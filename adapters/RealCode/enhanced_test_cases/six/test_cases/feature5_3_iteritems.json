@@ -1,0 +1,85 @@
+{
+    "description": "Given a dictionary as comma-separated key:value pairs, print all key-value pairs sorted by key, formatted as key=value, one per line.",
+    "cases": [
+        {
+            "input": "a:1,b:2,c:3",
+            "expected_output": "a=1\\nb=2\\nc=3"
+        },
+        {
+            "input": "z:1,a:2,m:3",
+            "expected_output": "a=2\\nm=3\\nz=1"
+        },
+        {
+            "input": "x:10",
+            "expected_output": "x=10"
+        },
+        {
+            "input": "b:2,a:1,d:4,c:3",
+            "expected_output": "a=1\\nb=2\\nc=3\\nd=4"
+        },
+        {
+            "input": "cat:1,ant:2,bat:3",
+            "expected_output": "ant=2\\nbat=3\\ncat=1"
+        },
+        {
+            "input": "",
+            "expected_output": ""
+        },
+        {
+            "input": "   ",
+            "expected_output": ""
+        },
+        {
+            "input": "a:1",
+            "expected_output": "a=1"
+        },
+        {
+            "input": "a:1,b:2",
+            "expected_output": "a=1\nb=2"
+        },
+        {
+            "input": "z:1,a:2",
+            "expected_output": "a=2\nz=1"
+        },
+        {
+            "input": "key:value",
+            "expected_output": "key=value"
+        },
+        {
+            "input": "key:",
+            "expected_output": "key="
+        },
+        {
+            "input": ":value",
+            "expected_output": "=value"
+        },
+        {
+            "input": "a:1,a:2",
+            "expected_output": "a=2"
+        },
+        {
+            "input": "1:first,2:second",
+            "expected_output": "1=first\n2=second"
+        },
+        {
+            "input": "key with spaces:value",
+            "expected_output": "key with spaces=value"
+        },
+        {
+            "input": "key:value with spaces",
+            "expected_output": "key=value with spaces"
+        },
+        {
+            "input": "key:123abc",
+            "expected_output": "key=123abc"
+        },
+        {
+            "input": "key:-5",
+            "expected_output": "key=-5"
+        },
+        {
+            "input": "key:0",
+            "expected_output": "key=0"
+        }
+    ]
+}

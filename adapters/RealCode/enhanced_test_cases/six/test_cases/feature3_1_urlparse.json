@@ -1,0 +1,85 @@
+{
+    "description": "Given a URL string, print its protocol scheme.",
+    "cases": [
+        {
+            "input": "https://example.com/path?query=1",
+            "expected_output": "https"
+        },
+        {
+            "input": "ftp://files/doc.xml",
+            "expected_output": "ftp"
+        },
+        {
+            "input": "http://example.com",
+            "expected_output": "http"
+        },
+        {
+            "input": "file:///tmp/test.txt",
+            "expected_output": "file"
+        },
+        {
+            "input": "ssh://git@github.com/repo",
+            "expected_output": "ssh"
+        },
+        {
+            "input": "http://user:pass@host:8080/path?q=1#frag",
+            "expected_output": "http"
+        },
+        {
+            "input": "mailto:user@example.com",
+            "expected_output": "mailto"
+        },
+        {
+            "input": "https://example.com:443/secure",
+            "expected_output": "https"
+        },
+        {
+            "input": "example.com/path",
+            "expected_output": ""
+        },
+        {
+            "input": "HTTP://example.com",
+            "expected_output": "http"
+        },
+        {
+            "input": "custom://something",
+            "expected_output": "custom"
+        },
+        {
+            "input": "data:text/plain,hello",
+            "expected_output": "data"
+        },
+        {
+            "input": "://example.com",
+            "expected_output": ""
+        },
+        {
+            "input": "http:/example.com",
+            "expected_output": "http"
+        },
+        {
+            "input": "http://",
+            "expected_output": "http"
+        },
+        {
+            "input": "",
+            "expected_output": ""
+        },
+        {
+            "input": "   ",
+            "expected_output": ""
+        },
+        {
+            "input": "http://example.com:80",
+            "expected_output": "http"
+        },
+        {
+            "input": "file://localhost/path",
+            "expected_output": "file"
+        },
+        {
+            "input": "git+ssh://git@github.com",
+            "expected_output": "git+ssh"
+        }
+    ]
+}

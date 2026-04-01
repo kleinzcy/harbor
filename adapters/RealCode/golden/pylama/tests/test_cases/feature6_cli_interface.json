@@ -1,0 +1,26 @@
+{
+    "description": "Test command-line argument parsing and execution",
+    "cases": [
+        {
+            "input": {
+                "args": [
+                    "--select=E301",
+                    "test.py"
+                ]
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": [
+                    "--help"
+                ]
+            },
+            "expected_output": {
+                "output_contains": "usage:"
+            }
+        }
+    ]
+}

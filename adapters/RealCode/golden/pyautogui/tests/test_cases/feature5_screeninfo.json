@@ -1,0 +1,59 @@
+{
+  "description": "Screen information retrieval, coordinate validation, and geometric calculations",
+  "cases": [
+    {
+      "input": {
+        "test_type": "screen_size"
+      },
+      "expected_output": {
+        "width_greater_than": 0,
+        "height_greater_than": 0
+      }
+    },
+    {
+      "input": {
+        "test_type": "mouse_position"
+      },
+      "expected_output": {
+        "x_within_screen": true,
+        "y_within_screen": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "coordinate_check",
+        "x": 100,
+        "y": 200
+      },
+      "expected_output": {
+        "on_screen": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "coordinate_check",
+        "x": -10,
+        "y": -10
+      },
+      "expected_output": {
+        "on_screen": false
+      }
+    },
+    {
+      "input": {
+        "test_type": "geometric_calculation",
+        "x1": 0,
+        "y1": 0,
+        "x2": 100,
+        "y2": 100,
+        "n": 0.5
+      },
+      "expected_output": {
+        "point": [
+          50,
+          50
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "description": "Library should use memory file system when available and pipes when not, without breaking functionality.",
+    "cases": [
+        {
+            "input": {
+                "use_memory_fs": null,
+                "operation": "dataframe_apply",
+                "df_size": 80
+            },
+            "expected_output": ",value\ncol0,-9.9072121304\ncol1,-0.9090693083\ncol2,10.2397063505\n"
+        },
+        {
+            "input": {
+                "use_memory_fs": true,
+                "operation": "dataframe_apply",
+                "df_size": 80
+            },
+            "expected_output": ",value\ncol0,-9.9072121304\ncol1,-0.9090693083\ncol2,10.2397063505\n"
+        },
+        {
+            "input": {
+                "use_memory_fs": false,
+                "operation": "dataframe_apply",
+                "df_size": 80
+            },
+            "expected_output": ",value\ncol0,-9.9072121304\ncol1,-0.9090693083\ncol2,10.2397063505\n"
+        }
+    ]
+}

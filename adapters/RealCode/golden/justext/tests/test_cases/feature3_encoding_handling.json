@@ -1,0 +1,17 @@
+{
+    "description": "Automatic encoding detection and decoding for various HTML inputs",
+    "cases": [
+        {
+            "input": "<p>Hello 世界</p>",
+            "expected_output": "Hello 世界"
+        },
+        {
+            "input": "<meta charset=\"utf-8\"><p>Test content</p>",
+            "expected_output": "Test content"
+        },
+        {
+            "input": "<meta charset=\"iso-8859-1\"><p>Test</p>",
+            "expected_output": "Test"
+        }
+    ]
+}

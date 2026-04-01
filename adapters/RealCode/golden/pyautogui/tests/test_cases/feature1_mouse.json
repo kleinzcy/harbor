@@ -1,0 +1,83 @@
+{
+  "description": "Comprehensive mouse operation validation with coordinate boundaries and animation parameters",
+  "cases": [
+    {
+      "input": {
+        "test_type": "mouse_move",
+        "operation": "moveTo",
+        "x": 100,
+        "y": 200,
+        "duration": 0.5,
+        "tween": "linear"
+      },
+      "expected_output": {
+        "success": true,
+        "position_within_tolerance": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "mouse_move",
+        "operation": "moveRel",
+        "xOffset": 50,
+        "yOffset": -30,
+        "duration": 0
+      },
+      "expected_output": {
+        "success": true,
+        "position_within_tolerance": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "mouse_click",
+        "operation": "click",
+        "x": 150,
+        "y": 250,
+        "clicks": 2,
+        "button": "left"
+      },
+      "expected_output": {
+        "success": true,
+        "click_count_valid": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "mouse_click",
+        "operation": "rightClick",
+        "x": 300,
+        "y": 400
+      },
+      "expected_output": {
+        "success": true,
+        "button": "right"
+      }
+    },
+    {
+      "input": {
+        "test_type": "mouse_drag",
+        "operation": "dragRel",
+        "xOffset": 100,
+        "yOffset": 100,
+        "duration": 1.0,
+        "button": "left"
+      },
+      "expected_output": {
+        "success": true,
+        "drag_completed": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "mouse_scroll",
+        "operation": "scroll",
+        "clicks": 5
+      },
+      "expected_output": {
+        "success": true,
+        "scroll_detected": true
+      }
+    }
+  ]
+}

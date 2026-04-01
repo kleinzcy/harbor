@@ -1,0 +1,38 @@
+{
+    "description": "Exceptions in user functions should be raised in the main process; library should work on all major OSes. [Enhanced: added boundary/window/IPC/config/exception-diversity cases.]",
+    "cases": [
+        {
+            "input": {
+                "operation": "dataframe_apply",
+                "df_size": 30,
+                "func": "lambda x: 1/0"
+            },
+            "expected_output": "ZeroDivisionError"
+        },
+        {
+            "input": {
+                "operation": "series_map",
+                "df_size": 30,
+                "func": "lambda x: x.nonexistent()"
+            },
+            "expected_output": "AttributeError"
+        },
+        {
+            "input": {
+                "operation": "dataframe_apply",
+                "axis": 0,
+                "df_size": 20,
+                "func": "lambda x: int(str(x.name).replace('col','')) / 0"
+            },
+            "expected_output": "ZeroDivisionError"
+        },
+        {
+            "input": {
+                "operation": "series_apply",
+                "df_size": 15,
+                "func": "lambda x: int('not_a_number')"
+            },
+            "expected_output": "ValueError"
+        }
+    ]
+}

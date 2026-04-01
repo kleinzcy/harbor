@@ -1,0 +1,65 @@
+{
+    "description": "Given a text string, write it to an in-memory text buffer, read it back, and print it.",
+    "cases": [
+        {
+            "input": "hello world",
+            "expected_output": "hello world"
+        },
+        {
+            "input": "goodbye",
+            "expected_output": "goodbye"
+        },
+        {
+            "input": "test 123",
+            "expected_output": "test 123"
+        },
+        {
+            "input": "Python buffer",
+            "expected_output": "Python buffer"
+        },
+        {
+            "input": "a",
+            "expected_output": "a"
+        },
+        {
+            "input": "line of text",
+            "expected_output": "line of text"
+        },
+        {
+            "input": "",
+            "expected_output": ""
+        },
+        {
+            "input": "   ",
+            "expected_output": ""
+        },
+        {
+            "input": "caf\u00e9",
+            "expected_output": "caf\u00e9"
+        },
+        {
+            "input": "long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text ",
+            "expected_output": "long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text"
+        },
+        {
+            "input": "text with\t tabs",
+            "expected_output": "text with\t tabs"
+        },
+        {
+            "input": "text with\n newline",
+            "expected_output": "text with\n newline"
+        },
+        {
+            "input": "  leading and trailing  ",
+            "expected_output": "leading and trailing"
+        },
+        {
+            "input": "special chars !@#$%^&*()",
+            "expected_output": "special chars !@#$%^&*()"
+        },
+        {
+            "input": "quotes ' \" ",
+            "expected_output": "quotes ' \""
+        }
+    ]
+}

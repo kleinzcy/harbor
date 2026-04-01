@@ -1,0 +1,14 @@
+
+This is a long paragraph with many common words like the, and, is, which are typical stopwords in English. It contains useful information.
+
+This paragraph has exactly half link density. Link text here and some more text to make total length. The stopwords are present.
+This paragraph has link density just above threshold. Link text here and some more text but link density is slightly above 0.5.
+Heading with link inside
+A paragraph with no stopwords at all. Python programming language syntax functions loops.
+Short paragraph without period
+
+Very long paragraph with many stopwords and low link density. This should be content because it has sufficient length and stopword density. The link density is low because there is only one small link in this lengthy paragraph.
+
+No links at all, just plain text.
+Length exactly 50 chars with stopwords.
+Length exactly 49 chars with stopwords.

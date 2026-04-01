@@ -1,0 +1,65 @@
+{
+    "description": "Removal of non-content HTML elements before text extraction",
+    "cases": [
+        {
+            "input": "<body><script>alert('test')</script><p>Real content</p></body>",
+            "expected_output": "Real content"
+        },
+        {
+            "input": "<body><style>.class { color: red; }</style><p>Text</p></body>",
+            "expected_output": "Text"
+        },
+        {
+            "input": "<body><!-- Comment --><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><script>var x = 1;</script><script>var y = 2;</script><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><script>Hello world</script><p>Text</p></body>",
+            "expected_output": "Text"
+        },
+        {
+            "input": "<body><style>@import url('style.css');</style><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><head><title>Title</title></head><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><noscript>Please enable JavaScript</noscript><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><div style=\"color: red;\">Styled div</div><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><script src=\"script.js\"></script><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><!--[if IE]>Special<![endif]--><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><![CDATA[<p>Ignored</p>]]><p>Real</p></body>",
+            "expected_output": "Real"
+        },
+        {
+            "input": "<body><!-- Multi\nline\ncomment --><p>Content</p></body>",
+            "expected_output": "Content"
+        },
+        {
+            "input": "<body><style>body { margin: 0; }</style><style>p { color: blue; }</style><p>Text</p></body>",
+            "expected_output": "Text"
+        },
+        {
+            "input": "<body><script>// comment\nconsole.log('test');</script><p>Content</p></body>",
+            "expected_output": "Content"
+        }
+    ]
+}

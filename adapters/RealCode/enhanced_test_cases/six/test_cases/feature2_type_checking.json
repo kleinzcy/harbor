@@ -1,0 +1,113 @@
+{
+    "description": "Given a value as input, print its type classification: string, integer, or other.",
+    "cases": [
+        {
+            "input": "hello",
+            "expected_output": "string"
+        },
+        {
+            "input": "42",
+            "expected_output": "integer"
+        },
+        {
+            "input": "3.14",
+            "expected_output": "other"
+        },
+        {
+            "input": "-5",
+            "expected_output": "integer"
+        },
+        {
+            "input": "0",
+            "expected_output": "integer"
+        },
+        {
+            "input": "+42",
+            "expected_output": "integer"
+        },
+        {
+            "input": "999999",
+            "expected_output": "integer"
+        },
+        {
+            "input": "-3.14",
+            "expected_output": "other"
+        },
+        {
+            "input": "1e5",
+            "expected_output": "other"
+        },
+        {
+            "input": "0.0",
+            "expected_output": "other"
+        },
+        {
+            "input": "inf",
+            "expected_output": "other"
+        },
+        {
+            "input": "abc123",
+            "expected_output": "string"
+        },
+        {
+            "input": "True",
+            "expected_output": "string"
+        },
+        {
+            "input": "None",
+            "expected_output": "string"
+        },
+        {
+            "input": "hello world",
+            "expected_output": "string"
+        },
+        {
+            "input": "",
+            "expected_output": "string"
+        },
+        {
+            "input": "00123",
+            "expected_output": "integer"
+        },
+        {
+            "input": "12345678901234567890",
+            "expected_output": "integer"
+        },
+        {
+            "input": "caf\u00e9",
+            "expected_output": "string"
+        },
+        {
+            "input": "   ",
+            "expected_output": "string"
+        },
+        {
+            "input": "-0",
+            "expected_output": "integer"
+        },
+        {
+            "input": "1.23e-5",
+            "expected_output": "other"
+        },
+        {
+            "input": "1.0",
+            "expected_output": "other"
+        },
+        {
+            "input": "1.",
+            "expected_output": "other"
+        },
+        {
+            "input": "0x10",
+            "expected_output": "string"
+        },
+        {
+            "input": "0b101",
+            "expected_output": "string"
+        },
+        {
+            "input": "123abc",
+            "expected_output": "string"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-scan",
+  "files_found": 2,
+  "total_size": 26,
+  "file_types": {
+    ".txt": 1,
+    ".py": 1
+  },
+  "files": [
+    {
+      "path": "file2.txt",
+      "size": 12,
+      "truncated": false,
+      "extension": ".txt",
+      "content": "text content"
+    },
+    {
+      "path": "file1.py",
+      "size": 14,
+      "truncated": false,
+      "extension": ".py",
+      "content": "print('hello')"
+    }
+  ],
+  "contains_python": true,
+  "contains_text": true
+}

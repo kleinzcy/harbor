@@ -1,0 +1,33 @@
+{
+    "description": "Given a plain text string, convert it to bytes and print the bytes representation.",
+    "cases": [
+        {
+            "input": "hello",
+            "expected_output": "b'hello'"
+        },
+        {
+            "input": "world",
+            "expected_output": "b'world'"
+        },
+        {
+            "input": "test 123",
+            "expected_output": "b'test 123'"
+        },
+        {
+            "input": "Python",
+            "expected_output": "b'Python'"
+        },
+        {
+            "input": "42",
+            "expected_output": "b'42'"
+        },
+        {
+            "input": "a",
+            "expected_output": "b'a'"
+        },
+        {
+            "input": "foo bar",
+            "expected_output": "b'foo bar'"
+        }
+    ]
+}

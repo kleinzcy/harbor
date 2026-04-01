@@ -1,0 +1,25 @@
+{
+  "description": "Enhanced error messages in Python 3.11+",
+  "cases": [
+    {
+      "input": {
+        "python_version": "3.11",
+        "argnames": "x,expected",
+        "argvalues": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "test_assertion": "self.assertEqual(x**2, expected)"
+      },
+      "expected_output": {
+        "error_contains": "Test parameters: x=1, expected=2"
+      }
+    }
+  ]
+}

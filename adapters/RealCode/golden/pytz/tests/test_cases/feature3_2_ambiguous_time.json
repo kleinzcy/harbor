@@ -1,0 +1,25 @@
+{
+    "description": "Test handling of ambiguous times during DST fall-back transitions using is_dst parameter.",
+    "cases": [
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-10-27 01:30:00", "is_dst": false},
+            "expected_output": "2002-10-27 01:30:00 EST (-0500)"
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-10-27 01:30:00", "is_dst": true},
+            "expected_output": "2002-10-27 01:30:00 EDT (-0400)"
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-10-27 01:30:00", "is_dst": null},
+            "expected_output": {"error": "AmbiguousTimeError"}
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-10-27 01:00:00", "is_dst": false},
+            "expected_output": "2002-10-27 01:00:00 EST (-0500)"
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-10-27 01:00:00", "is_dst": true},
+            "expected_output": "2002-10-27 01:00:00 EDT (-0400)"
+        }
+    ]
+}

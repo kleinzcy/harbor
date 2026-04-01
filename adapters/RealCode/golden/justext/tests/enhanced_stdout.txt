@@ -1,0 +1,121 @@
+Hello world
+First paragraph
+Second paragraph
+Title
+Content
+
+
+Nested text
+Hello world !
+Title1
+Title2
+Item1
+Item2
+Cell1
+Cell2
+Header
+Paragraph
+Line1 
+ Line2
+Hello 世界 🌍
+AT&T © 2025
+Inner paragraph
+Text with   multiple   spaces
+
+This is a long paragraph with many common words like the, and, is, which are typical stopwords in English. It contains useful information.
+
+This paragraph has exactly half link density. Link text here and some more text to make total length. The stopwords are present.
+This paragraph has link density just above threshold. Link text here and some more text but link density is slightly above 0.5.
+Heading with link inside
+A paragraph with no stopwords at all. Python programming language syntax functions loops.
+Short paragraph without period
+
+Very long paragraph with many stopwords and low link density. This should be content because it has sufficient length and stopword density. The link density is low because there is only one small link in this lengthy paragraph.
+
+No links at all, just plain text.
+Length exactly 50 chars with stopwords.
+Length exactly 49 chars with stopwords.
+Hello 世界
+Test content
+Test
+﻿BOM character
+
+Emojis: 🚀 👍 😀
+Zero-width space:​test
+Combining characters: ñ (n with tilde)
+Test
+First charset wins
+Chinese encoding
+HTML entities: <div> & "quotes"
+Non-breaking space: test
+["the", "and", "is", "in", "to", "of", "a", "that", "it", "for"]
+["der", "die", "das", "und", "in", "den", "von", "zu", "mit", "sich"]
+["le", "la", "les", "de", "un", "une", "des", "et", "en", "à"]
+["the", "and", "is", "in", "to", "of", "a", "that", "it", "for"]
+["der", "die", "das", "und", "in", "den", "von", "zu", "mit", "sich"]
+["le", "la", "les", "de", "un", "une", "des", "et", "en", "à"]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Real content
+Text
+Content
+Content
+Text
+Content
+Content
+Content
+Content
+Content
+Content
+Real
+Content
+Text
+Content
+Long good paragraph with many words and sufficient length.
+Short.
+Another long good paragraph with adequate length.
+Good content here
+Short at start.
+Long content paragraph with many words and sufficient length.
+Long content paragraph with many words and sufficient length.
+Short at end.
+
+Boilerplate with high link density. Link Link
+Long content paragraph.
+Another boilerplate.
+Heading
+Subheading
+Short.
+Long content paragraph.
+Short paragraph exactly 100 characters long. This is exactly 100 chars.
+Another long paragraph.
+Long content paragraph.
+Short paragraph of 99 characters. This is exactly 99 characters long, just below threshold.
+Another long paragraph.
+First long paragraph.
+Short with high link density link .
+Second long paragraph.
+Medium length paragraph but still content.
+
+This is a long paragraph with only one link and plenty of regular text.
+Plain text without any links
+Link density exactly 0.5: link text plus some other text.
+
+Empty link
+Link1 Link2 both links
+image link
+
+
+Heading with link
+
+
+Link density zero: no links.
+Multiple links with varying lengths: short and a longer link text plus some other text.

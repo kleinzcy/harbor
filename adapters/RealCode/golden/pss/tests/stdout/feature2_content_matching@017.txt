@@ -1,0 +1,16 @@
+[
+  {
+    "matching_line": "foo boo",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        7
+      ]
+    ]
+  }
+]

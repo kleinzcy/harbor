@@ -1,0 +1,51 @@
+{
+    "description": "Parallel apply on single\u2011column and multi\u2011column groupby should match serial pandas results. [Enhanced: added boundary/window/IPC/config/exception-diversity cases.]",
+    "cases": [
+        {
+            "input": {
+                "operation": "groupby_apply",
+                "group_cols": [
+                    "a"
+                ],
+                "df_size": 200,
+                "func": "lambda g: g.sum(numeric_only=True)"
+            },
+            "expected_output": ",index,a,col0,col1,col2\n0,0,x,-2.0012218957,8.5338455235,0.6330790818\n1,1,y,-4.0091301209,-2.2976639324,-9.5182831386\n2,2,z,-2.1438410178,10.9374557887,-8.2458028205\n"
+        },
+        {
+            "input": {
+                "operation": "groupby_apply",
+                "group_cols": [
+                    "a",
+                    "b"
+                ],
+                "df_size": 200,
+                "func": "lambda g: g.mean(numeric_only=True)"
+            },
+            "expected_output": ",index,a,b,col0,col1,col2\n0,0,x,p,0.2575321030,0.2182535214,-0.1941605804\n1,1,x,q,-0.3499927098,0.0443826439,0.2346792745\n2,2,y,p,0.1807702689,-0.1172070179,-0.3051458469\n3,3,y,q,-0.3100970469,0.0430888266,-0.0018955447\n4,4,z,p,0.0031089111,0.1971522866,0.1040048500\n5,5,z,q,-0.0629191264,0.0902365725,-0.3417219991\n"
+        },
+        {
+            "input": {
+                "operation": "groupby_apply",
+                "group_cols": [
+                    "a"
+                ],
+                "df_size": 45,
+                "func": "lambda g: g.sum(numeric_only=True)"
+            },
+            "expected_output": ",index,a,col0,col1,col2\n0,0,x,-12.8890099003,3.3490751652,7.5357384314\n1,1,y,4.0565529379,-3.4790188742,-4.0226984035\n2,2,z,-0.8984556815,0.9681185428,-6.4115826818\n"
+        },
+        {
+            "input": {
+                "operation": "groupby_apply",
+                "group_cols": [
+                    "a",
+                    "b"
+                ],
+                "df_size": 90,
+                "func": "lambda g: g.mean(numeric_only=True)"
+            },
+            "expected_output": ",index,a,b,col0,col1,col2\n0,0,x,p,-0.3085869961,-0.1203483658,0.2784617511\n1,1,x,q,-0.4042623829,0.3147459182,-0.1153331569\n2,2,y,p,-0.0920872974,0.1104880802,0.5305649795\n3,3,y,q,-0.1436332388,-0.0441601255,-0.3934213305\n4,4,z,p,0.1628821243,0.1896151283,-0.1933520691\n5,5,z,q,0.6147237068,-0.2611618120,-0.0672198414\n"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "code": "x = 42",
+  "contains_import": false,
+  "contains_print": false,
+  "contains_output": false,
+  "contains_markdown": false,
+  "cell_count": 1,
+  "code_cells": 1,
+  "markdown_cells": 0
+}

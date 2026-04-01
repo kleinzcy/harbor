@@ -1,0 +1,29 @@
+{
+    "description": "Test configuration loading and precedence rules",
+    "cases": [
+        {
+            "input": {
+                "config_content": "[pylama]\nlinters = pycodestyle,pyflakes",
+                "cli_args": [
+                    "--linters=mccabe"
+                ]
+            },
+            "expected_output": {
+                "linters": [
+                    "mccabe"
+                ]
+            }
+        },
+        {
+            "input": {
+                "config_content": "[pylama:pycodestyle]\nmax_line_length = 100",
+                "cli_args": []
+            },
+            "expected_output": {
+                "pycodestyle": {
+                    "max_line_length": 100
+                }
+            }
+        }
+    ]
+}

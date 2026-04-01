@@ -1,0 +1,4 @@
+{
+  "success": true,
+  "drag_completed": true
+}

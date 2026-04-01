@@ -1,0 +1,20 @@
+[
+  {
+    "matching_line": "i \u0130 \u0131",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ]
+  }
+]

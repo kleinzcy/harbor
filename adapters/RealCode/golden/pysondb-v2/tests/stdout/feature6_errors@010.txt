@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Records must be a list",
+  "error_type": "TypeError"
+}

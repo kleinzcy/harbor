@@ -1,0 +1,29 @@
+{
+    "description": "Given space-separated words as input, print them joined by a single space.",
+    "cases": [
+        {
+            "input": "Hello World",
+            "expected_output": "Hello World"
+        },
+        {
+            "input": "foo bar baz",
+            "expected_output": "foo bar baz"
+        },
+        {
+            "input": "hello",
+            "expected_output": "hello"
+        },
+        {
+            "input": "a b c d e",
+            "expected_output": "a b c d e"
+        },
+        {
+            "input": "one two three",
+            "expected_output": "one two three"
+        },
+        {
+            "input": "Python is great",
+            "expected_output": "Python is great"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "description": "Progress bar should appear when enabled and not appear when disabled, without affecting the correctness of results. [Enhanced: added boundary/window/IPC/config/exception-diversity cases.]",
+    "cases": [
+        {
+            "input": {
+                "progress_bar": true,
+                "operation": "dataframe_apply",
+                "df_size": 50
+            },
+            "expected_output": ",value\ncol0,-11.2736952628\ncol1,0.8890435234\ncol2,-1.9643783335\n"
+        },
+        {
+            "input": {
+                "progress_bar": false,
+                "operation": "dataframe_apply",
+                "df_size": 50
+            },
+            "expected_output": ",value\ncol0,-11.2736952628\ncol1,0.8890435234\ncol2,-1.9643783335\n"
+        },
+        {
+            "input": {
+                "progress_bar": true,
+                "operation": "dataframe_apply",
+                "df_size": 1
+            },
+            "expected_output": ",value\ncol0,0.4967141530\ncol1,-0.1382643012\ncol2,0.6476885381\n"
+        },
+        {
+            "input": {
+                "progress_bar": false,
+                "operation": "series_map",
+                "df_size": 25
+            },
+            "expected_output": ",value\n0,1.4967141530\n1,0.8617356988\n2,1.6476885381\n3,2.5230298564\n4,0.7658466253\n5,0.7658630431\n6,2.5792128155\n7,1.7674347292\n8,0.5305256141\n9,1.5425600436\n10,0.5365823072\n11,0.5342702464\n12,1.2419622716\n13,-0.9132802447\n14,-0.7249178325\n15,0.4377124708\n16,-0.0128311203\n17,1.3142473326\n18,0.0919759245\n19,-0.4123037013\n20,2.4656487689\n21,0.7742236995\n22,1.0675282047\n23,-0.4247481862\n24,0.4556172755\n"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "description": "Removal of non-content HTML elements before text extraction",
+    "cases": [
+        {
+            "input": "<body><script>alert('test')</script><p>Real content</p></body>",
+            "expected_output": "Real content"
+        },
+        {
+            "input": "<body><style>.class { color: red; }</style><p>Text</p></body>",
+            "expected_output": "Text"
+        },
+        {
+            "input": "<body><!-- Comment --><p>Content</p></body>",
+            "expected_output": "Content"
+        }
+    ]
+}

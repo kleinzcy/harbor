@@ -1,0 +1,69 @@
+{
+    "description": "Support for multiple languages through stopword lists",
+    "cases": [
+        {
+            "input": "English",
+            "expected_output": "[\"the\", \"and\", \"is\", \"in\", \"to\", \"of\", \"a\", \"that\", \"it\", \"for\"]"
+        },
+        {
+            "input": "German",
+            "expected_output": "[\"der\", \"die\", \"das\", \"und\", \"in\", \"den\", \"von\", \"zu\", \"mit\", \"sich\"]"
+        },
+        {
+            "input": "French",
+            "expected_output": "[\"le\", \"la\", \"les\", \"de\", \"un\", \"une\", \"des\", \"et\", \"en\", \"à\"]"
+        },
+        {
+            "input": "ENGLISH",
+            "expected_output": "[\"the\", \"and\", \"is\", \"in\", \"to\", \"of\", \"a\", \"that\", \"it\", \"for\"]"
+        },
+        {
+            "input": "german",
+            "expected_output": "[\"der\", \"die\", \"das\", \"und\", \"in\", \"den\", \"von\", \"zu\", \"mit\", \"sich\"]"
+        },
+        {
+            "input": "FRENCH",
+            "expected_output": "[\"le\", \"la\", \"les\", \"de\", \"un\", \"une\", \"des\", \"et\", \"en\", \"à\"]"
+        },
+        {
+            "input": "Spanish",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Italian",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Portuguese",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Dutch",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Russian",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Chinese",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Japanese",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Korean",
+            "expected_output": "[]"
+        },
+        {
+            "input": "Arabic",
+            "expected_output": "[]"
+        },
+        {
+            "input": "unknown",
+            "expected_output": "[]"
+        }
+    ]
+}

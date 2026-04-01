@@ -1,0 +1,61 @@
+{
+    "description": "Given an original error message, raise it, catch it, wrap it into a RuntimeError, and print the type and final message.",
+    "cases": [
+        {
+            "input": "original error",
+            "expected_output": "RuntimeError: wrapped: original error"
+        },
+        {
+            "input": "bad input",
+            "expected_output": "RuntimeError: wrapped: bad input"
+        },
+        {
+            "input": "something went wrong",
+            "expected_output": "RuntimeError: wrapped: something went wrong"
+        },
+        {
+            "input": "error 404",
+            "expected_output": "RuntimeError: wrapped: error 404"
+        },
+        {
+            "input": "test",
+            "expected_output": "RuntimeError: wrapped: test"
+        },
+        {
+            "input": "connection refused",
+            "expected_output": "RuntimeError: wrapped: connection refused"
+        },
+        {
+            "input": "",
+            "expected_output": "RuntimeError: wrapped: "
+        },
+        {
+            "input": "   ",
+            "expected_output": "RuntimeError: wrapped: "
+        },
+        {
+            "input": "error: something",
+            "expected_output": "RuntimeError: wrapped: error: something"
+        },
+        {
+            "input": "long error message long error message long error message long error message long error message ",
+            "expected_output": "RuntimeError: wrapped: long error message long error message long error message long error message long error message"
+        },
+        {
+            "input": "caf\u00e9 error",
+            "expected_output": "RuntimeError: wrapped: caf\u00e9 error"
+        },
+        {
+            "input": "special !@#$%^&*()",
+            "expected_output": "RuntimeError: wrapped: special !@#$%^&*()"
+        },
+        {
+            "input": "newline\nin message",
+            "expected_output": "RuntimeError: wrapped: newline\nin message"
+        },
+        {
+            "input": "\t tab",
+            "expected_output": "RuntimeError: wrapped: tab"
+        }
+    ]
+}

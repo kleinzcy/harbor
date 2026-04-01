@@ -1,0 +1,27 @@
+{
+    "description": "Test distance calculation from object pixel position",
+    "cases": [
+        {
+            "input": {
+                "v": 150,
+                "h": 5.5,
+                "x_shift": 300,
+                "image": "dummy_array"
+            },
+            "expected_output": {
+                "distance": 45.2
+            }
+        },
+        {
+            "input": {
+                "v": 200,
+                "h": 5.5,
+                "x_shift": 300,
+                "image": "dummy_array"
+            },
+            "expected_output": {
+                "distance": 32.1
+            }
+        }
+    ]
+}

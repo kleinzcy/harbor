@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "source": ".",
+  "is_url": false,
+  "files_analyzed": 7,
+  "exclude_patterns": [],
+  "include_patterns": [],
+  "tree": "\u251c\u2500\u2500 README.md\n\u251c\u2500\u2500 __pycache__\n\u2502   \u2514\u2500\u2500 cache.pyo\n\u251c\u2500\u2500 digest.json\n\u251c\u2500\u2500 main.py\n\u251c\u2500\u2500 module.pyc\n\u251c\u2500\u2500 notes.txt\n\u2514\u2500\u2500 src\n    \u2514\u2500\u2500 utils.py",
+  "summary": {
+    "directory": "/private/tmp/test-project",
+    "total_files": 7,
+    "max_file_size_kb": 5120
+  }
+}
+{
+  "exit_code": 0,
+  "creates_digest": false,
+  "contains_structure": true,
+  "contains_hello_world": false,
+  "includes_py": false,
+  "excludes_pyc": false,
+  "stdout_contains_structure": true,
+  "no_digest_file": true
+}

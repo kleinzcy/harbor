@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "creates_digest": true,
+  "contains_structure": true,
+  "contains_hello_world": false,
+  "includes_py": true,
+  "excludes_pyc": true,
+  "stdout_contains_structure": false,
+  "no_digest_file": false
+}

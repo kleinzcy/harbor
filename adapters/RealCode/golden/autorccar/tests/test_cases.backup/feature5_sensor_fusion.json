@@ -1,0 +1,23 @@
+{
+    "description": "Test ultrasonic sensor data integration and threshold checking",
+    "cases": [
+        {
+            "input": {
+                "sensor_distance": 15,
+                "threshold": 30
+            },
+            "expected_output": {
+                "action": "stop"
+            }
+        },
+        {
+            "input": {
+                "sensor_distance": 50,
+                "threshold": 30
+            },
+            "expected_output": {
+                "action": "proceed"
+            }
+        }
+    ]
+}

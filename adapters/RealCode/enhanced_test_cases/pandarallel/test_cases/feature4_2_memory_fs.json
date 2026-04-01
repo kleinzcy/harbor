@@ -1,0 +1,46 @@
+{
+    "description": "Library should use memory file system when available and pipes when not, without breaking functionality. [Enhanced: added boundary/window/IPC/config/exception-diversity cases.]",
+    "cases": [
+        {
+            "input": {
+                "use_memory_fs": null,
+                "operation": "dataframe_apply",
+                "df_size": 80
+            },
+            "expected_output": ",value\ncol0,-9.9072121304\ncol1,-0.9090693083\ncol2,10.2397063505\n"
+        },
+        {
+            "input": {
+                "use_memory_fs": true,
+                "operation": "dataframe_apply",
+                "df_size": 80
+            },
+            "expected_output": ",value\ncol0,-9.9072121304\ncol1,-0.9090693083\ncol2,10.2397063505\n"
+        },
+        {
+            "input": {
+                "use_memory_fs": false,
+                "operation": "dataframe_apply",
+                "df_size": 80
+            },
+            "expected_output": ",value\ncol0,-9.9072121304\ncol1,-0.9090693083\ncol2,10.2397063505\n"
+        },
+        {
+            "input": {
+                "use_memory_fs": null,
+                "operation": "dataframe_apply",
+                "df_size": 35
+            },
+            "expected_output": ",value\ncol0,-4.6424985448\ncol1,-4.7873523543\ncol2,-4.0970944025\n"
+        },
+        {
+            "input": {
+                "use_memory_fs": true,
+                "operation": "series_apply",
+                "df_size": 42,
+                "func": "lambda x: x + 10"
+            },
+            "expected_output": ",value\n0,10.4967141530\n1,9.8617356988\n2,10.6476885381\n3,11.5230298564\n4,9.7658466253\n5,9.7658630431\n6,11.5792128155\n7,10.7674347292\n8,9.5305256141\n9,10.5425600436\n10,9.5365823072\n11,9.5342702464\n12,10.2419622716\n13,8.0867197553\n14,8.2750821675\n15,9.4377124708\n16,8.9871688797\n17,10.3142473326\n18,9.0919759245\n19,8.5876962987\n20,11.4656487689\n21,9.7742236995\n22,10.0675282047\n23,8.5752518138\n24,9.4556172755\n25,10.1109225897\n26,8.8490064226\n27,10.3756980183\n28,9.3993613101\n29,9.7083062502\n30,9.3982933878\n31,11.8522781845\n32,9.9865027753\n33,8.9422890710\n34,10.8225449121\n35,8.7791563500\n36,10.2088635950\n37,8.0403298761\n38,8.6718139511\n39,10.1968612359\n40,10.7384665800\n41,10.1713682812\n"
+        }
+    ]
+}

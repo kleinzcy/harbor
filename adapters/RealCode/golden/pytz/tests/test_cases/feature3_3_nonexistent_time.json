@@ -1,0 +1,21 @@
+{
+    "description": "Test handling of non-existent times during DST spring-forward transitions.",
+    "cases": [
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 02:30:00", "is_dst": null},
+            "expected_output": {"error": "NonExistentTimeError"}
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 02:00:00", "is_dst": null},
+            "expected_output": {"error": "NonExistentTimeError"}
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 02:30:00", "is_dst": true},
+            "expected_output": "2002-04-07 02:30:00 EDT (-0400)"
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 02:30:00", "is_dst": false},
+            "expected_output": "2002-04-07 02:30:00 EST (-0500)"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+{"exact": ["Pacific/Auckland", "Pacific/Chatham"]}

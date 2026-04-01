@@ -1,0 +1,3 @@
+{
+  "memory_increase_below_threshold": true
+}

@@ -1,0 +1,17 @@
+{
+    "description": "Basic HTML text extraction with simple paragraphs",
+    "cases": [
+        {
+            "input": "<p>Hello world</p>",
+            "expected_output": "Hello world"
+        },
+        {
+            "input": "<div><p>First paragraph</p><p>Second paragraph</p></div>",
+            "expected_output": "First paragraph\nSecond paragraph"
+        },
+        {
+            "input": "<h1>Title</h1><p>Content</p>",
+            "expected_output": "Title\nContent"
+        }
+    ]
+}

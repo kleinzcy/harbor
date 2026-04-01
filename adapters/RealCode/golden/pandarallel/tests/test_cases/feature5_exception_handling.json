@@ -1,0 +1,7 @@
+{
+    "description": "Exceptions in user functions should be raised in the main process; library should work on all major OSes.",
+    "cases": [
+        {"input": {"operation": "dataframe_apply", "df_size": 30, "func": "lambda x: 1/0"}, "expected_output": "ZeroDivisionError"},
+        {"input": {"operation": "series_map", "df_size": 30, "func": "lambda x: x.nonexistent()"}, "expected_output": "AttributeError"}
+    ]
+}

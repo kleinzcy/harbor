@@ -1,0 +1,19 @@
+{
+  "description": "Command-line interface for feature extraction from CSV file",
+  "cases": [
+    {
+      "input": {
+        "command": "tsfresh-extract-features --input data.csv --id-column id --time-column time --value-column value --output features.csv",
+        "input_file": "id,time,value\n1,0,1.0\n1,1,2.0\n2,0,3.0\n2,1,4.0"
+      },
+      "expected_output": {
+        "output_file_columns": [
+          "id",
+          "value__mean",
+          "value__variance"
+        ],
+        "row_count": 2
+      }
+    }
+  ]
+}

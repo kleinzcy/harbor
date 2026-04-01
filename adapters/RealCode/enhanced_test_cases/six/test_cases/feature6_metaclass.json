@@ -1,0 +1,69 @@
+{
+    "description": "Given a class name, dynamically create it using a custom metaclass that injects injected=True, then print whether the injection succeeded.",
+    "cases": [
+        {
+            "input": "MyClass",
+            "expected_output": "True"
+        },
+        {
+            "input": "AnotherClass",
+            "expected_output": "True"
+        },
+        {
+            "input": "TestClass",
+            "expected_output": "True"
+        },
+        {
+            "input": "Foo",
+            "expected_output": "True"
+        },
+        {
+            "input": "My_Meta_Class",
+            "expected_output": "True"
+        },
+        {
+            "input": "A",
+            "expected_output": "True"
+        },
+        {
+            "input": "",
+            "expected_output": ""
+        },
+        {
+            "input": "   ",
+            "expected_output": ""
+        },
+        {
+            "input": "MyClass1",
+            "expected_output": "True"
+        },
+        {
+            "input": "My_Class",
+            "expected_output": "True"
+        },
+        {
+            "input": "ClassWithUnderscore_123",
+            "expected_output": "True"
+        },
+        {
+            "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "expected_output": "True"
+        },
+        {
+            "input": "caf\u00e9",
+            "expected_output": "True"
+        },
+        {
+            "input": "123",
+            "expected_output": "True"
+        },
+        {
+            "input": "class",
+            "expected_output": "True"
+        },
+        {
+            "input": "my-class",
+            "expected_output": "True"
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+{
+  "success": true,
+  "location_found": false
+}

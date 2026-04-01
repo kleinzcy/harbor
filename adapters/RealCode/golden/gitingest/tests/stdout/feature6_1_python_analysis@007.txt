@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "imports": [
+    "sys"
+  ],
+  "functions": [
+    "main"
+  ],
+  "classes": [],
+  "docstrings": [
+    {
+      "type": "module",
+      "docstring": "Module docstring."
+    },
+    {
+      "type": "function",
+      "name": "main",
+      "docstring": "Main function."
+    }
+  ],
+  "has_docstring": true,
+  "has_print": false,
+  "total_elements": 2
+}

@@ -1,0 +1,16 @@
+{
+    "description": "Test Python code analysis and extraction",
+    "cases": [
+        {
+            "input": {
+                "code": "import os\nimport sys\n\ndef hello():\n    \"\"\"Say hello\"\"\"\n    print('Hello')\n\nclass Calculator:\n    def add(self, a, b):\n        return a + b"
+            },
+            "expected_output": {
+                "imports": ["os", "sys"],
+                "functions": ["hello"],
+                "classes": ["Calculator"],
+                "has_docstring": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,267 @@
+{
+  "description": "Test LazyList, LazySet, and LazyDict deferred computation, correct behavior after materialization, and standard collection operations.",
+  "cases": [
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [
+          1,
+          2,
+          3
+        ],
+        "operation": "len"
+      },
+      "expected_output": 3
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [
+          10,
+          20,
+          30
+        ],
+        "operation": "getitem",
+        "index": 1
+      },
+      "expected_output": 20
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [
+          1,
+          2,
+          3
+        ],
+        "operation": "contains",
+        "value": 2
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [
+          1,
+          2,
+          3
+        ],
+        "operation": "list"
+      },
+      "expected_output": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [
+          "a",
+          "b",
+          "c"
+        ],
+        "operation": "len"
+      },
+      "expected_output": 3
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [
+          "a",
+          "b",
+          "c"
+        ],
+        "operation": "contains",
+        "value": "b"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [
+          "a",
+          "b",
+          "c"
+        ],
+        "operation": "contains",
+        "value": "z"
+      },
+      "expected_output": false
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {
+          "x": 1,
+          "y": 2
+        },
+        "operation": "getitem",
+        "key": "x"
+      },
+      "expected_output": 1
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {
+          "x": 1,
+          "y": 2
+        },
+        "operation": "keys"
+      },
+      "expected_output": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {
+          "x": 1,
+          "y": 2
+        },
+        "operation": "len"
+      },
+      "expected_output": 2
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [],
+        "operation": "len"
+      },
+      "expected_output": 0
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [],
+        "operation": "contains",
+        "value": 5
+      },
+      "expected_output": false
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [
+          42
+        ],
+        "operation": "getitem",
+        "index": 0
+      },
+      "expected_output": 42
+    },
+    {
+      "input": {
+        "class": "LazyList",
+        "fill_data": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "operation": "list"
+      },
+      "expected_output": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [],
+        "operation": "len"
+      },
+      "expected_output": 0
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [],
+        "operation": "contains",
+        "value": "a"
+      },
+      "expected_output": false
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [
+          "a",
+          "a",
+          "b"
+        ],
+        "operation": "len"
+      },
+      "expected_output": 2
+    },
+    {
+      "input": {
+        "class": "LazySet",
+        "fill_data": [
+          "a",
+          "a",
+          "b"
+        ],
+        "operation": "contains",
+        "value": "a"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {},
+        "operation": "len"
+      },
+      "expected_output": 0
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {},
+        "operation": "keys"
+      },
+      "expected_output": []
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {
+          "a": {
+            "nested": 1
+          }
+        },
+        "operation": "getitem",
+        "key": "a"
+      },
+      "expected_output": {
+        "nested": 1
+      }
+    },
+    {
+      "input": {
+        "class": "LazyDict",
+        "fill_data": {
+          "key1": "value1",
+          "key2": "value2",
+          "key3": "value3"
+        },
+        "operation": "len"
+      },
+      "expected_output": 3
+    }
+  ]
+}

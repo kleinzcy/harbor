@@ -1,0 +1,50 @@
+{
+  "description": "Documentation doctest validation, API accessibility checks, and example code testing",
+  "cases": [
+    {
+      "input": {
+        "test_type": "doctest"
+      },
+      "expected_output": {
+        "tests_passed": true,
+        "failures": 0
+      }
+    },
+    {
+      "input": {
+        "test_type": "api_availability",
+        "function_names": [
+          "moveTo",
+          "click",
+          "typewrite",
+          "screenshot"
+        ]
+      },
+      "expected_output": {
+        "all_functions_available": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "example_code",
+        "example": "basic_mouse_movement"
+      },
+      "expected_output": {
+        "success": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "constant_validation",
+        "constants": [
+          "FAILSAFE",
+          "PAUSE",
+          "PRIMARY"
+        ]
+      },
+      "expected_output": {
+        "all_constants_defined": true
+      }
+    }
+  ]
+}

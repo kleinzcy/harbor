@@ -1,0 +1,22 @@
+[
+  {
+    "matching_line": "vector<int> v;",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        7
+      ]
+    ]
+  },
+  {
+    "matching_line": "vector <float> f;",
+    "matching_lineno": 2,
+    "matching_column_ranges": [
+      [
+        0,
+        8
+      ]
+    ]
+  }
+]

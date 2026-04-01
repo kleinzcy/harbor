@@ -1,0 +1,7 @@
+[
+  {
+    "matching_line": "warning",
+    "matching_lineno": 2,
+    "matching_column_ranges": []
+  }
+]

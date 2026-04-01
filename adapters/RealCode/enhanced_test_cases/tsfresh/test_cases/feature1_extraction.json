@@ -1,0 +1,505 @@
+{
+  "description": "Extract basic statistical features from a simple time series (enhanced with edge cases)",
+  "cases": [
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "time": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length"
+        ],
+        "1": [
+          1.5,
+          0.5,
+          2.0
+        ],
+        "2": [
+          3.5,
+          0.5,
+          2.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1
+          ],
+          "time": [
+            0
+          ],
+          "value": [
+            5.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          5.0,
+          NaN,
+          1.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2
+          ],
+          "value": [
+            7.0,
+            7.0,
+            7.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          7.0,
+          0.0,
+          3.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2
+          ],
+          "value": [
+            -5.0,
+            0.0,
+            5.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          0.0,
+          25.0,
+          3.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "value": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          4.5,
+          9.166666666666666,
+          10.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            2,
+            0,
+            1
+          ],
+          "value": [
+            3.0,
+            1.0,
+            2.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          "time": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0,
+            10.0,
+            20.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0,
+          1.0
+        ],
+        "2": [
+          15.0,
+          50.0,
+          2.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            "a",
+            "a",
+            "b",
+            "b"
+          ],
+          "time": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "value": [
+            5.0,
+            6.0,
+            7.0,
+            8.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "a": [
+          5.5,
+          0.5,
+          2.0,
+          1.0
+        ],
+        "b": [
+          7.5,
+          0.5,
+          2.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "comprehensive"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2
+          ],
+          "value": [
+            1.0,
+            NaN,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          NaN,
+          NaN,
+          3.0,
+          1.0
+        ]
+      }
+    }
+  ]
+}

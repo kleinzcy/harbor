@@ -1,0 +1,31 @@
+{
+    "description": "Test error deduplication across multiple linters",
+    "cases": [
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701"
+                    },
+                    {
+                        "source": "pylint",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "C0321"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 5,
+                    "text": "E701"
+                }
+            ]
+        }
+    ]
+}

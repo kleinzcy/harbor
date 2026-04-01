@@ -1,0 +1,21 @@
+{
+    "description": "Progress bar should appear when enabled and not appear when disabled, without affecting the correctness of results.",
+    "cases": [
+        {
+            "input": {
+                "progress_bar": true,
+                "operation": "dataframe_apply",
+                "df_size": 50
+            },
+            "expected_output": ",value\ncol0,-11.2736952628\ncol1,0.8890435234\ncol2,-1.9643783335\n"
+        },
+        {
+            "input": {
+                "progress_bar": false,
+                "operation": "dataframe_apply",
+                "df_size": 50
+            },
+            "expected_output": ",value\ncol0,-11.2736952628\ncol1,0.8890435234\ncol2,-1.9643783335\n"
+        }
+    ]
+}

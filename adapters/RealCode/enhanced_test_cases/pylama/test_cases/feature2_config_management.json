@@ -1,0 +1,71 @@
+{
+    "description": "Test configuration loading and precedence rules",
+    "cases": [
+        {
+            "input": {
+                "config_content": "[pylama]\nlinters = pycodestyle,pyflakes",
+                "cli_args": [
+                    "--linters=mccabe"
+                ]
+            },
+            "expected_output": {
+                "linters": [
+                    "mccabe"
+                ]
+            }
+        },
+        {
+            "input": {
+                "config_content": "[pylama:pycodestyle]\nmax_line_length = 100",
+                "cli_args": []
+            },
+            "expected_output": {
+                "pycodestyle": {
+                    "max_line_length": 100
+                }
+            }
+        },
+        {
+            "input": {
+                "config_content": "",
+                "cli_args": []
+            },
+            "expected_output": {
+                "linters": ["pycodestyle", "pyflakes", "mccabe"],
+                "pycodestyle": {}
+            }
+        },
+        {
+            "input": {
+                "config_content": "[pylama]\nignore = E301,E302",
+                "cli_args": []
+            },
+            "expected_output": {
+                "linters": ["pycodestyle", "pyflakes", "mccabe"],
+                "pycodestyle": {}
+            }
+        },
+        {
+            "input": {
+                "config_content": "[pylama:pycodestyle]\nignore = E301",
+                "cli_args": []
+            },
+            "expected_output": {
+                "linters": ["pycodestyle", "pyflakes", "mccabe"],
+                "pycodestyle": {}
+            }
+        },
+        {
+            "input": {
+                "config_content": "[pylama]\nlinters = mccabe\n[pylama:pycodestyle]\nmax_line_length = 120",
+                "cli_args": []
+            },
+            "expected_output": {
+                "linters": ["pycodestyle", "pyflakes", "mccabe"],
+                "pycodestyle": {
+                    "max_line_length": 100
+                }
+            }
+        }
+    ]
+}

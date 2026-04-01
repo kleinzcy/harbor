@@ -1,0 +1,85 @@
+{
+    "description": "Test ultrasonic sensor data integration and threshold checking",
+    "cases": [
+        {
+            "input": {
+                "sensor_distance": 15,
+                "threshold": 30
+            },
+            "expected_output": {
+                "action": "stop"
+            }
+        },
+        {
+            "input": {
+                "sensor_distance": 50,
+                "threshold": 30
+            },
+            "expected_output": {
+                "action": "proceed"
+            }
+        },
+        {
+            "input": "",
+            "expected_output": {"error": "No input provided"}
+        },
+        {
+            "input": "{",
+            "expected_output": {"error": "Invalid JSON input"}
+        },
+        {
+            "input": {},
+            "expected_output": {"error": "Missing required parameter: sensor_distance"}
+        },
+        {
+            "input": {"sensor_distance": 15},
+            "expected_output": {"error": "Missing required parameter: threshold"}
+        },
+        {
+            "input": {"sensor_distance": "abc", "threshold": 30},
+            "expected_output": {"error": "Invalid parameter type: could not convert string to float: 'abc'"}
+        },
+        {
+            "input": {"sensor_distance": 30, "threshold": 30},
+            "expected_output": {
+                "action": "proceed"
+            }
+        },
+        {
+            "input": {"sensor_distance": 0, "threshold": 30},
+            "expected_output": {
+                "action": "stop"
+            }
+        },
+        {
+            "input": {"sensor_distance": -5, "threshold": 30},
+            "expected_output": {
+                "action": "stop"
+            }
+        },
+        {
+            "input": {"sensor_distance": 1000, "threshold": 30},
+            "expected_output": {
+                "action": "proceed"
+            }
+        },
+        {
+            "input": {"sensor_distance": 15, "threshold": 0},
+            "expected_output": {
+                "action": "proceed"
+            }
+        },
+        {
+            "input": {"sensor_distance": 15, "threshold": -10},
+            "expected_output": {
+                "action": "proceed"
+            }
+        },
+        {
+            "input": {"sensor_distance": 15, "threshold": 30, "extra": "field"},
+            "expected_output": {
+                "action": "stop"
+            }
+        }
+    ]
+}

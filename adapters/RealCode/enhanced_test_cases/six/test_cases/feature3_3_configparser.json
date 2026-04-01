@@ -1,0 +1,61 @@
+{
+    "description": "Given a section and key separated by a space, look up and print the value from a built-in in-memory config. The config contains: [server] host=localhost, port=8080.",
+    "cases": [
+        {
+            "input": "server host",
+            "expected_output": "localhost"
+        },
+        {
+            "input": "server port",
+            "expected_output": "8080"
+        },
+        {
+            "input": "",
+            "expected_output": ""
+        },
+        {
+            "input": "   ",
+            "expected_output": ""
+        },
+        {
+            "input": "server",
+            "expected_output": ""
+        },
+        {
+            "input": "server host extra",
+            "expected_output": ""
+        },
+        {
+            "input": "SERVER HOST",
+            "expected_output": ""
+        },
+        {
+            "input": "SERVER PORT",
+            "expected_output": ""
+        },
+        {
+            "input": "server HOST",
+            "expected_output": "localhost"
+        },
+        {
+            "input": "server missing",
+            "expected_output": ""
+        },
+        {
+            "input": "missing key",
+            "expected_output": ""
+        },
+        {
+            "input": " server host ",
+            "expected_output": "localhost"
+        },
+        {
+            "input": "server  host",
+            "expected_output": "localhost"
+        },
+        {
+            "input": "Server Host",
+            "expected_output": ""
+        }
+    ]
+}

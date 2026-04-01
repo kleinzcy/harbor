@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Database 1 has incompatible schema",
+  "error_type": "ValueError"
+}

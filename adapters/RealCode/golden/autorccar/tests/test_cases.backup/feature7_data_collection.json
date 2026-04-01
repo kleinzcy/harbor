@@ -1,0 +1,35 @@
+{
+    "description": "Test training data collection and labeling",
+    "cases": [
+        {
+            "input": {
+                "key": "K_UP",
+                "frame": "image_array"
+            },
+            "expected_output": {
+                "label": [
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                "saved": true
+            }
+        },
+        {
+            "input": {
+                "key": "K_LEFT",
+                "frame": "image_array"
+            },
+            "expected_output": {
+                "label": [
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "saved": true
+            }
+        }
+    ]
+}

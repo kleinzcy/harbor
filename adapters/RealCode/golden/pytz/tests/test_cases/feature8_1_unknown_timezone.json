@@ -1,0 +1,21 @@
+{
+    "description": "Test that UnknownTimeZoneError is raised for invalid timezone names.",
+    "cases": [
+        {
+            "input": {"zone": "Unknown/Timezone"},
+            "expected_output": {"error": "UnknownTimeZoneError", "is_key_error": true}
+        },
+        {
+            "input": {"zone": "Foo/Bar/Baz"},
+            "expected_output": {"error": "UnknownTimeZoneError", "is_key_error": true}
+        },
+        {
+            "input": {"zone": ""},
+            "expected_output": {"error": "UnknownTimeZoneError", "is_key_error": true}
+        },
+        {
+            "input": {"zone": "US/Eastern"},
+            "expected_output": {"error": null, "zone": "US/Eastern"}
+        }
+    ]
+}

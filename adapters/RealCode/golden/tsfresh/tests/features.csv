@@ -1,0 +1,3 @@
+series,val__mean,val__variance,val__length,val__time_stretch
+A,1.5,0.5,2,1.0
+B,3.5,0.5,2,1.0

@@ -1,0 +1,65 @@
+{
+    "description": "Calculation and use of link density for content classification",
+    "cases": [
+        {
+            "input": "<p><a href=\"#\">Link1</a><a href=\"#\">Link2</a><a href=\"#\">Link3</a>text</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>This is a long paragraph with only one <a href=\"#\">link</a> and plenty of regular text.</p>",
+            "expected_output": "This is a long paragraph with only one link and plenty of regular text."
+        },
+        {
+            "input": "<p>Plain text without any links</p>",
+            "expected_output": "Plain text without any links"
+        },
+        {
+            "input": "<p>Link density exactly 0.5: <a href=\"#\">link text</a> plus some other text.</p>",
+            "expected_output": "Link density exactly 0.5: link text plus some other text."
+        },
+        {
+            "input": "<p>Link density just above 0.5: <a href=\"#\">link text</a> plus minimal other text.</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p><a href=\"#\"></a>Empty link</p>",
+            "expected_output": "Empty link"
+        },
+        {
+            "input": "<p><a href=\"#\">Link1</a><a href=\"#\">Link2</a> both links</p>",
+            "expected_output": "Link1 Link2 both links"
+        },
+        {
+            "input": "<p><a href=\"#\"><img src=\"img.jpg\" alt=\"image\"></a> image link</p>",
+            "expected_output": "image link"
+        },
+        {
+            "input": "<p>Text with <a href=\"#\">link containing punctuation!</a> and more.</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p><a href=\"#\">Link with spaces</a> and text.</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<h1>Heading with <a href=\"#\">link</a></h1>",
+            "expected_output": "Heading with link"
+        },
+        {
+            "input": "<p></p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p><a href=\"#\">Only link</a></p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>Link density zero: no links.</p>",
+            "expected_output": "Link density zero: no links."
+        },
+        {
+            "input": "<p>Multiple links with varying lengths: <a href=\"#\">short</a> and <a href=\"#\">a longer link text</a> plus some other text.</p>",
+            "expected_output": "Multiple links with varying lengths: short and a longer link text plus some other text."
+        }
+    ]
+}

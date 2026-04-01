@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "format": "json",
+  "data": {
+    "nested": {
+      "inner": {
+        "key": "value"
+      }
+    },
+    "list": [
+      1,
+      2,
+      3
+    ]
+  },
+  "keys": [
+    "nested",
+    "list"
+  ],
+  "values": [
+    {
+      "inner": {
+        "key": "value"
+      }
+    },
+    [
+      1,
+      2,
+      3
+    ]
+  ],
+  "key_count": 2
+}

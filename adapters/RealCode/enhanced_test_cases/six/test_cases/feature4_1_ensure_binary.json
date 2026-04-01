@@ -1,0 +1,69 @@
+{
+    "description": "Given a plain text string, convert it to bytes and print the bytes representation.",
+    "cases": [
+        {
+            "input": "hello",
+            "expected_output": "b'hello'"
+        },
+        {
+            "input": "world",
+            "expected_output": "b'world'"
+        },
+        {
+            "input": "test 123",
+            "expected_output": "b'test 123'"
+        },
+        {
+            "input": "Python",
+            "expected_output": "b'Python'"
+        },
+        {
+            "input": "42",
+            "expected_output": "b'42'"
+        },
+        {
+            "input": "a",
+            "expected_output": "b'a'"
+        },
+        {
+            "input": "foo bar",
+            "expected_output": "b'foo bar'"
+        },
+        {
+            "input": "",
+            "expected_output": "b''"
+        },
+        {
+            "input": "   ",
+            "expected_output": "b'   '"
+        },
+        {
+            "input": "caf\u00e9",
+            "expected_output": "b'caf\\xc3\\xa9'"
+        },
+        {
+            "input": "line\nbreak",
+            "expected_output": "b'line\\nbreak'"
+        },
+        {
+            "input": "hello\\world",
+            "expected_output": "b'hello\\\\world'"
+        },
+        {
+            "input": "quote'inside",
+            "expected_output": "b\"quote'inside\""
+        },
+        {
+            "input": "quote\"inside",
+            "expected_output": "b'quote\"inside'"
+        },
+        {
+            "input": "unicode: \u00e9, \u00f1, \u4e2d\u6587",
+            "expected_output": "b'unicode: \\xc3\\xa9, \\xc3\\xb1, \\xe4\\xb8\\xad\\xe6\\x96\\x87'"
+        },
+        {
+            "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "expected_output": "b'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'"
+        }
+    ]
+}

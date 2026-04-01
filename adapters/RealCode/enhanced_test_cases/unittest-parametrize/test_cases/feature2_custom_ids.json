@@ -1,0 +1,206 @@
+{
+  "description": "Custom test IDs via ids parameter and param objects",
+  "cases": [
+    {
+      "input": {
+        "argnames": "value,expected",
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "ids": [
+          "one",
+          "two",
+          "three"
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_ids_one",
+          "test_with_ids_two",
+          "test_with_ids_three"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "input,output",
+        "argvalues": [
+          {
+            "__type__": "param",
+            "args": [
+              "hello",
+              5
+            ],
+            "id": "string"
+          },
+          {
+            "__type__": "param",
+            "args": [
+              [
+                1,
+                2,
+                3
+              ],
+              3
+            ],
+            "id": "list"
+          },
+          {
+            "__type__": "param",
+            "args": [
+              {},
+              0
+            ],
+            "id": "empty"
+          }
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_length_string",
+          "test_length_list",
+          "test_length_empty"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x,expected",
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "ids": [
+          "same",
+          "same"
+        ]
+      },
+      "expected_output": {
+        "error": "Duplicate param id 'same'"
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "ids": [
+          "one",
+          null,
+          "three"
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_ids_one",
+          "test_with_ids_1",
+          "test_with_ids_three"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          {
+            "__type__": "param",
+            "args": [
+              1
+            ],
+            "id": null
+          }
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_ids_0"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          {
+            "__type__": "param",
+            "args": [
+              1
+            ]
+          }
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_ids_0"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ids": [
+          "_hidden",
+          "normal_123"
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_ids__hidden",
+          "test_with_ids_normal_123"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          [
+            1
+          ]
+        ],
+        "ids": [
+          ""
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_ids_0"
+        ]
+      }
+    }
+  ]
+}

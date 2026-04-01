@@ -1,0 +1,21 @@
+{
+    "description": "Command line interface operations",
+    "cases": [
+        {
+            "input": {"command": "--info"},
+            "expected_output": {"status": "success", "contains": ["PysonDB", "JSON parser"]}
+        },
+        {
+            "input": {"command": "show", "db_file": "test_data.json"},
+            "expected_output": {"status": "success", "format": "table", "row_count": 3}
+        },
+        {
+            "input": {"command": "merge", "db_files": ["db1.json", "db2.json"], "output": "merged.json"},
+            "expected_output": {"status": "success", "message": "DB's merged successfully"}
+        },
+        {
+            "input": {"command": "tocsv", "db_file": "test_data.json", "output": "output.csv"},
+            "expected_output": {"status": "success", "file_exists": true, "lines": 4}
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "description": "Test file system scanning with various filtering options - enhanced",
+    "cases": [
+        {
+            "input": {
+                "local_path": "/tmp/test-scan",
+                "files": {
+                    "file1.py": "print('hello')",
+                    "file2.txt": "text content"
+                },
+                "ignore_patterns": []
+            },
+            "expected_output": {
+                "files_found": 2,
+                "contains_python": true,
+                "contains_text": true
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-filter",
+                "files": {
+                    "keep.py": "keep this",
+                    "ignore.pyc": "ignore this"
+                },
+                "ignore_patterns": ["*.pyc"]
+            },
+            "expected_output": {
+                "files_found": 1,
+                "contains_keep": true,
+                "contains_ignore": false
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-size",
+                "files": {
+                    "small.txt": "small content",
+                    "large.txt": "large content that exceeds size limit"
+                },
+                "max_file_size": 20
+            },
+            "expected_output": {
+                "small_included": true,
+                "large_truncated": true,
+                "size_limit_respected": true
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-nonexistent",
+                "files": {}
+            },
+            "expected_output": {
+                "success": false,
+                "files_found": 0
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-empty",
+                "files": {}
+            },
+            "expected_output": {
+                "files_found": 0,
+                "contains_python": false,
+                "contains_text": false
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-nested",
+                "files": {
+                    "dir1/file1.py": "import os",
+                    "dir1/dir2/file2.txt": "text",
+                    "dir1/dir2/file3.py": "print('hi')",
+                    "root.txt": "root"
+                },
+                "ignore_patterns": []
+            },
+            "expected_output": {
+                "files_found": 4,
+                "contains_python": true,
+                "contains_text": true
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-ignore-dir",
+                "files": {
+                    "include/file.py": "code",
+                    "exclude_dir/ignore.py": "ignore",
+                    "exclude_dir/sub/file.txt": "text"
+                },
+                "ignore_patterns": ["exclude_dir/"]
+            },
+            "expected_output": {
+                "files_found": 1,
+                "contains_python": true,
+                "contains_text": false
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-binary",
+                "files": {
+                    "binary.bin": "\\x00\\x01\\x02",
+                    "text.txt": "normal text"
+                }
+            },
+            "expected_output": {
+                "files_found": 2,
+                "contains_text": true
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-exact-size",
+                "files": {
+                    "exact.txt": "0123456789"
+                },
+                "max_file_size": 10
+            },
+            "expected_output": {
+                "files_found": 1,
+                "large_truncated": false
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-hidden",
+                "files": {
+                    ".hidden": "secret",
+                    "visible.txt": "visible"
+                },
+                "ignore_patterns": []
+            },
+            "expected_output": {
+                "files_found": 2,
+                "contains_text": true
+            }
+        }
+    ]
+}

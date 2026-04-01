@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Record must be a dictionary",
+  "error_type": "TypeError"
+}

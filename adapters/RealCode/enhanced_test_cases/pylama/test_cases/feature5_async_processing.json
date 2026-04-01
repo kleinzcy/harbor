@@ -1,0 +1,63 @@
+{
+    "description": "Test asynchronous checking performance and correctness",
+    "cases": [
+        {
+            "input": {
+                "paths": ["large_project/"],
+                "concurrent": true
+            },
+            "expected_output": {
+                "time_saved_ratio": ">0.5"
+            }
+        },
+        {
+            "input": {
+                "paths": ["small.py"],
+                "concurrent": false
+            },
+            "expected_output": {
+                "errors_count": 0
+            }
+        },
+        {
+            "input": {
+                "paths": [],
+                "concurrent": false
+            },
+            "expected_output": {
+                "errors_count": 0,
+                "time_elapsed": 0.0
+            }
+        },
+        {
+            "input": {
+                "paths": ["nonexistent/"],
+                "concurrent": true
+            },
+            "expected_output": {
+                "errors_count": 0,
+                "time_saved_ratio": 0.6
+            }
+        },
+        {
+            "input": {
+                "paths": ["large_project/"],
+                "concurrent": false
+            },
+            "expected_output": {
+                "errors_count": 0,
+                "time_elapsed": 0.0
+            }
+        },
+        {
+            "input": {
+                "paths": ["single.py"],
+                "concurrent": true
+            },
+            "expected_output": {
+                "errors_count": 0,
+                "time_saved_ratio": 0.6
+            }
+        }
+    ]
+}

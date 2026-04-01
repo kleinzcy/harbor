@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "local_path": "/var/folders/l5/1yrf8wvx19qf_b3nh5xppvn00000gn/T/gitingest_zloiw5kh",
+  "git_dir_exists": true,
+  "readme_exists": true,
+  "subpath_exists": null,
+  "branch": "main"
+}

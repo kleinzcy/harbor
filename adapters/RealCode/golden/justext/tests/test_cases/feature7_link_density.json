@@ -1,0 +1,17 @@
+{
+    "description": "Calculation and use of link density for content classification",
+    "cases": [
+        {
+            "input": "<p><a href=\"#\">Link1</a><a href=\"#\">Link2</a><a href=\"#\">Link3</a>text</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>This is a long paragraph with only one <a href=\"#\">link</a> and plenty of regular text.</p>",
+            "expected_output": "This is a long paragraph with only one link and plenty of regular text."
+        },
+        {
+            "input": "<p>Plain text without any links</p>",
+            "expected_output": "Plain text without any links"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+  "description": "Screen capture and image recognition with region, confidence, and color matching parameters",
+  "cases": [
+    {
+      "input": {
+        "test_type": "screenshot",
+        "region": [
+          0,
+          0,
+          100,
+          100
+        ],
+        "save_filename": "test_screenshot.png"
+      },
+      "expected_output": {
+        "success": true,
+        "image_captured": true,
+        "file_exists": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "pixel_color",
+        "x": 50,
+        "y": 50
+      },
+      "expected_output": {
+        "success": true,
+        "color_format_valid": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "pixel_match",
+        "x": 100,
+        "y": 200,
+        "expected_rgb": [
+          255,
+          0,
+          0
+        ],
+        "tolerance": 10
+      },
+      "expected_output": {
+        "success": true,
+        "match_result": false
+      }
+    },
+    {
+      "input": {
+        "test_type": "image_locate",
+        "image_path": "test_button.png",
+        "confidence": 0.8,
+        "region": [
+          0,
+          0,
+          800,
+          600
+        ]
+      },
+      "expected_output": {
+        "success": true,
+        "location_found": false
+      }
+    }
+  ]
+}

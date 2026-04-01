@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "imports": [
+    "math",
+    "json",
+    "typing.List",
+    "typing.Dict",
+    "pandas"
+  ],
+  "functions": [],
+  "classes": [],
+  "docstrings": [],
+  "has_docstring": false,
+  "has_print": false,
+  "total_elements": 5
+}

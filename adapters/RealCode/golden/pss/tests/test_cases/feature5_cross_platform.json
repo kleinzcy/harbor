@@ -1,0 +1,58 @@
+{
+    "description": "Cross‑platform utilities: text detection, byte conversion, color decoding, path normalization",
+    "cases": [
+        {
+            "input": {
+                "function": "istextfile",
+                "bytes_data": b"print('hello')\n# comment\n",
+                "blocksize": 512
+            },
+            "expected_output": true
+        },
+        {
+            "input": {
+                "function": "istextfile",
+                "bytes_data": b"\x00\x01\x02\x03PNG\x1a\n",
+                "blocksize": 512
+            },
+            "expected_output": false
+        },
+        {
+            "input": {
+                "function": "tostring",
+                "data": b"Hello World"
+            },
+            "expected_output": "Hello World"
+        },
+        {
+            "input": {
+                "function": "tostring",
+                "data": "Already a string"
+            },
+            "expected_output": "Already a string"
+        },
+        {
+            "input": {
+                "function": "decode_colorama_color",
+                "color_str": "RED,WHITE,BOLD"
+            },
+            "expected_output": "\u001b[31m\u001b[47m\u001b[1m"
+        },
+        {
+            "input": {
+                "function": "normalize_path",
+                "path": "C:\\Users\\project\\src\\main.py",
+                "platform": "windows"
+            },
+            "expected_output": "C:/Users/project/src/main.py"
+        },
+        {
+            "input": {
+                "function": "normalize_path",
+                "path": "/home/user/project/src//main.py",
+                "platform": "linux"
+            },
+            "expected_output": "/home/user/project/src/main.py"
+        }
+    ]
+}

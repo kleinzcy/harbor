@@ -1,0 +1,57 @@
+{
+    "description": "Verify JSON output format contains all required fields",
+    "cases": [
+        {
+            "input": {
+                "format": "json",
+                "code": "x = 1"
+            },
+            "expected_output": [
+                {
+                    "filename": "<stdin>",
+                    "lnum": 1,
+                    "col": 3,
+                    "source": "pycodestyle",
+                    "type": "E",
+                    "number": "E225",
+                    "text": "missing whitespace around operator"
+                }
+            ]
+        },
+        {
+            "input": {
+                "format": "json",
+                "code": ""
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "json",
+                "code": "def foo():\n    pass"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "json",
+                "code": "x = 1  # missing whitespace"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "json",
+                "code": "#!/usr/bin/env python3\nimport sys"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "json",
+                "code": "def foo("
+            },
+            "expected_output": []
+        }
+    ]
+}

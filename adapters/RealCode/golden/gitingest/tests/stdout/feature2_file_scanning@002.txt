@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-size",
+  "files_found": 2,
+  "total_size": 50,
+  "file_types": {
+    ".txt": 2
+  },
+  "files": [
+    {
+      "path": "large.txt",
+      "size": 37,
+      "truncated": true,
+      "extension": ".txt",
+      "content": "[File too large: 37 bytes, truncated to 20 bytes]"
+    },
+    {
+      "path": "small.txt",
+      "size": 13,
+      "truncated": false,
+      "extension": ".txt",
+      "content": "small content"
+    }
+  ],
+  "contains_python": false,
+  "contains_text": true
+}

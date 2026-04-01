@@ -1,0 +1,73 @@
+{
+    "description": "Given space-separated words as input, print them joined by a single space.",
+    "cases": [
+        {
+            "input": "Hello World",
+            "expected_output": "Hello World"
+        },
+        {
+            "input": "foo bar baz",
+            "expected_output": "foo bar baz"
+        },
+        {
+            "input": "hello",
+            "expected_output": "hello"
+        },
+        {
+            "input": "a b c d e",
+            "expected_output": "a b c d e"
+        },
+        {
+            "input": "one two three",
+            "expected_output": "one two three"
+        },
+        {
+            "input": "Python is great",
+            "expected_output": "Python is great"
+        },
+        {
+            "input": "",
+            "expected_output": ""
+        },
+        {
+            "input": "   ",
+            "expected_output": ""
+        },
+        {
+            "input": "hello   world",
+            "expected_output": "hello world"
+        },
+        {
+            "input": "hello\tworld",
+            "expected_output": "hello world"
+        },
+        {
+            "input": "hello\nworld",
+            "expected_output": "hello world"
+        },
+        {
+            "input": "  leading",
+            "expected_output": "leading"
+        },
+        {
+            "input": "trailing  ",
+            "expected_output": "trailing"
+        },
+        {
+            "input": "  multiple   spaces   between   words  ",
+            "expected_output": "multiple spaces between words"
+        },
+        {
+            "input": "caf\u00e9 \u00e9cole",
+            "expected_output": "caf\u00e9 \u00e9cole"
+        },
+        {
+            "input": "a b c d e f g h i j",
+            "expected_output": "a b c d e f g h i j"
+        },
+        {
+            "input": "one",
+            "expected_output": "one"
+        }
+    ]
+}

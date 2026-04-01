@@ -1,0 +1,99 @@
+{
+    "description": "Test handling of ambiguous times during DST fall-back transitions using is_dst parameter.",
+    "cases": [
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:30:00",
+                "is_dst": false
+            },
+            "expected_output": "2002-10-27 01:30:00 EST (-0500)"
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:30:00",
+                "is_dst": true
+            },
+            "expected_output": "2002-10-27 01:30:00 EDT (-0400)"
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:30:00",
+                "is_dst": null
+            },
+            "expected_output": {
+                "error": "AmbiguousTimeError"
+            }
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:00:00",
+                "is_dst": false
+            },
+            "expected_output": "2002-10-27 01:00:00 EST (-0500)"
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:00:00",
+                "is_dst": true
+            },
+            "expected_output": "2002-10-27 01:00:00 EDT (-0400)"
+        },
+        {
+            "input": {
+                "zone": "Europe/London",
+                "datetime": "2002-10-27 01:30:00",
+                "is_dst": false
+            },
+            "expected_output": "2002-10-27 01:30:00 GMT (+0000)"
+        },
+        {
+            "input": {
+                "zone": "Europe/London",
+                "datetime": "2002-10-27 01:30:00",
+                "is_dst": true
+            },
+            "expected_output": "2002-10-27 01:30:00 BST (+0100)"
+        },
+        {
+            "input": {
+                "zone": "Europe/London",
+                "datetime": "2002-10-27 01:30:00",
+                "is_dst": null
+            },
+            "expected_output": {
+                "error": "AmbiguousTimeError"
+            }
+        },
+        {
+            "input": {
+                "zone": "Pacific/Auckland",
+                "datetime": "2002-04-07 02:30:00",
+                "is_dst": false
+            },
+            "expected_output": "2002-04-07 02:30:00 NZST (+1200)"
+        },
+        {
+            "input": {
+                "zone": "Pacific/Auckland",
+                "datetime": "2002-04-07 02:30:00",
+                "is_dst": true
+            },
+            "expected_output": "2002-04-07 02:30:00 NZDT (+1300)"
+        },
+        {
+            "input": {
+                "zone": "Pacific/Auckland",
+                "datetime": "2002-04-07 02:30:00",
+                "is_dst": null
+            },
+            "expected_output": {
+                "error": "AmbiguousTimeError"
+            }
+        }
+    ]
+}

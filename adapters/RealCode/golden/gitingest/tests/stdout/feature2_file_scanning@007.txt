@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-binary",
+  "files_found": 2,
+  "total_size": 23,
+  "file_types": {
+    ".txt": 1,
+    ".bin": 1
+  },
+  "files": [
+    {
+      "path": "text.txt",
+      "size": 11,
+      "truncated": false,
+      "extension": ".txt",
+      "content": "normal text"
+    },
+    {
+      "path": "binary.bin",
+      "size": 12,
+      "truncated": false,
+      "extension": ".bin",
+      "content": "\\x00\\x01\\x02"
+    }
+  ],
+  "contains_python": false,
+  "contains_text": true
+}

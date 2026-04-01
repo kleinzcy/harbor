@@ -1,0 +1,12 @@
+[
+  {
+    "matching_line": "Warning: something",
+    "matching_lineno": 2,
+    "matching_column_ranges": []
+  },
+  {
+    "matching_line": "Info: something",
+    "matching_lineno": 3,
+    "matching_column_ranges": []
+  }
+]

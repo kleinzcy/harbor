@@ -1,0 +1,52 @@
+{
+  "description": "Performance measurement, multi-threading validation, and stability testing",
+  "cases": [
+    {
+      "input": {
+        "test_type": "timing_validation",
+        "operation": "typewrite",
+        "text": "Hello",
+        "interval": 0.1
+      },
+      "expected_output": {
+        "duration_within_tolerance": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "multithreading",
+        "threads": 3,
+        "operations": [
+          "typewrite",
+          "press",
+          "moveTo"
+        ]
+      },
+      "expected_output": {
+        "all_threads_completed": true,
+        "no_deadlocks": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "memory_usage",
+        "iterations": 1000,
+        "operation": "click"
+      },
+      "expected_output": {
+        "memory_increase_below_threshold": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "long_running",
+        "duration_seconds": 30,
+        "operations_per_second": 10
+      },
+      "expected_output": {
+        "success": true,
+        "no_crashes": true
+      }
+    }
+  ]
+}

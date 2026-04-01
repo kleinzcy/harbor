@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Unknown CLI command: unknown",
+  "error_type": "ValueError"
+}

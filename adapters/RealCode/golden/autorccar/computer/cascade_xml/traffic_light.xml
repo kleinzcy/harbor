@@ -1,0 +1,21 @@
+<opencv_storage>
+<cascade>
+  <stageType>BOOST</stageType>
+  <featureType>HAAR</featureType>
+  <height>30</height>
+  <width>10</width>
+  <stageParams>
+    <maxWeakCount>3</maxWeakCount>
+  </stageParams>
+  <featureParams>
+    <maxCatCount>0</maxCatCount>
+  </featureParams>
+  <stageNum>20</stageNum>
+  <stages>
+    <!-- Dummy stages for testing -->
+  </stages>
+  <features>
+    <!-- Dummy features for testing -->
+  </features>
+</cascade>
+</opencv_storage>

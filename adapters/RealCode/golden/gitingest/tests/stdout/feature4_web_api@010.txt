@@ -1,0 +1,11 @@
+{
+  "status_code": 200,
+  "success": true,
+  "includes_py_md": false,
+  "excludes_other_formats": false,
+  "summary": {
+    "repository": "repo",
+    "owner": "user",
+    "files_processed": 15
+  }
+}

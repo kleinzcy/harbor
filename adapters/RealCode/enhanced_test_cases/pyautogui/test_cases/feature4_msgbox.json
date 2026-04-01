@@ -1,0 +1,129 @@
+{
+  "description": "Message box dialog simulation with various button configurations and input scenarios",
+  "cases": [
+    {
+      "input": {
+        "test_type": "alert",
+        "text": "Hello World",
+        "title": "Test Alert"
+      },
+      "expected_output": {
+        "return_value": "OK"
+      }
+    },
+    {
+      "input": {
+        "test_type": "confirm",
+        "text": "Continue?",
+        "buttons": [
+          "Yes",
+          "No"
+        ]
+      },
+      "expected_output": {
+        "return_value_in": [
+          "Yes",
+          "No"
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_type": "prompt",
+        "text": "Enter name:",
+        "default": "User"
+      },
+      "expected_output": {
+        "return_value_type": "string"
+      }
+    },
+    {
+      "input": {
+        "test_type": "password",
+        "text": "Enter password:",
+        "mask": "*"
+      },
+      "expected_output": {
+        "return_value_type": "string"
+      }
+    },
+    {
+      "input": {
+        "test_type": "alert",
+        "text": "",
+        "title": ""
+      },
+      "expected_output": {
+        "return_value": "OK"
+      }
+    },
+    {
+      "input": {
+        "test_type": "confirm",
+        "text": "Only OK",
+        "buttons": [
+          "OK"
+        ]
+      },
+      "expected_output": {
+        "return_value_in": [
+          "OK"
+        ],
+        "return_value": "OK"
+      }
+    },
+    {
+      "input": {
+        "test_type": "confirm",
+        "text": "Choose",
+        "buttons": [
+          "Yes",
+          "No",
+          "Cancel"
+        ]
+      },
+      "expected_output": {
+        "return_value_in": [
+          "Yes",
+          "No",
+          "Cancel"
+        ],
+        "return_value": "Yes"
+      }
+    },
+    {
+      "input": {
+        "test_type": "prompt",
+        "text": "Name?",
+        "default": ""
+      },
+      "expected_output": {
+        "return_value_type": "str",
+        "return_value": ""
+      }
+    },
+    {
+      "input": {
+        "test_type": "password",
+        "text": "Password:",
+        "mask": ""
+      },
+      "expected_output": {
+        "return_value_type": "str",
+        "return_value": ""
+      }
+    },
+    {
+      "input": {
+        "test_type": "password",
+        "text": "Password:",
+        "default": "secret",
+        "mask": "*"
+      },
+      "expected_output": {
+        "return_value_type": "str",
+        "return_value": "secret"
+      }
+    }
+  ]
+}

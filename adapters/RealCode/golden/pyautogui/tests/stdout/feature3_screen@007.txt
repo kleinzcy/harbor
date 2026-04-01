@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "color_format_valid": true,
+  "color": [
+    255,
+    255,
+    255
+  ]
+}

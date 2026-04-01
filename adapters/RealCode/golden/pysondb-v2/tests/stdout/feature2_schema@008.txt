@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "all_records_have_key": true,
+  "keys_sorted": [
+    "aaa_first",
+    "email",
+    "nullable",
+    "tags"
+  ]
+}

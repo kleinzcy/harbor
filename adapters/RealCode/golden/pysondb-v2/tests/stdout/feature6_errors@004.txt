@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Database should be corrupted",
+  "error_type": "SchemaTypeError"
+}

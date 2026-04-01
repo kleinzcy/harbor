@@ -1,0 +1,179 @@
+{
+    "description": "Test error deduplication across multiple linters",
+    "cases": [
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701"
+                    },
+                    {
+                        "source": "pylint",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "C0321"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 5,
+                    "text": "E701"
+                }
+            ]
+        },
+        {
+            "input": {
+                "errors": []
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pyflakes",
+                        "lnum": 5,
+                        "col": 1,
+                        "text": "F401"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pyflakes",
+                    "lnum": 5,
+                    "col": 1,
+                    "text": "F401"
+                }
+            ]
+        },
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701"
+                    },
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 5,
+                    "text": "E701"
+                }
+            ]
+        },
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701"
+                    },
+                    {
+                        "source": "pyflakes",
+                        "lnum": 20,
+                        "col": 3,
+                        "text": "F402"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 5,
+                    "text": "E701"
+                },
+                {
+                    "source": "pyflakes",
+                    "lnum": 20,
+                    "col": 3,
+                    "text": "F402"
+                }
+            ]
+        },
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pylint",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "C0321",
+                        "type": "C",
+                        "number": "0321"
+                    },
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701",
+                        "type": "E",
+                        "number": "701"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 5,
+                    "text": "E701",
+                    "type": "E",
+                    "number": "701"
+                }
+            ]
+        },
+        {
+            "input": {
+                "errors": [
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 5,
+                        "text": "E701"
+                    },
+                    {
+                        "source": "pycodestyle",
+                        "lnum": 10,
+                        "col": 6,
+                        "text": "E701"
+                    }
+                ]
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 5,
+                    "text": "E701"
+                },
+                {
+                    "source": "pycodestyle",
+                    "lnum": 10,
+                    "col": 6,
+                    "text": "E701"
+                }
+            ]
+        }
+    ]
+}

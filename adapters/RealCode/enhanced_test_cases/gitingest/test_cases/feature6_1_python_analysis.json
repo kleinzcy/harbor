@@ -1,0 +1,120 @@
+{
+    "description": "Test Python code analysis and extraction - enhanced",
+    "cases": [
+        {
+            "input": {
+                "code": "import os\nimport sys\n\ndef hello():\n    \"\"\"Say hello\"\"\"\n    print('Hello')\n\nclass Calculator:\n    def add(self, a, b):\n        return a + b"
+            },
+            "expected_output": {
+                "imports": ["os", "sys"],
+                "functions": ["hello"],
+                "classes": ["Calculator"],
+                "has_docstring": true
+            }
+        },
+        {
+            "input": {
+                "code": ""
+            },
+            "expected_output": {
+                "success": true,
+                "imports": [],
+                "functions": [],
+                "classes": [],
+                "has_docstring": false,
+                "has_print": false
+            }
+        },
+        {
+            "input": {
+                "code": "import math, json\nfrom typing import List, Dict\nimport pandas as pd"
+            },
+            "expected_output": {
+                "imports": ["math", "json", "typing.List", "typing.Dict", "pandas"],
+                "functions": [],
+                "classes": [],
+                "has_docstring": false
+            }
+        },
+        {
+            "input": {
+                "code": "def outer():\n    def inner():\n        pass\n    return inner\n\nasync def fetch():\n    await something"
+            },
+            "expected_output": {
+                "functions": ["outer", "inner", "fetch"],
+                "has_docstring": false
+            }
+        },
+        {
+            "input": {
+                "code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Dog(Animal):\n    def bark(self):\n        print('woof')\n\nclass Cat(Animal):\n    pass"
+            },
+            "expected_output": {
+                "classes": ["Animal", "Dog", "Cat"],
+                "functions": ["__init__", "bark"],
+                "has_print": true
+            }
+        },
+        {
+            "input": {
+                "code": "@decorator\ndef foo():\n    pass\n\n@property\ndef bar(self):\n    return self._bar"
+            },
+            "expected_output": {
+                "functions": ["foo", "bar"],
+                "has_docstring": false
+            }
+        },
+        {
+            "input": {
+                "code": "def add(a: int, b: int) -> int:\n    return a + b\n\nx: List[str] = []"
+            },
+            "expected_output": {
+                "functions": ["add"],
+                "has_docstring": false
+            }
+        },
+        {
+            "input": {
+                "code": "\"\"\"Module docstring.\"\"\"\n\nimport sys\n\ndef main():\n    \"\"\"Main function.\"\"\"\n    pass"
+            },
+            "expected_output": {
+                "imports": ["sys"],
+                "functions": ["main"],
+                "has_docstring": true,
+                "docstrings": [
+                    {"type": "module", "docstring": "Module docstring."},
+                    {"type": "function", "name": "main", "docstring": "Main function."}
+                ]
+            }
+        },
+        {
+            "input": {
+                "code": "print('hello')\nprint('world')"
+            },
+            "expected_output": {
+                "has_print": true,
+                "functions": [],
+                "classes": []
+            }
+        },
+        {
+            "input": {
+                "code": "x = 1 + 2  # comment"
+            },
+            "expected_output": {
+                "success": true,
+                "has_docstring": false,
+                "has_print": false
+            }
+        },
+        {
+            "input": {
+                "code": "invalid syntax !@#"
+            },
+            "expected_output": {
+                "success": true,
+                "regex_fallback": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "description": "Test file system scanning with various filtering options",
+    "cases": [
+        {
+            "input": {
+                "local_path": "/tmp/test-scan",
+                "files": {
+                    "file1.py": "print('hello')",
+                    "file2.txt": "text content"
+                },
+                "ignore_patterns": []
+            },
+            "expected_output": {
+                "files_found": 2,
+                "contains_python": true,
+                "contains_text": true
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-filter",
+                "files": {
+                    "keep.py": "keep this",
+                    "ignore.pyc": "ignore this"
+                },
+                "ignore_patterns": ["*.pyc"]
+            },
+            "expected_output": {
+                "files_found": 1,
+                "contains_keep": true,
+                "contains_ignore": false
+            }
+        },
+        {
+            "input": {
+                "local_path": "/tmp/test-size",
+                "files": {
+                    "small.txt": "x".repeat(100),
+                    "large.txt": "x".repeat(1000)
+                },
+                "max_file_size": 1000
+            },
+            "expected_output": {
+                "small_included": true,
+                "large_truncated": true,
+                "size_limit_respected": true
+            }
+        }
+    ]
+}

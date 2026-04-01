@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-repo-1",
+  "git_dir_exists": true,
+  "readme_exists": true,
+  "subpath_exists": null,
+  "branch": "main"
+}

@@ -1,0 +1,61 @@
+{
+    "description": "Detection of boilerplate content based on link density and text characteristics",
+    "cases": [
+        {
+            "input": "<div><a href=\"#\">Link1</a><a href=\"#\">Link2</a><a href=\"#\">Link3</a>Short text</div>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>This is a long paragraph with many common words like the, and, is, which are typical stopwords in English. It contains useful information.</p>",
+            "expected_output": "This is a long paragraph with many common words like the, and, is, which are typical stopwords in English. It contains useful information."
+        },
+        {
+            "input": "<p>Short.</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>This paragraph has exactly half link density. <a href=\"#\">Link text here</a> and some more text to make total length. The stopwords are present.</p>",
+            "expected_output": "This paragraph has exactly half link density. Link text here and some more text to make total length. The stopwords are present."
+        },
+        {
+            "input": "<p>This paragraph has link density just above threshold. <a href=\"#\">Link text here</a> and some more text but link density is slightly above 0.5.</p>",
+            "expected_output": "This paragraph has link density just above threshold. Link text here and some more text but link density is slightly above 0.5."
+        },
+        {
+            "input": "<h1>Heading with <a href=\"#\">link</a> inside</h1>",
+            "expected_output": "Heading with link inside"
+        },
+        {
+            "input": "<p>A paragraph with no stopwords at all. Python programming language syntax functions loops.</p>",
+            "expected_output": "A paragraph with no stopwords at all. Python programming language syntax functions loops."
+        },
+        {
+            "input": "<p>Short paragraph without period</p>",
+            "expected_output": "Short paragraph without period"
+        },
+        {
+            "input": "<p>Short.</p><p>Another short.</p><p>Third short.</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>Very long paragraph with many stopwords and low link density. This should be content because it has sufficient length and stopword density. The link density is low because there is only one <a href=\"#\">small link</a> in this lengthy paragraph.</p>",
+            "expected_output": "Very long paragraph with many stopwords and low link density. This should be content because it has sufficient length and stopword density. The link density is low because there is only one small link in this lengthy paragraph."
+        },
+        {
+            "input": "<p><a href=\"#\">Link only</a></p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>No links at all, just plain text.</p>",
+            "expected_output": "No links at all, just plain text."
+        },
+        {
+            "input": "<p>Length exactly 50 chars with stopwords.</p>",
+            "expected_output": "Length exactly 50 chars with stopwords."
+        },
+        {
+            "input": "<p>Length exactly 49 chars with stopwords.</p>",
+            "expected_output": "Length exactly 49 chars with stopwords."
+        }
+    ]
+}

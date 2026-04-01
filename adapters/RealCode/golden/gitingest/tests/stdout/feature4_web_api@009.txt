@@ -1,0 +1,21 @@
+{
+  "status_code": 200,
+  "success": true,
+  "summary": {
+    "repository": "Hello-World",
+    "owner": "octocat",
+    "files_processed": 42,
+    "total_size": "1.2MB"
+  },
+  "tree": {
+    "structure": "Hello-World/\n\u251c\u2500\u2500 README.md\n\u251c\u2500\u2500 src/\n\u2502   \u251c\u2500\u2500 main.py\n\u2502   \u2514\u2500\u2500 utils.py\n\u2514\u2500\u2500 tests/\n    \u2514\u2500\u2500 test_main.py"
+  },
+  "content": {
+    "README.md": "# Hello World\n\nA sample repository for testing.",
+    "src/main.py": "def main():\n    print('Hello World!')"
+  },
+  "contains_repo_name": true,
+  "has_summary": true,
+  "has_tree": true,
+  "has_content": true
+}

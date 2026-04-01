@@ -1,0 +1,4 @@
+{
+  "return_value_type": "str",
+  "return_value": ""
+}

@@ -1,0 +1,49 @@
+{
+    "description": "Context-aware paragraph classification considering neighboring content",
+    "cases": [
+        {
+            "input": "<div><p>Long good paragraph with many words and sufficient length.</p><p>Short.</p><p>Another long good paragraph with adequate length.</p></div>",
+            "expected_output": "Long good paragraph with many words and sufficient length.\nShort.\nAnother long good paragraph with adequate length."
+        },
+        {
+            "input": "<div><nav><a>Link1</a><a>Link2</a></nav><p>Good content here</p><footer><a>Footer</a></footer></div>",
+            "expected_output": "Good content here"
+        },
+        {
+            "input": "<div><p>Short at start.</p><p>Long content paragraph with many words and sufficient length.</p></div>",
+            "expected_output": "Short at start.\nLong content paragraph with many words and sufficient length."
+        },
+        {
+            "input": "<div><p>Long content paragraph with many words and sufficient length.</p><p>Short at end.</p></div>",
+            "expected_output": "Long content paragraph with many words and sufficient length.\nShort at end."
+        },
+        {
+            "input": "<div><p>Short1.</p><p>Short2.</p><p>Short3.</p></div>",
+            "expected_output": ""
+        },
+        {
+            "input": "<div><p>Boilerplate with high link density. <a href=\"#\">Link</a><a href=\"#\">Link</a></p><p>Long content paragraph.</p><p>Another boilerplate.</p></div>",
+            "expected_output": "Boilerplate with high link density. Link Link\nLong content paragraph.\nAnother boilerplate."
+        },
+        {
+            "input": "<div><h1>Heading</h1><p>Short.</p><h2>Subheading</h2></div>",
+            "expected_output": "Heading\nSubheading\nShort."
+        },
+        {
+            "input": "<div><p>Long content paragraph.</p><p>Short paragraph exactly 100 characters long. This is exactly 100 chars.</p><p>Another long paragraph.</p></div>",
+            "expected_output": "Long content paragraph.\nShort paragraph exactly 100 characters long. This is exactly 100 chars.\nAnother long paragraph."
+        },
+        {
+            "input": "<div><p>Long content paragraph.</p><p>Short paragraph of 99 characters. This is exactly 99 characters long, just below threshold.</p><p>Another long paragraph.</p></div>",
+            "expected_output": "Long content paragraph.\nShort paragraph of 99 characters. This is exactly 99 characters long, just below threshold.\nAnother long paragraph."
+        },
+        {
+            "input": "<div><p>First long paragraph.</p><p>Short with high link density <a href=\"#\">link</a>.</p><p>Second long paragraph.</p></div>",
+            "expected_output": "First long paragraph.\nShort with high link density link .\nSecond long paragraph."
+        },
+        {
+            "input": "<div><p>Long paragraph.</p><p>Short.</p><p>Medium length paragraph but still content.</p><p>Short.</p><p>Long paragraph.</p></div>",
+            "expected_output": "Medium length paragraph but still content."
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+Duplicate test name 'test_something_0' in class TestClass2

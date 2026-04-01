@@ -1,0 +1,12 @@
+[
+  {
+    "matching_line": "\\n newline",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        2
+      ]
+    ]
+  }
+]

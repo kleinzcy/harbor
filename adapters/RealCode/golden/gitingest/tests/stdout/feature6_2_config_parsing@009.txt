@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "format": "ini",
+  "data": {
+    "section": {
+      "key": "value",
+      "another": "123"
+    }
+  },
+  "keys": [
+    "section"
+  ],
+  "values": [
+    {
+      "key": "value",
+      "another": "123"
+    }
+  ],
+  "key_count": 1
+}

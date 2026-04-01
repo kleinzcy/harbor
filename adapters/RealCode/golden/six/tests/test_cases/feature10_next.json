@@ -1,0 +1,45 @@
+{
+    "description": "Given a comma-separated integer list and a count n separated by a space, print the first n values from the iterator one per line. Print StopIteration if the iterator runs out.",
+    "cases": [
+        {
+            "input": "1,2,3 2",
+            "expected_output": "1\\n2"
+        },
+        {
+            "input": "4,5 3",
+            "expected_output": "4\\n5\\nStopIteration"
+        },
+        {
+            "input": "1 1",
+            "expected_output": "1"
+        },
+        {
+            "input": "1,2,3 3",
+            "expected_output": "1\\n2\\n3"
+        },
+        {
+            "input": "1,2,3,4,5 3",
+            "expected_output": "1\\n2\\n3"
+        },
+        {
+            "input": "10 2",
+            "expected_output": "10\\nStopIteration"
+        },
+        {
+            "input": "-1,-2,-3 2",
+            "expected_output": "-1\\n-2"
+        },
+        {
+            "input": "100,200,300 1",
+            "expected_output": "100"
+        },
+        {
+            "input": "7 5",
+            "expected_output": "7\\nStopIteration\\nStopIteration\\nStopIteration\\nStopIteration"
+        },
+        {
+            "input": "1,2,3,4,5 5",
+            "expected_output": "1\\n2\\n3\\n4\\n5"
+        }
+    ]
+}

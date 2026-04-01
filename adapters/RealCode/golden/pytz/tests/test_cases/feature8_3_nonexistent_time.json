@@ -1,0 +1,17 @@
+{
+    "description": "Test that NonExistentTimeError is raised for non-existent times during DST spring-forward when is_dst=None.",
+    "cases": [
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 02:30:00", "is_dst": null},
+            "expected_output": {"error": "NonExistentTimeError"}
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 02:00:00", "is_dst": null},
+            "expected_output": {"error": "NonExistentTimeError"}
+        },
+        {
+            "input": {"zone": "US/Eastern", "datetime": "2002-04-07 03:00:00", "is_dst": null},
+            "expected_output": {"error": null, "formatted": "2002-04-07 03:00:00 EDT (-0400)"}
+        }
+    ]
+}

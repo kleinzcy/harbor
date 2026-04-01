@@ -1,0 +1,111 @@
+{
+  "description": "Extract features from irregularly sampled time series (enhanced)",
+  "cases": [
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            2.5,
+            5.0
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__time_stretch"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          0.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1
+          ],
+          "time": [
+            0.5
+          ],
+          "value": [
+            10.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          10.0,
+          NaN,
+          1.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            100,
+            200
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length",
+          "value__time_stretch"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0,
+          0.01
+        ]
+      }
+    }
+  ]
+}

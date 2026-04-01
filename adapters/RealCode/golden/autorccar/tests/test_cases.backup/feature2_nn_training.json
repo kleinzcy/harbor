@@ -1,0 +1,17 @@
+{
+    "description": "Test neural network creation, training, and prediction",
+    "cases": [
+        {
+            "input": {"layer_sizes": [76800, 32, 4]},
+            "expected_output": "model_created"
+        },
+        {
+            "input": {"X_train_shape": [100, 76800], "y_train_shape": [100, 4]},
+            "expected_output": "training_completed"
+        },
+        {
+            "input": {"X_test_sample": [0.1, 0.2, 0.3]},
+            "expected_output": {"prediction": 2}
+        }
+    ]
+}

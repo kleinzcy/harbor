@@ -1,0 +1,102 @@
+{
+    "description": "Test timezone object creation, singleton caching, case-insensitive resolution, and error handling for unknown timezones.",
+    "cases": [
+        {
+            "input": {
+                "action": "create",
+                "zone": "US/Eastern"
+            },
+            "expected_output": {
+                "zone": "US/Eastern",
+                "type": "DstTzInfo"
+            }
+        },
+        {
+            "input": {
+                "action": "create",
+                "zone": "UTC"
+            },
+            "expected_output": {
+                "zone": "UTC",
+                "type": "UTC",
+                "is_pytz_utc": true
+            }
+        },
+        {
+            "input": {
+                "action": "create",
+                "zone": "Asia/Shanghai"
+            },
+            "expected_output": {
+                "zone": "Asia/Shanghai",
+                "type": "DstTzInfo"
+            }
+        },
+        {
+            "input": {
+                "action": "singleton_check",
+                "zone": "US/Eastern"
+            },
+            "expected_output": {
+                "same_object": true
+            }
+        },
+        {
+            "input": {
+                "action": "singleton_check",
+                "zone": "UTC"
+            },
+            "expected_output": {
+                "same_object": true
+            }
+        },
+        {
+            "input": {
+                "action": "create",
+                "zone": "GMT"
+            },
+            "expected_output": {
+                "zone": "GMT",
+                "type": "StaticTzInfo"
+            }
+        },
+        {
+            "input": {
+                "action": "create",
+                "zone": "America/New_York"
+            },
+            "expected_output": {
+                "zone": "America/New_York",
+                "type": "DstTzInfo"
+            }
+        },
+        {
+            "input": {
+                "action": "create",
+                "zone": "Europe/London"
+            },
+            "expected_output": {
+                "zone": "Europe/London",
+                "type": "DstTzInfo"
+            }
+        },
+        {
+            "input": {
+                "action": "singleton_check",
+                "zone": "Asia/Shanghai"
+            },
+            "expected_output": {
+                "same_object": true
+            }
+        },
+        {
+            "input": {
+                "action": "singleton_check",
+                "zone": "GMT"
+            },
+            "expected_output": {
+                "same_object": true
+            }
+        }
+    ]
+}

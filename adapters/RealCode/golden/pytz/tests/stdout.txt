@@ -1,0 +1,82 @@
+{"zone": "US/Eastern", "type": "DstTzInfo"}
+{"zone": "UTC", "type": "UTC", "is_pytz_utc": true}
+{"zone": "Asia/Shanghai", "type": "DstTzInfo"}
+{"same_object": true}
+{"same_object": true}
+{"same_object": true, "zone": "US/Eastern"}
+{"zone": "GMT", "type": "StaticTzInfo"}
+{"error": "UnknownTimeZoneError", "is_key_error": true}
+{"error": "UnknownTimeZoneError", "is_key_error": true}
+3
+20
+True
+[1, 2, 3]
+3
+True
+False
+1
+["x", "y"]
+2
+2002-10-27 06:00:00 EST (-0500)
+2002-07-07 06:00:00 EDT (-0400)
+2002-10-27 06:00:00 CET (+0100)
+2002-10-27 06:00:00 CST (+0800)
+2023-01-15 10:30:00 EST (-0500)
+2023-06-15 10:30:00 EDT (-0400)
+2002-10-27 01:30:00 EST (-0500)
+2002-10-27 01:30:00 EDT (-0400)
+{"error": "AmbiguousTimeError"}
+2002-10-27 01:00:00 EST (-0500)
+2002-10-27 01:00:00 EDT (-0400)
+{"error": "NonExistentTimeError"}
+{"error": "NonExistentTimeError"}
+2002-04-07 02:30:00 EDT (-0400)
+2002-04-07 02:30:00 EST (-0500)
+{"before_normalize": "2002-10-27 00:50:00 EST (-0500)", "after_normalize": "2002-10-27 01:50:00 EDT (-0400)"}
+{"before_normalize": "2002-10-27 02:00:00 EST (-0500)", "after_normalize": "2002-10-27 01:00:00 EST (-0500)"}
+{"before_normalize": "2002-04-07 02:00:00 EST (-0500)", "after_normalize": "2002-04-07 03:00:00 EDT (-0400)"}
+{"before_normalize": "2002-07-07 12:30:00 EDT (-0400)", "after_normalize": "2002-07-07 12:30:00 EDT (-0400)"}
+2002-10-27 01:00:00 EST (-0500)
+2002-10-27 14:00:00 CST (+0800)
+2002-07-07 02:00:00 EDT (-0400)
+2002-10-27 06:00:00 GMT (+0000)
+2002-07-07 07:00:00 BST (+0100)
+2002-10-27 19:00:00 CST (+0800)
+2002-07-07 18:00:00 CST (+0800)
+2002-10-27 01:00:00 EST (-0500)
+2002-07-07 07:00:00 EDT (-0400)
+{"formatted": "2002-10-27 06:00:00 +08:00 (+0800)", "utcoffset": "8:00:00", "dst": "0:00:00", "repr": "pytz.FixedOffset(480)"}
+{"formatted": "2002-10-27 06:00:00 -05:00 (-0500)", "utcoffset": "-1 day, 19:00:00", "dst": "0:00:00", "repr": "pytz.FixedOffset(-300)"}
+{"formatted": "2002-10-27 06:00:00 +00:00 (+0000)", "utcoffset": "0:00:00", "dst": "0:00:00", "repr": "pytz.FixedOffset(0)"}
+{"formatted": "2002-10-27 06:00:00 +09:00 (+0900)", "utcoffset": "9:00:00", "dst": "0:00:00", "repr": "pytz.FixedOffset(540)"}
+{"same_object": true}
+{"contains": ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Anchorage", "America/Honolulu"]}
+{"exact": ["Pacific/Auckland", "Pacific/Chatham"]}
+{"exact": ["Europe/Zurich"]}
+{"contains": ["Asia/Shanghai"]}
+{"contains": ["Europe/London"]}
+{"error": "KeyError"}
+{"error": "UnknownTimeZoneError", "is_key_error": true}
+{"error": "UnknownTimeZoneError", "is_key_error": true}
+{"error": "UnknownTimeZoneError", "is_key_error": true}
+{"error": "Expected UnknownTimeZoneError but got timezone object"}
+{"error": "AmbiguousTimeError"}
+{"error": "AmbiguousTimeError"}
+{"error": "Expected AmbiguousTimeError but got localized datetime"}
+{"error": "NonExistentTimeError"}
+{"error": "NonExistentTimeError"}
+{"error": "Expected NonExistentTimeError but got localized datetime"}
+{"same_object_after_roundtrip": true, "zone": "US/Eastern"}
+{"same_object_after_roundtrip": true, "zone": "UTC"}
+{"same_object_after_roundtrip": true, "zone": "Asia/Shanghai"}
+{"same_object_after_roundtrip": true, "zone": "GMT"}
+{"same_object_after_roundtrip": true, "repr": "pytz.FixedOffset(480)"}
+{"same_object_after_roundtrip": true, "zone": "UTC"}
+True
+True
+True
+True
+True
+False
+True
+True

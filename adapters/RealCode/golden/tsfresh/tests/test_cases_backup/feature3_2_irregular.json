@@ -1,0 +1,41 @@
+{
+  "description": "Extract features from irregularly sampled time series",
+  "cases": [
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            2.5,
+            5.0
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__time_stretch"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          0.5
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+    "description": "Default nb_workers should equal the system's physical core count.",
+    "cases": [
+        {"input": {"operation": "get_default_workers"}, "expected_output": ">= 1"}
+    ]
+}

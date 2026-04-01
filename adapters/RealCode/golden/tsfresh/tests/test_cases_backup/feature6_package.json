@@ -1,0 +1,26 @@
+{
+  "description": "Package installation and basic import test",
+  "cases": [
+    {
+      "input": {
+        "command": "pip install -e ."
+      },
+      "expected_output": {
+        "exit_code": 0,
+        "module_imports": [
+          "tsfresh",
+          "tsfresh.feature_extraction",
+          "tsfresh.feature_selection"
+        ]
+      }
+    },
+    {
+      "input": {
+        "command": "python -c 'from tsfresh import extract_features; from tsfresh.feature_extraction import MinimalFCParameters; print(\"OK\")'"
+      },
+      "expected_output": {
+        "stdout": "OK"
+      }
+    }
+  ]
+}

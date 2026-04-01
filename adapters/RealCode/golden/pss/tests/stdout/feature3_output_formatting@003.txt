@@ -1,0 +1,2 @@
+[36mtest.py[0m
+[32m1:[0mdef [31mhello[0m():

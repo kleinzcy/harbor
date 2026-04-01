@@ -1,0 +1,32 @@
+[
+  {
+    "matching_line": "Error: something",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        5
+      ]
+    ]
+  },
+  {
+    "matching_line": "error: something",
+    "matching_lineno": 2,
+    "matching_column_ranges": [
+      [
+        0,
+        5
+      ]
+    ]
+  },
+  {
+    "matching_line": "ERROR: something",
+    "matching_lineno": 3,
+    "matching_column_ranges": [
+      [
+        0,
+        5
+      ]
+    ]
+  }
+]

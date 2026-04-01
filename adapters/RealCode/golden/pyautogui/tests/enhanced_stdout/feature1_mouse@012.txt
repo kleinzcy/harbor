@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "click_count_valid": true,
+  "button": "middle"
+}

@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "ID 'non_existent_123' does not exist",
+  "error_type": "IdDoesNotExistError"
+}

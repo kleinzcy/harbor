@@ -1,0 +1,17 @@
+{
+    "description": "Database utilities for migration, merging, and export",
+    "cases": [
+        {
+            "input": {"operation": "migrate", "old_data": {"data": [{"id": 1, "name": "Test", "age": 20}]}},
+            "expected_output": {"status": "success", "has_version": 2, "has_keys": true, "data_count": 1}
+        },
+        {
+            "input": {"operation": "merge", "databases": [{"version": 2, "keys": ["name", "age"], "data": {"1": {"name": "A", "age": 25}}}, {"version": 2, "keys": ["name", "age"], "data": {"2": {"name": "B", "age": 30}}}]},
+            "expected_output": {"status": "success", "merged_keys": ["age", "name"], "total_records": 2}
+        },
+        {
+            "input": {"operation": "purge_db", "input": "any"},
+            "expected_output": {"status": "success", "structure": {"version": 2, "keys": [], "data": {}}}
+        }
+    ]
+}

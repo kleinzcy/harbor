@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "file": "test.py",
+      "matches": []
+    }
+  ]
+}

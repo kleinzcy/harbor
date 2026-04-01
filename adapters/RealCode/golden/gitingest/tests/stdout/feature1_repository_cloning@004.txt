@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "Clone failed: Cloning into '/tmp/test-repo-5'...\nfatal: Remote branch nonexistent-branch not found in upstream origin\n",
+  "local_path": "/tmp/test-repo-5",
+  "git_dir_exists": false
+}

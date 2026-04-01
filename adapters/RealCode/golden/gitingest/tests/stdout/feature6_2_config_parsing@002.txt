@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "error": "TOML parsing requires Python 3.11+ or tomli package",
+  "format": "toml",
+  "keys": [],
+  "values": []
+}

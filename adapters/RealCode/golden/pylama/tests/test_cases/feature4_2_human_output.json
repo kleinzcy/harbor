@@ -1,0 +1,14 @@
+{
+    "description": "Verify human-readable format matches expected style",
+    "cases": [
+        {
+            "input": {
+                "format": "pycodestyle",
+                "code": "def foo(): pass"
+            },
+            "expected_output": [
+                "stdin:1:1: D100 Missing docstring in public module"
+            ]
+        }
+    ]
+}

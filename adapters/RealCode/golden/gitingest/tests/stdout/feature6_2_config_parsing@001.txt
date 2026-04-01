@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "format": "yaml",
+  "data": {
+    "name": "project",
+    "version": "1.0.0",
+    "dependencies": [
+      "requests",
+      "pytest"
+    ]
+  },
+  "keys": [
+    "name",
+    "version",
+    "dependencies"
+  ],
+  "values": [
+    "project",
+    "1.0.0",
+    [
+      "requests",
+      "pytest"
+    ]
+  ],
+  "key_count": 3
+}

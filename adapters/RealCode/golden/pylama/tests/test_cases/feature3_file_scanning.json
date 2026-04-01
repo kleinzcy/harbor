@@ -1,0 +1,30 @@
+{
+    "description": "Test file scanning with ignore patterns and path matching",
+    "cases": [
+        {
+            "input": {
+                "paths": [
+                    "src/"
+                ],
+                "ignore_patterns": [
+                    "*/test_*.py"
+                ]
+            },
+            "expected_output": {
+                "files_found": 5,
+                "files_ignored": 2
+            }
+        },
+        {
+            "input": {
+                "paths": [
+                    "-"
+                ],
+                "code": "import os"
+            },
+            "expected_output": {
+                "files_checked": 1
+            }
+        }
+    ]
+}

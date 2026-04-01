@@ -1,0 +1,1 @@
+This paragraph has exactly half link density. Link text here and some more text to make total length. The stopwords are present.

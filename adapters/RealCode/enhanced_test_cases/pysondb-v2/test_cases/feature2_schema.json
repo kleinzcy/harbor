@@ -1,0 +1,138 @@
+{
+    "description": "Schema evolution and dynamic field management",
+    "cases": [
+        {
+            "input": {
+                "operation": "add_new_key",
+                "key": "email",
+                "default": "unknown@example.com"
+            },
+            "expected_output": {
+                "status": "success",
+                "all_records_have_key": true
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "David",
+                    "age": 40,
+                    "email": "david@example.com"
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "keys_sorted": [
+                    "age",
+                    "email",
+                    "name"
+                ]
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Eve",
+                    "unknown_field": "value"
+                }
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "set_id_generator",
+                "generator_type": "sequential"
+            },
+            "expected_output": {
+                "status": "success",
+                "next_id_pattern": "1"
+            }
+        },
+        {
+            "input": {
+                "operation": "add_new_key",
+                "key": "nullable"
+            },
+            "expected_output": {
+                "status": "success",
+                "all_records_have_key": true
+            }
+        },
+        {
+            "input": {
+                "operation": "add_new_key",
+                "key": "nullable",
+                "default": "different"
+            },
+            "expected_output": {
+                "status": "success",
+                "all_records_have_key": true
+            }
+        },
+        {
+            "input": {
+                "operation": "add_new_key",
+                "key": "tags",
+                "default": []
+            },
+            "expected_output": {
+                "status": "success",
+                "all_records_have_key": true
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "ComplexUser",
+                    "age": 99,
+                    "email": "complex@example.com",
+                    "nullable": null,
+                    "tags": [
+                        "python",
+                        "json"
+                    ],
+                    "metadata": {
+                        "version": 1
+                    }
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "keys_sorted": [
+                    "age",
+                    "email",
+                    "metadata",
+                    "name",
+                    "nullable",
+                    "tags"
+                ]
+            }
+        },
+        {
+            "input": {
+                "operation": "add_new_key",
+                "key": "aaa_first",
+                "default": 0
+            },
+            "expected_output": {
+                "status": "success",
+                "all_records_have_key": true
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all"
+            },
+            "expected_output": {
+                "status": "success",
+                "count": 2
+            }
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "description": "Test Git hook installation and execution",
+    "cases": [
+        {
+            "input": {
+                "action": "install",
+                "complexity": 10,
+                "strict": true
+            },
+            "expected_output": {
+                "hook_installed": true
+            }
+        },
+        {
+            "input": {
+                "action": "run",
+                "staged_files": [
+                    "bad.py"
+                ]
+            },
+            "expected_output": {
+                "errors_found": 2,
+                "commit_blocked": true
+            }
+        }
+    ]
+}

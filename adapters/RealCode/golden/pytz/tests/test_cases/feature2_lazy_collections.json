@@ -1,0 +1,45 @@
+{
+    "description": "Test LazyList, LazySet, and LazyDict deferred computation, correct behavior after materialization, and standard collection operations.",
+    "cases": [
+        {
+            "input": {"class": "LazyList", "fill_data": [1, 2, 3], "operation": "len"},
+            "expected_output": 3
+        },
+        {
+            "input": {"class": "LazyList", "fill_data": [10, 20, 30], "operation": "getitem", "index": 1},
+            "expected_output": 20
+        },
+        {
+            "input": {"class": "LazyList", "fill_data": [1, 2, 3], "operation": "contains", "value": 2},
+            "expected_output": true
+        },
+        {
+            "input": {"class": "LazyList", "fill_data": [1, 2, 3], "operation": "list"},
+            "expected_output": [1, 2, 3]
+        },
+        {
+            "input": {"class": "LazySet", "fill_data": ["a", "b", "c"], "operation": "len"},
+            "expected_output": 3
+        },
+        {
+            "input": {"class": "LazySet", "fill_data": ["a", "b", "c"], "operation": "contains", "value": "b"},
+            "expected_output": true
+        },
+        {
+            "input": {"class": "LazySet", "fill_data": ["a", "b", "c"], "operation": "contains", "value": "z"},
+            "expected_output": false
+        },
+        {
+            "input": {"class": "LazyDict", "fill_data": {"x": 1, "y": 2}, "operation": "getitem", "key": "x"},
+            "expected_output": 1
+        },
+        {
+            "input": {"class": "LazyDict", "fill_data": {"x": 1, "y": 2}, "operation": "keys"},
+            "expected_output": ["x", "y"]
+        },
+        {
+            "input": {"class": "LazyDict", "fill_data": {"x": 1, "y": 2}, "operation": "len"},
+            "expected_output": 2
+        }
+    ]
+}

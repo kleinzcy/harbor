@@ -1,0 +1,96 @@
+{
+    "description": "Command line interface operations",
+    "cases": [
+        {
+            "input": {
+                "command": "--info"
+            },
+            "expected_output": {
+                "status": "success",
+                "contains": [
+                    "PysonDB",
+                    "JSON parser"
+                ]
+            }
+        },
+        {
+            "input": {
+                "command": "show",
+                "db_file": "test_data.json"
+            },
+            "expected_output": {
+                "status": "success",
+                "format": "table",
+                "row_count": 3
+            }
+        },
+        {
+            "input": {
+                "command": "merge",
+                "db_files": [
+                    "db1.json",
+                    "db2.json"
+                ],
+                "output": "merged.json"
+            },
+            "expected_output": {
+                "status": "success",
+                "message": "DB's merged successfully"
+            }
+        },
+        {
+            "input": {
+                "command": "tocsv",
+                "db_file": "test_data.json",
+                "output": "output.csv"
+            },
+            "expected_output": {
+                "status": "success",
+                "file_exists": true,
+                "lines": 4
+            }
+        },
+        {
+            "input": {
+                "command": "unknown"
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "ValueError"
+            }
+        },
+        {
+            "input": {
+                "command": "show",
+                "db_file": "non_existent.json"
+            },
+            "expected_output": {
+                "status": "success",
+                "format": "table",
+                "row_count": 0
+            }
+        },
+        {
+            "input": {
+                "command": "merge",
+                "db_files": [],
+                "output": "merged.json"
+            },
+            "expected_output": {
+                "status": "error"
+            }
+        },
+        {
+            "input": {
+                "command": "tocsv",
+                "db_file": "empty.json",
+                "output": "empty.csv"
+            },
+            "expected_output": {
+                "status": "success",
+                "file_exists": true,
+                "lines": 1
+            }
+        }
+    ]
+}

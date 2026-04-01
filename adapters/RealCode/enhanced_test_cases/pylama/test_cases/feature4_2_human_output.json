@@ -1,0 +1,49 @@
+{
+    "description": "Verify human-readable format matches expected style",
+    "cases": [
+        {
+            "input": {
+                "format": "pycodestyle",
+                "code": "def foo(): pass"
+            },
+            "expected_output": [
+                "stdin:1:1: D100 Missing docstring in public module"
+            ]
+        },
+        {
+            "input": {
+                "format": "pycodestyle",
+                "code": ""
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "pycodestyle",
+                "code": "x = 1"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "pycodestyle",
+                "code": "def foo("
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "pylint",
+                "code": "def foo(): pass"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "format": "parsable",
+                "code": "import os"
+            },
+            "expected_output": []
+        }
+    ]
+}

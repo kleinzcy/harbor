@@ -1,0 +1,32 @@
+{
+    "description": "initialize() should accept nb_workers, progress_bar, verbose, use_memory_fs parameters and apply them globally. [Enhanced: added boundary/window/IPC/config/exception-diversity cases.]",
+    "cases": [
+        {
+            "input": {
+                "nb_workers": 2,
+                "progress_bar": true,
+                "verbose": 2,
+                "use_memory_fs": null
+            },
+            "expected_output": "initialized"
+        },
+        {
+            "input": {
+                "nb_workers": 1,
+                "progress_bar": false,
+                "verbose": 0,
+                "use_memory_fs": false
+            },
+            "expected_output": "initialized"
+        },
+        {
+            "input": {
+                "nb_workers": 4,
+                "progress_bar": false,
+                "verbose": 0,
+                "use_memory_fs": null
+            },
+            "expected_output": "initialized"
+        }
+    ]
+}

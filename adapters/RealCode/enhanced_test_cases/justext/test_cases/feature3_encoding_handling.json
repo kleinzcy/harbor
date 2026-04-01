@@ -1,0 +1,57 @@
+{
+    "description": "Automatic encoding detection and decoding for various HTML inputs",
+    "cases": [
+        {
+            "input": "<p>Hello 世界</p>",
+            "expected_output": "Hello 世界"
+        },
+        {
+            "input": "<meta charset=\"utf-8\"><p>Test content</p>",
+            "expected_output": "Test content"
+        },
+        {
+            "input": "<meta charset=\"iso-8859-1\"><p>Test</p>",
+            "expected_output": "Test"
+        },
+        {
+            "input": "<p>\uFEFFBOM character</p>",
+            "expected_output": "\uFEFFBOM character"
+        },
+        {
+            "input": "<p>Mixed scripts: English, Русский, 中文, العربية, ελληνικά</p>",
+            "expected_output": ""
+        },
+        {
+            "input": "<p>Emojis: 🚀 👍 😀</p>",
+            "expected_output": "Emojis: 🚀 👍 😀"
+        },
+        {
+            "input": "<p>Zero-width space:​test</p>",
+            "expected_output": "Zero-width space:​test"
+        },
+        {
+            "input": "<p>Combining characters: ñ (n with tilde)</p>",
+            "expected_output": "Combining characters: ñ (n with tilde)"
+        },
+        {
+            "input": "<meta charset=\"windows-1252\"><p>Test</p>",
+            "expected_output": "Test"
+        },
+        {
+            "input": "<meta charset=\"utf-8\"><meta charset=\"iso-8859-1\"><p>First charset wins</p>",
+            "expected_output": "First charset wins"
+        },
+        {
+            "input": "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\"><p>Chinese encoding</p>",
+            "expected_output": "Chinese encoding"
+        },
+        {
+            "input": "<p>HTML entities: &lt;div&gt; &amp; &quot;quotes&quot;</p>",
+            "expected_output": "HTML entities: <div> & \"quotes\""
+        },
+        {
+            "input": "<p>Non-breaking space:&nbsp;test</p>",
+            "expected_output": "Non-breaking space:\u00a0test"
+        }
+    ]
+}

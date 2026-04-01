@@ -1,0 +1,77 @@
+{
+    "description": "Test command-line argument parsing and execution",
+    "cases": [
+        {
+            "input": {
+                "args": ["--select=E301", "test.py"]
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": ["--help"]
+            },
+            "expected_output": {
+                "output_contains": "usage:"
+            }
+        },
+        {
+            "input": {
+                "args": []
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": ["--version"]
+            },
+            "expected_output": {
+                "output_contains": "pylama"
+            }
+        },
+        {
+            "input": {
+                "args": ["--ignore=E301,E302", "test.py"]
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": ["--linters=pycodestyle", "test.py"]
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": ["--format=json", "test.py"]
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": ["--verbose", "test.py"]
+            },
+            "expected_output": {
+                "exit_code": 0
+            }
+        },
+        {
+            "input": {
+                "args": ["--invalid-arg"]
+            },
+            "expected_output": {
+                "exit_code": 2
+            }
+        }
+    ]
+}

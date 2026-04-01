@@ -1,0 +1,239 @@
+{
+    "description": "OutputFormatter callbacks and default colored output (enhanced with edge cases)",
+    "cases": [
+        {
+            "input": {
+                "formatter": "default",
+                "actions": [
+                    {
+                        "type": "start_matches_in_file",
+                        "filename": "src/main.py"
+                    },
+                    {
+                        "type": "matching_line",
+                        "matchresult": {
+                            "matching_line": "def example():",
+                            "matching_lineno": 10,
+                            "matching_column_ranges": [
+                                [
+                                    0,
+                                    3
+                                ]
+                            ]
+                        },
+                        "filename": "src/main.py"
+                    },
+                    {
+                        "type": "context_line",
+                        "line": "import sys",
+                        "lineno": 9,
+                        "filename": "src/main.py"
+                    },
+                    {
+                        "type": "end_matches_in_file",
+                        "filename": "src/main.py"
+                    }
+                ],
+                "colors": false
+            },
+            "expected_output": "src/main.py\n10:def example():\n 9:import sys"
+        },
+        {
+            "input": {
+                "formatter": "json",
+                "actions": [
+                    {
+                        "type": "start_matches_in_file",
+                        "filename": "src/main.py"
+                    },
+                    {
+                        "type": "matching_line",
+                        "matchresult": {
+                            "matching_line": "def example():",
+                            "matching_lineno": 10,
+                            "matching_column_ranges": [
+                                [
+                                    0,
+                                    3
+                                ]
+                            ]
+                        },
+                        "filename": "src/main.py"
+                    },
+                    {
+                        "type": "end_matches_in_file",
+                        "filename": "src/main.py"
+                    }
+                ]
+            },
+            "expected_output": {
+                "file": "src/main.py",
+                "matches": [
+                    {
+                        "line": 10,
+                        "content": "def example():",
+                        "columns": [
+                            [
+                                0,
+                                3
+                            ]
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "actions": [
+                    {
+                        "type": "found_filename",
+                        "filename": "src/utils.py"
+                    }
+                ],
+                "colors": true
+            },
+            "expected_output": "\u001b[36msrc/utils.py\u001b[0m"
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "colors": true,
+                "actions": [
+                    {
+                        "type": "start_matches_in_file",
+                        "filename": "test.py"
+                    },
+                    {
+                        "type": "matching_line",
+                        "matchresult": {
+                            "matching_line": "def hello():",
+                            "matching_lineno": 1,
+                            "matching_column_ranges": [
+                                [
+                                    4,
+                                    9
+                                ]
+                            ]
+                        },
+                        "filename": "test.py"
+                    },
+                    {
+                        "type": "end_matches_in_file",
+                        "filename": "test.py"
+                    }
+                ]
+            },
+            "expected_output": "\u001b[36mtest.py\u001b[0m\n\u001b[32m1:\u001b[0mdef \u001b[31mhello\u001b[0m():"
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "colors": false,
+                "actions": [
+                    {
+                        "type": "start_matches_in_file",
+                        "filename": "a.py"
+                    },
+                    {
+                        "type": "matching_line",
+                        "matchresult": {
+                            "matching_line": "print(1)",
+                            "matching_lineno": 1,
+                            "matching_column_ranges": []
+                        },
+                        "filename": "a.py"
+                    },
+                    {
+                        "type": "end_matches_in_file",
+                        "filename": "a.py"
+                    },
+                    {
+                        "type": "start_matches_in_file",
+                        "filename": "b.py"
+                    },
+                    {
+                        "type": "matching_line",
+                        "matchresult": {
+                            "matching_line": "print(2)",
+                            "matching_lineno": 1,
+                            "matching_column_ranges": []
+                        },
+                        "filename": "b.py"
+                    },
+                    {
+                        "type": "end_matches_in_file",
+                        "filename": "b.py"
+                    }
+                ]
+            },
+            "expected_output": "a.py\n1:print(1)\nb.py\n1:print(2)"
+        },
+        {
+            "input": {
+                "formatter": "json",
+                "actions": [
+                    {
+                        "type": "found_filename",
+                        "filename": "test.py"
+                    }
+                ]
+            },
+            "expected_output": {
+                "files": [
+                    {
+                        "file": "test.py",
+                        "matches": []
+                    }
+                ]
+            }
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "actions": []
+            },
+            "expected_output": ""
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "colors": false,
+                "actions": [
+                    {
+                        "type": "found_filename",
+                        "filename": "file with spaces.py"
+                    }
+                ]
+            },
+            "expected_output": "file with spaces.py"
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "colors": false,
+                "actions": [
+                    {
+                        "type": "matching_line",
+                        "matchresult": {
+                            "matching_line": "abcdef",
+                            "matching_lineno": 1,
+                            "matching_column_ranges": [
+                                [
+                                    3,
+                                    5
+                                ],
+                                [
+                                    1,
+                                    2
+                                ]
+                            ]
+                        },
+                        "filename": "test.py"
+                    }
+                ]
+            },
+            "expected_output": "1:abcdef"
+        }
+    ]
+}

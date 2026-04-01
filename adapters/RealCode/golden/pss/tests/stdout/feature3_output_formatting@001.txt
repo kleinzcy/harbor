@@ -1,0 +1,19 @@
+{
+  "files": [
+    {
+      "file": "src/main.py",
+      "matches": [
+        {
+          "line": 10,
+          "content": "def example():",
+          "columns": [
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

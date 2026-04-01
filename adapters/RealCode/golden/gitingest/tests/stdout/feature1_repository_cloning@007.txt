@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "Clone failed: Cloning into '/tmp/test-repo-8'...\ngit: 'remote-invalid' is not a git command. See 'git --help'.\nfatal: remote helper 'invalid' aborted session\n",
+  "local_path": "/tmp/test-repo-8",
+  "git_dir_exists": false
+}

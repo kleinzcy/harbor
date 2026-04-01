@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Key 'invalid_key' is not in schema",
+  "error_type": "UnknownKeyError"
+}

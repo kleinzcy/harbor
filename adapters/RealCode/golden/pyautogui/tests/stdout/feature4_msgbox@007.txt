@@ -1,0 +1,8 @@
+{
+  "return_value_in": [
+    "Yes",
+    "No",
+    "Cancel"
+  ],
+  "return_value": "Yes"
+}

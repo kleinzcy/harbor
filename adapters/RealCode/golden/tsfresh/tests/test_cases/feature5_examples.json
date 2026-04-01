@@ -1,0 +1,18 @@
+{
+  "description": "Example notebook generates expected output for sample dataset",
+  "cases": [
+    {
+      "input": {
+        "notebook": "01_feature_extraction.ipynb",
+        "dataset": "robot_execution_failures"
+      },
+      "expected_output": {
+        "extracted_features_shape": [
+          100,
+          50
+        ],
+        "selected_features_count": 15
+      }
+    }
+  ]
+}

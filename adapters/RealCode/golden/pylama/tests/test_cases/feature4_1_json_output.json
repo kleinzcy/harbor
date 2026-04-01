@@ -1,0 +1,22 @@
+{
+    "description": "Verify JSON output format contains all required fields",
+    "cases": [
+        {
+            "input": {
+                "format": "json",
+                "code": "x = 1"
+            },
+            "expected_output": [
+                {
+                    "filename": "<stdin>",
+                    "lnum": 1,
+                    "col": 3,
+                    "source": "pycodestyle",
+                    "type": "E",
+                    "number": "E225",
+                    "text": "missing whitespace around operator"
+                }
+            ]
+        }
+    ]
+}

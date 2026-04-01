@@ -1,0 +1,110 @@
+{
+  "description": "Basic parameterization with string and tuple argument names",
+  "cases": [
+    {
+      "input": {
+        "argnames": "x,expected",
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_square_0",
+          "test_square_1",
+          "test_square_2"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "expected": 1
+          },
+          {
+            "x": 2,
+            "expected": 4
+          },
+          {
+            "x": 3,
+            "expected": 9
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": [
+          "x",
+          "expected"
+        ],
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_square_0",
+          "test_square_1"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "expected": 1
+          },
+          {
+            "x": 2,
+            "expected": 4
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x, expected",
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_spaces_0",
+          "test_with_spaces_1"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "expected": 1
+          },
+          {
+            "x": 2,
+            "expected": 4
+          }
+        ]
+      }
+    }
+  ]
+}

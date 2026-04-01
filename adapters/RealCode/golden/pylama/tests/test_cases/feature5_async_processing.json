@@ -1,0 +1,27 @@
+{
+    "description": "Test asynchronous checking performance and correctness",
+    "cases": [
+        {
+            "input": {
+                "paths": [
+                    "large_project/"
+                ],
+                "concurrent": true
+            },
+            "expected_output": {
+                "time_saved_ratio": ">0.5"
+            }
+        },
+        {
+            "input": {
+                "paths": [
+                    "small.py"
+                ],
+                "concurrent": false
+            },
+            "expected_output": {
+                "errors_count": 0
+            }
+        }
+    ]
+}

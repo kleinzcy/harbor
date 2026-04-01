@@ -1,0 +1,4 @@
+{
+  "normalized": false,
+  "error": "float() argument must be a string or a number, not 'NoneType'"
+}

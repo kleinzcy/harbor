@@ -1,0 +1,25 @@
+{
+    "description": "Test traffic light detection and color recognition",
+    "cases": [
+        {
+            "input": {
+                "cascade_file": "traffic_light.xml",
+                "image": "color_array"
+            },
+            "expected_output": {
+                "detected": true,
+                "color": "red"
+            }
+        },
+        {
+            "input": {
+                "cascade_file": "traffic_light.xml",
+                "image": "color_array_green"
+            },
+            "expected_output": {
+                "detected": true,
+                "color": "green"
+            }
+        }
+    ]
+}

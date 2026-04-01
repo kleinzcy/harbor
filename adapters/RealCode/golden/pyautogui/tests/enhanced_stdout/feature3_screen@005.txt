@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "image_captured": true,
+  "file_exists": false
+}

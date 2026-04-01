@@ -1,0 +1,48 @@
+{
+  "description": "Parameter validation and type checking",
+  "cases": [
+    {
+      "input": {
+        "argnames": "x,y",
+        "argvalues": [
+          [
+            1
+          ]
+        ]
+      },
+      "expected_output": {
+        "error": "tuple at index 0 has wrong number of arguments (1 != 2)"
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          {
+            "x": 1
+          }
+        ]
+      },
+      "expected_output": {
+        "error": "argvalue at index 0 is not a tuple or param instance"
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_single_values_0",
+          "test_single_values_1",
+          "test_single_values_2"
+        ]
+      }
+    }
+  ]
+}

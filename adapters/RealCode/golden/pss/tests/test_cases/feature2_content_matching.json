@@ -1,0 +1,122 @@
+{
+    "description": "ContentMatcher with regex, literal, case‑insensitive, whole‑word, inverted, smart‑case, and max‑match options",
+    "cases": [
+        {
+            "input": {
+                "pattern": "def ",
+                "ignore_case": false,
+                "invert_match": false,
+                "whole_words": false,
+                "literal_pattern": false,
+                "max_match_count": 2,
+                "content": "def foo():\n  print('def')\ndef bar():\n  pass\n  # def not here"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "def foo():",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [[0, 4]]
+                },
+                {
+                    "matching_line": "def bar():",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": [[0, 4]]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "vector *<",
+                "ignore_case": false,
+                "whole_words": false,
+                "literal_pattern": false,
+                "content": "vector<int> v;\nvector <float> f;"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "vector<int> v;",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [[0, 10]]
+                },
+                {
+                    "matching_line": "vector <float> f;",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": [[0, 13]]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "error",
+                "ignore_case": true,
+                "invert_match": true,
+                "max_match_count": 100,
+                "content": "ERROR: something\nWarning: something\nInfo: something"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "Warning: something",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": []
+                },
+                {
+                    "matching_line": "Info: something",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": []
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "Error",
+                "smart_case": true,
+                "content": "Error: something\nerror: something\nERROR: something"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "Error: something",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [[0, 5]]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "error",
+                "smart_case": true,
+                "content": "Error: something\nerror: something\nERROR: something"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "Error: something",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [[0, 5]]
+                },
+                {
+                    "matching_line": "error: something",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": [[0, 5]]
+                },
+                {
+                    "matching_line": "ERROR: something",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": [[0, 5]]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "$\\t",
+                "literal_pattern": true,
+                "content": "$\\t is a tab"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "$\\t is a tab",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [[0, 3]]
+                }
+            ]
+        }
+    ]
+}

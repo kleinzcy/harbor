@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "imports": [],
+  "functions": [
+    "__init__",
+    "bark"
+  ],
+  "classes": [
+    "Animal",
+    "Dog",
+    "Cat"
+  ],
+  "docstrings": [],
+  "has_docstring": false,
+  "has_print": true,
+  "total_elements": 5
+}

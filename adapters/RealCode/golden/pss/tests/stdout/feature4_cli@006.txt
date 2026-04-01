@@ -1,0 +1,21 @@
+{
+  "pattern": "-help",
+  "roots": [
+    "."
+  ],
+  "ignore_case": false,
+  "smart_case": false,
+  "whole_words": false,
+  "invert_match": false,
+  "literal_pattern": false,
+  "max_match_count": null,
+  "only_find_files": false,
+  "include_types": [],
+  "exclude_types": [],
+  "recurse": true,
+  "textonly": false,
+  "ncontext_before": 0,
+  "ncontext_after": 0,
+  "color": true,
+  "json": false
+}

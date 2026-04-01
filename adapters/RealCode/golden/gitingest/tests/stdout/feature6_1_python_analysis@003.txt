@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "imports": [],
+  "functions": [
+    "outer",
+    "inner"
+  ],
+  "classes": [],
+  "docstrings": [],
+  "has_docstring": false,
+  "has_print": false,
+  "total_elements": 2
+}

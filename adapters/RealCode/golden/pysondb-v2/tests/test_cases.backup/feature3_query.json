@@ -1,0 +1,21 @@
+{
+    "description": "Advanced querying and selective field retrieval",
+    "cases": [
+        {
+            "input": {"operation": "get_by_query", "query": "lambda x: x['age'] > 30"},
+            "expected_output": {"status": "success", "match_count": 2}
+        },
+        {
+            "input": {"operation": "get_by_query", "query": "lambda x: x['age'] > 30 and 'example.com' in x['email']"},
+            "expected_output": {"status": "success", "match_count": 1}
+        },
+        {
+            "input": {"operation": "get_all_select_keys", "keys": ["name", "email"]},
+            "expected_output": {"status": "success", "has_age": false, "has_name": true}
+        },
+        {
+            "input": {"operation": "get_all_select_keys", "keys": ["invalid_key"]},
+            "expected_output": {"status": "error", "error_type": "UnknownKeyError"}
+        }
+    ]
+}

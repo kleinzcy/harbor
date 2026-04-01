@@ -182,7 +182,12 @@ class SWEBenchToHarbor:
         paths.test_sh_path.chmod(0o755)
 
         # environment/Dockerfile
-        docker_image = self.id_to_docker_image[rec.instance_id]
+        docker_image = self.id_to_docker_image.get(rec.instance_id)
+        if docker_image is None:
+            raise ValueError(
+                f"No Docker image found for instance {rec.instance_id!r}; "
+                "make_test_spec likely failed for this instance"
+            )
         dockerfile_tpl = read_text(self.t_dockerfile)
         dockerfile = render_literal(dockerfile_tpl, docker_image=docker_image)
         paths.dockerfile_path.write_text(dockerfile)

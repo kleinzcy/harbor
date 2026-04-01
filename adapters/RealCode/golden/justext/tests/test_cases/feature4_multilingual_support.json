@@ -1,0 +1,17 @@
+{
+    "description": "Support for multiple languages through stopword lists",
+    "cases": [
+        {
+            "input": "English",
+            "expected_output": "[\"the\", \"and\", \"is\", \"in\", \"to\", \"of\", \"a\", \"that\", \"it\", \"for\"]"
+        },
+        {
+            "input": "German",
+            "expected_output": "[\"der\", \"die\", \"das\", \"und\", \"in\", \"den\", \"von\", \"zu\", \"mit\", \"sich\"]"
+        },
+        {
+            "input": "French",
+            "expected_output": "[\"le\", \"la\", \"les\", \"de\", \"un\", \"une\", \"des\", \"et\", \"en\", \"à\"]"
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+{
+    "description": "Advanced querying and selective field retrieval",
+    "cases": [
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Alice",
+                    "age": 30,
+                    "email": "alice@example.com"
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "id_length": 18
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Bob",
+                    "age": 25,
+                    "email": "bob@example.com"
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "id_length": 18
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Charlie",
+                    "age": 35,
+                    "email": "charlie@example.com"
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "id_length": 18
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "David",
+                    "age": 40,
+                    "email": "david@other.com"
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "id_length": 18
+            }
+        },
+        {
+            "input": {
+                "operation": "get_by_query",
+                "query": "lambda x: x['age'] > 30"
+            },
+            "expected_output": {
+                "status": "success",
+                "match_count": 2
+            }
+        },
+        {
+            "input": {
+                "operation": "get_by_query",
+                "query": "lambda x: x['age'] > 30 and 'example.com' in x['email']"
+            },
+            "expected_output": {
+                "status": "success",
+                "match_count": 1
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all_select_keys",
+                "keys": [
+                    "name",
+                    "email"
+                ]
+            },
+            "expected_output": {
+                "status": "success",
+                "has_age": false,
+                "has_name": true
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all_select_keys",
+                "keys": [
+                    "invalid_key"
+                ]
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "get_by_query",
+                "query": "lambda x: x['nonexistent'] > 0"
+            },
+            "expected_output": {
+                "status": "success",
+                "match_count": 0
+            }
+        },
+        {
+            "input": {
+                "operation": "get_by_query",
+                "query": "lambda x: False"
+            },
+            "expected_output": {
+                "status": "success",
+                "match_count": 0
+            }
+        },
+        {
+            "input": {
+                "operation": "get_by_query",
+                "query": "lambda x: x['age'] == 25 or x['age'] == 40"
+            },
+            "expected_output": {
+                "status": "success",
+                "match_count": 2
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all_select_keys",
+                "keys": []
+            },
+            "expected_output": {
+                "status": "success",
+                "has_age": false,
+                "has_name": false
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all_select_keys",
+                "keys": [
+                    "name",
+                    "age",
+                    "name"
+                ]
+            },
+            "expected_output": {
+                "status": "success",
+                "has_age": true,
+                "has_name": true
+            }
+        }
+    ]
+}

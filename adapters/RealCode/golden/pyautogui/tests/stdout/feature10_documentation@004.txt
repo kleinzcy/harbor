@@ -1,0 +1,8 @@
+{
+  "all_constants_defined": true,
+  "constants_defined": [
+    true,
+    true,
+    true
+  ]
+}

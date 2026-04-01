@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "imports": [
+    "os",
+    "sys"
+  ],
+  "functions": [
+    "hello",
+    "add"
+  ],
+  "classes": [
+    "Calculator"
+  ],
+  "docstrings": [
+    {
+      "type": "function",
+      "name": "hello",
+      "docstring": "Say hello"
+    }
+  ],
+  "has_docstring": true,
+  "has_print": true,
+  "total_elements": 5
+}

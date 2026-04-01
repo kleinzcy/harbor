@@ -1,0 +1,25 @@
+{
+    "description": "Test configuration file parsing and extraction",
+    "cases": [
+        {
+            "input": {
+                "format": "json",
+                "content": "{\"name\": \"project\", \"version\": \"1.0.0\", \"dependencies\": {\"requests\": \"^2.28.0\"}}"
+            },
+            "expected_output": {
+                "keys": ["name", "version", "dependencies"],
+                "values": ["project", "1.0.0", {"requests": "^2.28.0"}]
+            }
+        },
+        {
+            "input": {
+                "format": "yaml",
+                "content": "name: project\nversion: 1.0.0\ndependencies:\n  - requests\n  - pytest"
+            },
+            "expected_output": {
+                "keys": ["name", "version", "dependencies"],
+                "values": ["project", "1.0.0", ["requests", "pytest"]]
+            }
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+  "output_file_columns": [
+    "series",
+    "val__mean",
+    "val__variance",
+    "val__length",
+    "val__time_stretch"
+  ],
+  "row_count": 2
+}

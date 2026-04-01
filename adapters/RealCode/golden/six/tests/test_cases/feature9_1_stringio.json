@@ -1,0 +1,29 @@
+{
+    "description": "Given a text string, write it to an in-memory text buffer, read it back, and print it.",
+    "cases": [
+        {
+            "input": "hello world",
+            "expected_output": "hello world"
+        },
+        {
+            "input": "goodbye",
+            "expected_output": "goodbye"
+        },
+        {
+            "input": "test 123",
+            "expected_output": "test 123"
+        },
+        {
+            "input": "Python buffer",
+            "expected_output": "Python buffer"
+        },
+        {
+            "input": "a",
+            "expected_output": "a"
+        },
+        {
+            "input": "line of text",
+            "expected_output": "line of text"
+        }
+    ]
+}

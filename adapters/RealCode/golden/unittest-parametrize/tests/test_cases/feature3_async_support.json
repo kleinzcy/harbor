@@ -1,0 +1,58 @@
+{
+  "description": "Parameterization of asynchronous test methods",
+  "cases": [
+    {
+      "input": {
+        "argnames": "delay,multiplier",
+        "argvalues": [
+          [
+            0.001,
+            2
+          ],
+          [
+            0.002,
+            3
+          ],
+          [
+            0.003,
+            4
+          ]
+        ],
+        "async": true
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_async_operation_0",
+          "test_async_operation_1",
+          "test_async_operation_2"
+        ],
+        "async": true
+      }
+    },
+    {
+      "input": {
+        "argnames": "value",
+        "argvalues": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "async": true
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_async_values_0",
+          "test_async_values_1",
+          "test_async_values_2"
+        ],
+        "async": true
+      }
+    }
+  ]
+}

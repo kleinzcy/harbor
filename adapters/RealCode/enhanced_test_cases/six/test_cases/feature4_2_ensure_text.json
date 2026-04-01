@@ -1,0 +1,69 @@
+{
+    "description": "Given a bytes literal as a string (e.g. b'hello'), decode it and print the resulting text.",
+    "cases": [
+        {
+            "input": "b'hello'",
+            "expected_output": "hello"
+        },
+        {
+            "input": "b'world'",
+            "expected_output": "world"
+        },
+        {
+            "input": "b'test 123'",
+            "expected_output": "test 123"
+        },
+        {
+            "input": "b'Python'",
+            "expected_output": "Python"
+        },
+        {
+            "input": "b'42'",
+            "expected_output": "42"
+        },
+        {
+            "input": "b'a'",
+            "expected_output": "a"
+        },
+        {
+            "input": "b''",
+            "expected_output": ""
+        },
+        {
+            "input": "b'   '",
+            "expected_output": "   "
+        },
+        {
+            "input": "b'quote\\'inside'",
+            "expected_output": "quote'inside"
+        },
+        {
+            "input": "b'line\\nbreak'",
+            "expected_output": "line\nbreak"
+        },
+        {
+            "input": "b'\\\\'",
+            "expected_output": "\\"
+        },
+        {
+            "input": "b'\"'",
+            "expected_output": "\""
+        },
+        {
+            "input": "invalid bytes literal",
+            "expected_output": "invalid bytes literal"
+        },
+        {
+            "input": "b'hello",
+            "expected_output": "b'hello"
+        },
+        {
+            "input": "b'\\x00\\x01'",
+            "expected_output": "\u0000\u0001"
+        },
+        {
+            "input": "b'\\xc3\\xa9'",
+            "expected_output": "\u00e9"
+        }
+    ]
+}

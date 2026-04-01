@@ -1,0 +1,119 @@
+{
+    "description": "Test configuration file parsing and extraction - enhanced",
+    "cases": [
+        {
+            "input": {
+                "format": "json",
+                "content": "{\"name\": \"project\", \"version\": \"1.0.0\", \"dependencies\": {\"requests\": \"^2.28.0\"}}"
+            },
+            "expected_output": {
+                "keys": ["name", "version", "dependencies"],
+                "values": ["project", "1.0.0", {"requests": "^2.28.0"}]
+            }
+        },
+        {
+            "input": {
+                "format": "yaml",
+                "content": "name: project\nversion: 1.0.0\ndependencies:\n  - requests\n  - pytest"
+            },
+            "expected_output": {
+                "keys": ["name", "version", "dependencies"],
+                "values": ["project", "1.0.0", ["requests", "pytest"]]
+            }
+        },
+        {
+            "input": {
+                "format": "toml",
+                "content": "name = \"project\"\nversion = \"1.0.0\"\n\n[dependencies]\nrequests = \"^2.28.0\"\npytest = \"^7.0.0\""
+            },
+            "expected_output": {
+                "success": true,
+                "format": "toml",
+                "key_count": 3
+            }
+        },
+        {
+            "input": {
+                "format": "ini",
+                "content": "[database]\nhost = localhost\nport = 3306\n\n[server]\nport = 8080\nhostname = example.com"
+            },
+            "expected_output": {
+                "success": true,
+                "format": "ini",
+                "keys": ["database", "server"],
+                "key_count": 2
+            }
+        },
+        {
+            "input": {
+                "format": "json",
+                "content": "{}"
+            },
+            "expected_output": {
+                "keys": [],
+                "values": [],
+                "key_count": 0
+            }
+        },
+        {
+            "input": {
+                "format": "json",
+                "content": "{\"nested\": {\"inner\": {\"key\": \"value\"}}, \"list\": [1,2,3]}"
+            },
+            "expected_output": {
+                "keys": ["nested", "list"],
+                "key_count": 2
+            }
+        },
+        {
+            "input": {
+                "format": "json",
+                "content": "invalid json"
+            },
+            "expected_output": {
+                "success": false
+            }
+        },
+        {
+            "input": {
+                "format": "yaml",
+                "content": ""
+            },
+            "expected_output": {
+                "success": true,
+                "keys": [],
+                "key_count": 0
+            }
+        },
+        {
+            "input": {
+                "format": "yaml",
+                "content": "- item1\n- item2\n- item3"
+            },
+            "expected_output": {
+                "success": true,
+                "keys": [],
+                "key_count": 0
+            }
+        },
+        {
+            "input": {
+                "format": "ini",
+                "content": "[section]\nkey = value\nanother = 123"
+            },
+            "expected_output": {
+                "keys": ["section"],
+                "key_count": 1
+            }
+        },
+        {
+            "input": {
+                "format": "unsupported",
+                "content": "anything"
+            },
+            "expected_output": {
+                "success": false
+            }
+        }
+    ]
+}

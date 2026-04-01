@@ -1,0 +1,60 @@
+{
+  "description": "Select features relevant to a binary target variable",
+  "cases": [
+    {
+      "input": {
+        "X": {
+          "feature1": [
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ],
+          "feature2": [
+            0.1,
+            0.2,
+            0.3,
+            0.4
+          ],
+          "feature3": [
+            10,
+            20,
+            30,
+            40
+          ]
+        },
+        "y": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "fdr_level": 0.05,
+        "ml_task": "classification"
+      },
+      "expected_output": {
+        "selected_features": [
+          "feature1",
+          "feature3"
+        ],
+        "relevance_table": [
+          {
+            "feature": "feature1",
+            "p_value": 0.02,
+            "relevant": true
+          },
+          {
+            "feature": "feature2",
+            "p_value": 0.8,
+            "relevant": false
+          },
+          {
+            "feature": "feature3",
+            "p_value": 0.01,
+            "relevant": true
+          }
+        ]
+      }
+    }
+  ]
+}

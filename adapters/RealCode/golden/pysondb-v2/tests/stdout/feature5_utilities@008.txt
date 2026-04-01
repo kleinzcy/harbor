@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "structure": {
+    "version": 2,
+    "keys": [],
+    "data": {}
+  }
+}

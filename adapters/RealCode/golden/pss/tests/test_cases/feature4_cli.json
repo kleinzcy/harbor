@@ -1,0 +1,82 @@
+{
+    "description": "Command‑line argument parsing into pss_run parameters",
+    "cases": [
+        {
+            "input": ["-i", "-w", "hello", "./src"],
+            "expected_output": {
+                "pattern": "hello",
+                "ignore_case": true,
+                "whole_words": true,
+                "roots": ["./src"],
+                "only_find_files": false,
+                "include_types": [],
+                "exclude_types": [],
+                "recurse": true,
+                "textonly": false,
+                "ncontext_before": 0,
+                "ncontext_after": 0,
+                "smart_case": false,
+                "invert_match": false,
+                "literal_pattern": false
+            }
+        },
+        {
+            "input": ["--python", "--cpp", "-f", "./project"],
+            "expected_output": {
+                "pattern": null,
+                "only_find_files": true,
+                "roots": ["./project"],
+                "include_types": ["python", "cpp"],
+                "exclude_types": [],
+                "recurse": true,
+                "textonly": false,
+                "ignore_case": false,
+                "whole_words": false,
+                "smart_case": false,
+                "invert_match": false
+            }
+        },
+        {
+            "input": ["-C", "3", "-v", "error", "dir1", "dir2"],
+            "expected_output": {
+                "pattern": "error",
+                "roots": ["dir1", "dir2"],
+                "ncontext_before": 3,
+                "ncontext_after": 3,
+                "invert_match": true,
+                "only_find_files": false,
+                "include_types": [],
+                "exclude_types": [],
+                "ignore_case": false,
+                "smart_case": false
+            }
+        },
+        {
+            "input": ["--literal", "-m", "5", "pattern", "."],
+            "expected_output": {
+                "pattern": "pattern",
+                "literal_pattern": true,
+                "max_match_count": 5,
+                "roots": ["."],
+                "only_find_files": false,
+                "ignore_case": false,
+                "smart_case": false,
+                "whole_words": false
+            }
+        },
+        {
+            "input": ["-s", "Error", "./src"],
+            "expected_output": {
+                "pattern": "Error",
+                "smart_case": true,
+                "roots": ["./src"],
+                "only_find_files": false,
+                "include_types": [],
+                "exclude_types": [],
+                "ignore_case": false,
+                "whole_words": false,
+                "invert_match": false
+            }
+        }
+    ]
+}

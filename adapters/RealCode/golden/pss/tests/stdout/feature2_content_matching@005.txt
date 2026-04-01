@@ -1,0 +1,12 @@
+[
+  {
+    "matching_line": "$\\t is a tab",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        3
+      ]
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+# GitIngest Requirements
+
+# Core dependencies
+pyyaml>=6.0
+
+# TOML parsing (for Python < 3.11)
+tomli>=2.0.1; python_version < '3.11'
+
+# Optional web dependencies
+flask>=2.0
+flask-cors>=3.0
+
+# Development dependencies
+pytest>=7.0
+pytest-cov>=4.0
+black>=23.0
+flake8>=6.0
+mypy>=1.0

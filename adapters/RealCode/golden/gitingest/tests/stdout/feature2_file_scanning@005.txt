@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "error": "[Errno 2] No such file or directory: '/tmp/test-nested/dir1/file1.py'",
+  "files_found": 0,
+  "contains_python": false,
+  "contains_text": false
+}

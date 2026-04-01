@@ -1,0 +1,33 @@
+{
+  "description": "Compatibility with unittest ecosystem",
+  "cases": [
+    {
+      "input": {
+        "test_class": "MixedTestSuite",
+        "methods": [
+          "test_traditional",
+          "@parametrize test_parametrized",
+          "test_another_traditional"
+        ]
+      },
+      "expected_output": {
+        "runs_with": [
+          "unittest",
+          "pytest",
+          "Django"
+        ],
+        "non_parametrized_work": true
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": []
+      },
+      "expected_output": {
+        "generated_methods": [],
+        "original_method_removed": true
+      }
+    }
+  ]
+}

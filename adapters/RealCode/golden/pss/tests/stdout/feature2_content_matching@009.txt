@@ -1,0 +1,12 @@
+[
+  {
+    "matching_line": "error Error ERROR",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        6,
+        11
+      ]
+    ]
+  }
+]

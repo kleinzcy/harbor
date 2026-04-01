@@ -1,0 +1,12 @@
+{
+    "description": "No input required. The program detects the running Python version and prints the corresponding label.",
+    "cases": [
+        {
+            "input": "",
+            "expected_output": [
+                "Python 2",
+                "Python 3"
+            ]
+        }
+    ]
+}

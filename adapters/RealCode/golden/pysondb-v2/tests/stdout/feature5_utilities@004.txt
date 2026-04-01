@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "merged_keys": [
+    "name",
+    "age"
+  ],
+  "total_records": 2
+}

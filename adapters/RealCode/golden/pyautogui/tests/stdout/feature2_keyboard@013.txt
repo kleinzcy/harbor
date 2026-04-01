@@ -1,0 +1,4 @@
+{
+  "success": true,
+  "combination_recognized": true
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "matching_line": "aaa",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  }
+]

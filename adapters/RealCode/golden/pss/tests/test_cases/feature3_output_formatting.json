@@ -1,0 +1,44 @@
+{
+    "description": "OutputFormatter callbacks and default colored output",
+    "cases": [
+        {
+            "input": {
+                "formatter": "default",
+                "actions": [
+                    {"type": "start_matches_in_file", "filename": "src/main.py"},
+                    {"type": "matching_line", "matchresult": {"matching_line": "def example():", "matching_lineno": 10, "matching_column_ranges": [[0, 3]]}, "filename": "src/main.py"},
+                    {"type": "context_line", "line": "import sys", "lineno": 9, "filename": "src/main.py"},
+                    {"type": "end_matches_in_file", "filename": "src/main.py"}
+                ],
+                "colors": false
+            },
+            "expected_output": "src/main.py\n10:def example():\n 9:import sys"
+        },
+        {
+            "input": {
+                "formatter": "json",
+                "actions": [
+                    {"type": "start_matches_in_file", "filename": "src/main.py"},
+                    {"type": "matching_line", "matchresult": {"matching_line": "def example():", "matching_lineno": 10, "matching_column_ranges": [[0, 3]]}, "filename": "src/main.py"},
+                    {"type": "end_matches_in_file", "filename": "src/main.py"}
+                ]
+            },
+            "expected_output": {
+                "file": "src/main.py",
+                "matches": [
+                    {"line": 10, "content": "def example():", "columns": [[0, 3]]}
+                ]
+            }
+        },
+        {
+            "input": {
+                "formatter": "default",
+                "actions": [
+                    {"type": "found_filename", "filename": "src/utils.py"}
+                ],
+                "colors": true
+            },
+            "expected_output": "\u001b[36msrc/utils.py\u001b[0m"
+        }
+    ]
+}

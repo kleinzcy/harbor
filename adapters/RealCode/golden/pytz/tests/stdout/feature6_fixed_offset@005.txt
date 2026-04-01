@@ -1,0 +1,1 @@
+{"formatted": "2002-10-27 06:00:00 +14:00 (+1400)", "utcoffset": "14:00:00", "dst": "0:00:00", "repr": "pytz.FixedOffset(840)"}

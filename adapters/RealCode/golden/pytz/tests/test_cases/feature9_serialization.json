@@ -1,0 +1,29 @@
+{
+    "description": "Test pickle serialization and deserialization of timezone objects, verifying singleton preservation.",
+    "cases": [
+        {
+            "input": {"zone": "US/Eastern"},
+            "expected_output": {"same_object_after_roundtrip": true, "zone": "US/Eastern"}
+        },
+        {
+            "input": {"zone": "UTC"},
+            "expected_output": {"same_object_after_roundtrip": true, "zone": "UTC"}
+        },
+        {
+            "input": {"zone": "Asia/Shanghai"},
+            "expected_output": {"same_object_after_roundtrip": true, "zone": "Asia/Shanghai"}
+        },
+        {
+            "input": {"zone": "GMT"},
+            "expected_output": {"same_object_after_roundtrip": true, "zone": "GMT"}
+        },
+        {
+            "input": {"type": "FixedOffset", "offset_minutes": 480},
+            "expected_output": {"same_object_after_roundtrip": true, "repr": "pytz.FixedOffset(480)"}
+        },
+        {
+            "input": {"zone": "UTC", "check": "compact_serialization"},
+            "expected_output": {"utc_smaller_than_dst": true}
+        }
+    ]
+}

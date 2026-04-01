@@ -1,0 +1,1 @@
+{"width": 320, "height": 240, "roi_shape": [120, 320], "format": "gray"}

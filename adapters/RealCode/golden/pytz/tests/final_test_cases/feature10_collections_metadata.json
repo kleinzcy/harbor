@@ -1,0 +1,128 @@
+{
+  "description": "Test timezone name collections (all_timezones, common_timezones) and version metadata.",
+  "cases": [
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "US/Eastern"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "Asia/Shanghai"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "UTC"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "min_length"
+      },
+      "expected_output": 10
+    },
+    {
+      "input": {
+        "collection": "common_timezones",
+        "check": "contains",
+        "value": "US/Eastern"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "common_timezones",
+        "check": "is_list"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "attribute": "__version__",
+        "check": "is_string"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "attribute": "OLSON_VERSION",
+        "check": "is_string"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "Europe/London"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "Australia/Sydney"
+      },
+      "expected_output": false
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "America/Los_Angeles"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "all_timezones",
+        "check": "contains",
+        "value": "Pacific/Auckland"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "common_timezones",
+        "check": "contains",
+        "value": "Europe/London"
+      },
+      "expected_output": true
+    },
+    {
+      "input": {
+        "collection": "common_timezones",
+        "check": "contains",
+        "value": "Australia/Sydney"
+      },
+      "expected_output": false
+    },
+    {
+      "input": {
+        "collection": "common_timezones",
+        "check": "contains",
+        "value": "America/Los_Angeles"
+      },
+      "expected_output": false
+    },
+    {
+      "input": {
+        "collection": "common_timezones",
+        "check": "min_length"
+      },
+      "expected_output": false
+    }
+  ]
+}

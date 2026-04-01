@@ -1,0 +1,13 @@
+{
+    "description": "Given a section and key separated by a space, look up and print the value from a built-in in-memory config. The config contains: [server] host=localhost, port=8080.",
+    "cases": [
+        {
+            "input": "server host",
+            "expected_output": "localhost"
+        },
+        {
+            "input": "server port",
+            "expected_output": "8080"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "error": "[Errno 2] No such file or directory: '/tmp/test-ignore-dir/include/file.py'",
+  "files_found": 0,
+  "contains_python": false,
+  "contains_text": false
+}

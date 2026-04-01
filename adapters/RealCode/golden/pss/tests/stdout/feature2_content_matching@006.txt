@@ -1,0 +1,62 @@
+[
+  {
+    "matching_line": "hello",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ]
+    ]
+  },
+  {
+    "matching_line": "world",
+    "matching_lineno": 2,
+    "matching_column_ranges": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ]
+    ]
+  }
+]

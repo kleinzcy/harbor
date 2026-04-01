@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "imports": [],
+  "functions": [],
+  "classes": [],
+  "has_docstring": false,
+  "has_print": false,
+  "regex_fallback": true
+}

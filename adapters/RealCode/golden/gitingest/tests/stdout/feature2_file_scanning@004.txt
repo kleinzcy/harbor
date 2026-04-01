@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "Path does not exist: /tmp/test-empty",
+  "files_found": 0,
+  "files": []
+}

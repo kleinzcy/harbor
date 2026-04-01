@@ -1,0 +1,83 @@
+{
+    "description": "Test Git hook installation and execution",
+    "cases": [
+        {
+            "input": {
+                "action": "install",
+                "complexity": 10,
+                "strict": true
+            },
+            "expected_output": {
+                "hook_installed": true
+            }
+        },
+        {
+            "input": {
+                "action": "run",
+                "staged_files": ["bad.py"]
+            },
+            "expected_output": {
+                "errors_found": 2,
+                "commit_blocked": true
+            }
+        },
+        {
+            "input": {
+                "action": "install",
+                "complexity": 0,
+                "strict": false
+            },
+            "expected_output": {
+                "hook_installed": true
+            }
+        },
+        {
+            "input": {
+                "action": "install",
+                "complexity": 5,
+                "strict": false
+            },
+            "expected_output": {
+                "hook_installed": true
+            }
+        },
+        {
+            "input": {
+                "action": "run",
+                "staged_files": []
+            },
+            "expected_output": {
+                "errors_found": 0,
+                "commit_blocked": false
+            }
+        },
+        {
+            "input": {
+                "action": "run",
+                "staged_files": ["bad.py"],
+                "strict": false
+            },
+            "expected_output": {
+                "errors_found": 2,
+                "commit_blocked": false
+            }
+        },
+        {
+            "input": {
+                "action": "run",
+                "staged_files": [],
+                "strict": true
+            },
+            "expected_output": {
+                "errors_found": 0,
+                "commit_blocked": false
+            }
+        },
+        {
+            "input": {
+                "action": "unknown"
+            },
+            "expected_output": {}
+        }
+    ]
+}

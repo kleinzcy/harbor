@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-exact-size",
+  "files_found": 1,
+  "total_size": 10,
+  "file_types": {
+    ".txt": 1
+  },
+  "files": [
+    {
+      "path": "exact.txt",
+      "size": 10,
+      "truncated": false,
+      "extension": ".txt",
+      "content": "0123456789"
+    }
+  ],
+  "contains_python": false,
+  "contains_text": true
+}

@@ -1,0 +1,58 @@
+{
+    "description": "Verify that multiple linters can be registered and executed correctly",
+    "cases": [
+        {
+            "input": {
+                "linters": [
+                    "pycodestyle",
+                    "pyflakes"
+                ],
+                "code": "def foo(): pass"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "linters": [
+                    "pycodestyle"
+                ],
+                "code": "x=1"
+            },
+            "expected_output": [
+                {
+                    "source": "pycodestyle",
+                    "type": "E",
+                    "number": "E225"
+                }
+            ]
+        },
+        {
+            "input": {
+                "linters": [],
+                "code": ""
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "linters": ["unknown"],
+                "code": "x = 1"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "linters": ["pycodestyle", "pyflakes", "mccabe"],
+                "code": "def bar():\n    pass"
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "linters": ["pycodestyle"],
+                "code": "x = 1  # no error"
+            },
+            "expected_output": []
+        }
+    ]
+}

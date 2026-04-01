@@ -1,0 +1,6 @@
+{
+  "x_within_screen": true,
+  "y_within_screen": true,
+  "x": 0,
+  "y": 0
+}

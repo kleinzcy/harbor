@@ -1,0 +1,29 @@
+{
+    "description": "Given a plain ASCII string, encode to bytes, write to a binary buffer, read back, decode, and print.",
+    "cases": [
+        {
+            "input": "hello",
+            "expected_output": "hello"
+        },
+        {
+            "input": "data",
+            "expected_output": "data"
+        },
+        {
+            "input": "test",
+            "expected_output": "test"
+        },
+        {
+            "input": "binary",
+            "expected_output": "binary"
+        },
+        {
+            "input": "a",
+            "expected_output": "a"
+        },
+        {
+            "input": "12345",
+            "expected_output": "12345"
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+{
+    "description": "Basic CRUD operations with single and multiple records",
+    "cases": [
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Alice",
+                    "age": 30
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "id_length": 18
+            }
+        },
+        {
+            "input": {
+                "operation": "add_many",
+                "data": [
+                    {
+                        "name": "Bob",
+                        "age": 25
+                    },
+                    {
+                        "name": "Charlie",
+                        "age": 35
+                    }
+                ]
+            },
+            "expected_output": {
+                "status": "success",
+                "count": 2
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all"
+            },
+            "expected_output": {
+                "status": "success",
+                "count": 3
+            }
+        },
+        {
+            "input": {
+                "operation": "get_by_id",
+                "id": "123456789012345678"
+            },
+            "expected_output": {
+                "status": "success",
+                "data_contains": {
+                    "name": "Alice"
+                }
+            }
+        },
+        {
+            "input": {
+                "operation": "update_by_id",
+                "id": "123456789012345678",
+                "new_data": {
+                    "age": 31
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "updated_age": 31
+            }
+        },
+        {
+            "input": {
+                "operation": "delete_by_id",
+                "id": "123456789012345678"
+            },
+            "expected_output": {
+                "status": "success",
+                "remaining_count": 2
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {}
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "age": 40
+                }
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "David"
+                }
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Eve",
+                    "age": 50,
+                    "extra": "value"
+                }
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "add",
+                "data": {
+                    "name": "Frank",
+                    "age": 60
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "id_length": 18
+            }
+        },
+        {
+            "input": {
+                "operation": "get_all"
+            },
+            "expected_output": {
+                "status": "success",
+                "count": 3
+            }
+        },
+        {
+            "input": {
+                "operation": "update_by_id",
+                "id": "placeholder",
+                "new_data": {
+                    "unknown_field": "value"
+                }
+            },
+            "expected_output": {
+                "status": "error",
+                "error_type": "UnknownKeyError"
+            }
+        },
+        {
+            "input": {
+                "operation": "update_by_id",
+                "id": "placeholder",
+                "new_data": {
+                    "age": 65
+                }
+            },
+            "expected_output": {
+                "status": "success",
+                "updated_age": 65
+            }
+        },
+        {
+            "input": {
+                "operation": "delete_by_id",
+                "id": "placeholder"
+            },
+            "expected_output": {
+                "status": "success",
+                "remaining_count": 2
+            }
+        }
+    ]
+}

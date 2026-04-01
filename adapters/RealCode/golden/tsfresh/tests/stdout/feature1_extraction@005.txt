@@ -1,0 +1,14 @@
+{
+  "columns": [
+    "value__mean",
+    "value__variance",
+    "value__length",
+    "value__time_stretch"
+  ],
+  "1": [
+    4.5,
+    9.166666666666666,
+    10.0,
+    1.0
+  ]
+}

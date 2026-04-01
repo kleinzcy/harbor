@@ -1,0 +1,37 @@
+{
+    "description": "Test serial command mapping for steering predictions",
+    "cases": [
+        {
+            "input": {
+                "prediction": 2
+            },
+            "expected_output": {
+                "command": "forward"
+            }
+        },
+        {
+            "input": {
+                "prediction": 0
+            },
+            "expected_output": {
+                "command": "left"
+            }
+        },
+        {
+            "input": {
+                "prediction": 1
+            },
+            "expected_output": {
+                "command": "right"
+            }
+        },
+        {
+            "input": {
+                "prediction": 3
+            },
+            "expected_output": {
+                "command": "stop"
+            }
+        }
+    ]
+}

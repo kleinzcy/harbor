@@ -1,0 +1,59 @@
+{
+    "description": "Test stop sign detection in grayscale image",
+    "cases": [
+        {
+            "input": {
+                "cascade_file": "stop_sign.xml",
+                "image": "grayscale_array"
+            },
+            "expected_output": {
+                "detected": true,
+                "v_param": 150
+            }
+        },
+        {
+            "input": {
+                "cascade_file": "stop_sign.xml",
+                "image": "empty_gray_array"
+            },
+            "expected_output": {
+                "detected": false,
+                "v_param": 0
+            }
+        },
+        {
+            "input": "",
+            "expected_output": {"error": "No input provided"}
+        },
+        {
+            "input": "{",
+            "expected_output": {"error": "Invalid JSON input"}
+        },
+        {
+            "input": {},
+            "expected_output": {"error": "Missing cascade_file parameter"}
+        },
+        {
+            "input": {"cascade_file": "stop_sign.xml"},
+            "expected_output": {
+                "detected": true,
+                "v_param": 100
+            }
+        },
+        {
+            "input": {"cascade_file": "stop_sign.xml", "image": "unknown_image"},
+            "expected_output": {
+                "detected": true,
+                "v_param": 100
+            }
+        },
+        {
+            "input": {"cascade_file": "unknown.xml", "image": "grayscale_array"},
+            "expected_output": {"error": "Unknown cascade file: unknown.xml"}
+        },
+        {
+            "input": {"image": "grayscale_array"},
+            "expected_output": {"error": "Missing cascade_file parameter"}
+        }
+    ]
+}

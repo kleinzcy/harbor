@@ -1,0 +1,155 @@
+{
+    "description": "Test country timezone lookup by ISO 3166 country code with case-insensitive matching.",
+    "cases": [
+        {
+            "input": {
+                "country_code": "us"
+            },
+            "expected_output": {
+                "contains": [
+                    "America/New_York",
+                    "America/Chicago",
+                    "America/Denver",
+                    "America/Los_Angeles"
+                ],
+                "min_length": 5
+            }
+        },
+        {
+            "input": {
+                "country_code": "nz"
+            },
+            "expected_output": {
+                "exact": [
+                    "Pacific/Auckland",
+                    "Pacific/Chatham"
+                ]
+            }
+        },
+        {
+            "input": {
+                "country_code": "CH"
+            },
+            "expected_output": {
+                "exact": [
+                    "Europe/Zurich"
+                ]
+            }
+        },
+        {
+            "input": {
+                "country_code": "cn"
+            },
+            "expected_output": {
+                "contains": [
+                    "Asia/Shanghai"
+                ],
+                "min_length": 1
+            }
+        },
+        {
+            "input": {
+                "country_code": "gb"
+            },
+            "expected_output": {
+                "contains": [
+                    "Europe/London"
+                ]
+            }
+        },
+        {
+            "input": {
+                "country_code": "XX"
+            },
+            "expected_output": {
+                "error": "KeyError"
+            }
+        },
+        {
+            "input": {
+                "country_code": "Us"
+            },
+            "expected_output": {
+                "contains": [
+                    "America/New_York",
+                    "America/Chicago",
+                    "America/Denver",
+                    "America/Los_Angeles"
+                ],
+                "min_length": 5
+            }
+        },
+        {
+            "input": {
+                "country_code": "US"
+            },
+            "expected_output": {
+                "contains": [
+                    "America/New_York",
+                    "America/Chicago",
+                    "America/Denver",
+                    "America/Los_Angeles"
+                ],
+                "min_length": 5
+            }
+        },
+        {
+            "input": {
+                "country_code": ""
+            },
+            "expected_output": {
+                "error": "KeyError"
+            }
+        },
+        {
+            "input": {
+                "country_code": "123"
+            },
+            "expected_output": {
+                "error": "KeyError"
+            }
+        },
+        {
+            "input": {
+                "country_code": "ABC"
+            },
+            "expected_output": {
+                "error": "KeyError"
+            }
+        },
+        {
+            "input": {
+                "country_code": "au"
+            },
+            "expected_output": {
+                "contains": [
+                    "Australia/Sydney",
+                    "Australia/Melbourne",
+                    "Australia/Brisbane"
+                ],
+                "min_length": 5
+            }
+        },
+        {
+            "input": {
+                "country_code": "jp"
+            },
+            "expected_output": {
+                "exact": [
+                    "Asia/Tokyo"
+                ]
+            }
+        },
+        {
+            "input": {
+                "country_code": "ru"
+            },
+            "expected_output": {
+                "contains": [
+                    "Europe/Moscow"
+                ],
+                "min_length": 5
+            }
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+  "platform_in": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "platform": "darwin"
+}

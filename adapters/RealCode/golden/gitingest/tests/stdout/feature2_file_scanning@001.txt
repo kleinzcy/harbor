@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-filter",
+  "files_found": 1,
+  "total_size": 9,
+  "file_types": {
+    ".py": 1
+  },
+  "files": [
+    {
+      "path": "keep.py",
+      "size": 9,
+      "truncated": false,
+      "extension": ".py",
+      "content": "keep this"
+    }
+  ],
+  "contains_python": true,
+  "contains_text": false
+}

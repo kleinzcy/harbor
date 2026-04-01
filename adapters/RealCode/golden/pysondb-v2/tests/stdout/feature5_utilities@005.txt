@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "name 'SchemaTypeError' is not defined",
+  "error_type": "NameError"
+}

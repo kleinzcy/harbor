@@ -1,0 +1,13 @@
+{
+    "description": "Context-aware paragraph classification considering neighboring content",
+    "cases": [
+        {
+            "input": "<div><p>Long good paragraph with many words and sufficient length.</p><p>Short.</p><p>Another long good paragraph with adequate length.</p></div>",
+            "expected_output": "Long good paragraph with many words and sufficient length.\nShort.\nAnother long good paragraph with adequate length."
+        },
+        {
+            "input": "<div><nav><a>Link1</a><a>Link2</a></nav><p>Good content here</p><footer><a>Footer</a></footer></div>",
+            "expected_output": "Good content here"
+        }
+    ]
+}

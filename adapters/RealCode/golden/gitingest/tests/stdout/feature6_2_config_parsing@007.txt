@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "format": "yaml",
+  "data": {},
+  "keys": [],
+  "values": [],
+  "key_count": 0
+}

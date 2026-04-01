@@ -1,0 +1,85 @@
+{
+  "description": "Test direct conversion between non-UTC timezones.",
+  "cases": [
+    {
+      "input": {
+        "source_zone": "US/Eastern",
+        "source_datetime": "2002-10-27 06:00:00",
+        "target_zone": "Asia/Shanghai"
+      },
+      "expected_output": "2002-10-27 19:00:00 CST (+0800)"
+    },
+    {
+      "input": {
+        "source_zone": "US/Eastern",
+        "source_datetime": "2002-07-07 06:00:00",
+        "target_zone": "Asia/Shanghai"
+      },
+      "expected_output": "2002-07-07 18:00:00 CST (+0800)"
+    },
+    {
+      "input": {
+        "source_zone": "Asia/Shanghai",
+        "source_datetime": "2002-10-27 14:00:00",
+        "target_zone": "US/Eastern"
+      },
+      "expected_output": "2002-10-27 01:00:00 EST (-0500)"
+    },
+    {
+      "input": {
+        "source_zone": "Europe/London",
+        "source_datetime": "2002-07-07 12:00:00",
+        "target_zone": "US/Eastern"
+      },
+      "expected_output": "2002-07-07 07:00:00 EDT (-0400)"
+    },
+    {
+      "input": {
+        "source_zone": "Europe/London",
+        "source_datetime": "2002-10-27 12:00:00",
+        "target_zone": "Australia/Sydney"
+      },
+      "expected_output": "2002-10-27 23:00:00 EDT (+1100)"
+    },
+    {
+      "input": {
+        "source_zone": "Asia/Shanghai",
+        "source_datetime": "2002-10-27 14:00:00",
+        "target_zone": "America/Los_Angeles"
+      },
+      "expected_output": "2002-10-26 23:00:00 PDT (-0700)"
+    },
+    {
+      "input": {
+        "source_zone": "Pacific/Auckland",
+        "source_datetime": "2002-10-27 12:00:00",
+        "target_zone": "US/Eastern"
+      },
+      "expected_output": "2002-10-26 19:00:00 EDT (-0400)"
+    },
+    {
+      "input": {
+        "source_zone": "US/Eastern",
+        "source_datetime": "2002-10-27 06:00:00",
+        "target_zone": "US/Eastern"
+      },
+      "expected_output": "2002-10-27 06:00:00 EST (-0500)"
+    },
+    {
+      "input": {
+        "source_zone": "UTC",
+        "source_datetime": "2002-10-27 06:00:00",
+        "target_zone": "UTC"
+      },
+      "expected_output": "2002-10-27 06:00:00 UTC (+0000)"
+    },
+    {
+      "input": {
+        "source_zone": "GMT",
+        "source_datetime": "2002-10-27 06:00:00",
+        "target_zone": "GMT"
+      },
+      "expected_output": "2002-10-27 06:00:00 GMT (+0000)"
+    }
+  ]
+}

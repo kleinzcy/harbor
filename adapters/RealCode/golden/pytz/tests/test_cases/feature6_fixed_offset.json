@@ -1,0 +1,45 @@
+{
+    "description": "Test FixedOffset timezone creation, offset calculation, singleton caching, and datetime formatting.",
+    "cases": [
+        {
+            "input": {"offset_minutes": 480, "datetime": "2002-10-27 06:00:00"},
+            "expected_output": {
+                "formatted": "2002-10-27 06:00:00 (+0800)",
+                "utcoffset": "8:00:00",
+                "dst": "0:00:00",
+                "repr": "pytz.FixedOffset(480)"
+            }
+        },
+        {
+            "input": {"offset_minutes": -300, "datetime": "2002-10-27 06:00:00"},
+            "expected_output": {
+                "formatted": "2002-10-27 06:00:00 (-0500)",
+                "utcoffset": "-1 day, 19:00:00",
+                "dst": "0:00:00",
+                "repr": "pytz.FixedOffset(-300)"
+            }
+        },
+        {
+            "input": {"offset_minutes": 0, "datetime": "2002-10-27 06:00:00"},
+            "expected_output": {
+                "formatted": "2002-10-27 06:00:00 (+0000)",
+                "utcoffset": "0:00:00",
+                "dst": "0:00:00",
+                "repr": "pytz.FixedOffset(0)"
+            }
+        },
+        {
+            "input": {"offset_minutes": 540, "datetime": "2002-10-27 06:00:00"},
+            "expected_output": {
+                "formatted": "2002-10-27 06:00:00 (+0900)",
+                "utcoffset": "9:00:00",
+                "dst": "0:00:00",
+                "repr": "pytz.FixedOffset(540)"
+            }
+        },
+        {
+            "input": {"action": "singleton_check", "offset_minutes": 480},
+            "expected_output": {"same_object": true}
+        }
+    ]
+}

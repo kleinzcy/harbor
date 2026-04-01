@@ -1,0 +1,1 @@
+{"zone": "UTC", "type": "UTC", "is_pytz_utc": true}

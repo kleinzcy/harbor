@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "code": "import pandas as pd\nimport numpy as np\n\nprint('hello')\n\n# Output: hello\n\n# ## Section 1Details\n\n# ## Section 2",
+  "contains_import": true,
+  "contains_print": true,
+  "contains_output": true,
+  "contains_markdown": true,
+  "cell_count": 4,
+  "code_cells": 2,
+  "markdown_cells": 2
+}

@@ -1,0 +1,71 @@
+{
+    "description": "Test distance calculation from object pixel position",
+    "cases": [
+        {
+            "input": {
+                "v": 150,
+                "h": 5.5,
+                "x_shift": 300,
+                "image": "dummy_array"
+            },
+            "expected_output": {
+                "distance": 45.2
+            }
+        },
+        {
+            "input": {
+                "v": 200,
+                "h": 5.5,
+                "x_shift": 300,
+                "image": "dummy_array"
+            },
+            "expected_output": {
+                "distance": 32.1
+            }
+        },
+        {
+            "input": "",
+            "expected_output": {"error": "No input provided"}
+        },
+        {
+            "input": "{",
+            "expected_output": {"error": "Invalid JSON input"}
+        },
+        {
+            "input": {},
+            "expected_output": {"error": "Missing required parameter: v"}
+        },
+        {
+            "input": {"v": 150, "h": 5.5},
+            "expected_output": {"error": "Missing required parameter: x_shift"}
+        },
+        {
+            "input": {"v": "abc", "h": 5.5, "x_shift": 300},
+            "expected_output": {"error": "Invalid parameter type: could not convert string to float: 'abc'"}
+        },
+        {
+            "input": {"v": 0, "h": 5.5, "x_shift": 300},
+            "expected_output": {"distance": 0}
+        },
+        {
+            "input": {"v": -10, "h": 5.5, "x_shift": 300},
+            "expected_output": {"distance": 0}
+        },
+        {
+            "input": {"v": 100, "h": 5.5, "x_shift": 300},
+            "expected_output": {"distance": 68.7}
+        },
+        {
+            "input": {"v": 150, "h": 0, "x_shift": 300},
+            "expected_output": {"distance": 0}
+        },
+        {
+            "input": {"v": 150, "h": 5.5, "x_shift": 300, "image": "any"},
+            "expected_output": {"distance": 45.2}
+        },
+        {
+            "input": {"v": 150, "h": 5.5, "x_shift": 300, "extra": "field"},
+            "expected_output": {"distance": 45.2}
+        }
+    ]
+}

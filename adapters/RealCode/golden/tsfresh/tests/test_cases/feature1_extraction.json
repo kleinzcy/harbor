@@ -1,0 +1,87 @@
+{
+  "description": "Extract basic statistical features from a simple time series",
+  "cases": [
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            2
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length"
+        ],
+        "1": [
+          2.0,
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "time": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "value": [
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_value": "value",
+        "default_fc_parameters": "minimal"
+      },
+      "expected_output": {
+        "columns": [
+          "value__mean",
+          "value__variance",
+          "value__length"
+        ],
+        "1": [
+          1.5,
+          0.5,
+          2.0
+        ],
+        "2": [
+          3.5,
+          0.5,
+          2.0
+        ]
+      }
+    }
+  ]
+}

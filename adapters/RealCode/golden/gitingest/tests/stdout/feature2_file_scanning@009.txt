@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "local_path": "/tmp/test-hidden",
+  "files_found": 2,
+  "total_size": 13,
+  "file_types": {
+    "no_extension": 1,
+    ".txt": 1
+  },
+  "files": [
+    {
+      "path": ".hidden",
+      "size": 6,
+      "truncated": false,
+      "extension": "",
+      "content": "secret"
+    },
+    {
+      "path": "visible.txt",
+      "size": 7,
+      "truncated": false,
+      "extension": ".txt",
+      "content": "visible"
+    }
+  ],
+  "contains_python": false,
+  "contains_text": true
+}

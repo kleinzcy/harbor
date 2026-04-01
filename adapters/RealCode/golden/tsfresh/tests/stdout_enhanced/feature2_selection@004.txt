@@ -1,0 +1,15 @@
+{
+  "selected_features": [],
+  "relevance_table": [
+    {
+      "feature": "feature1",
+      "p_value": 0.6666666666666666,
+      "relevant": false
+    },
+    {
+      "feature": "feature2",
+      "p_value": 0.6666666666666666,
+      "relevant": false
+    }
+  ]
+}

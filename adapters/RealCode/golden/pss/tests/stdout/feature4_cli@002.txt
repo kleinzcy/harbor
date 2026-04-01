@@ -1,0 +1,22 @@
+{
+  "pattern": "error",
+  "roots": [
+    "dir1",
+    "dir2"
+  ],
+  "ignore_case": false,
+  "smart_case": false,
+  "whole_words": false,
+  "invert_match": true,
+  "literal_pattern": false,
+  "max_match_count": null,
+  "only_find_files": false,
+  "include_types": [],
+  "exclude_types": [],
+  "recurse": true,
+  "textonly": false,
+  "ncontext_before": 3,
+  "ncontext_after": 3,
+  "color": true,
+  "json": false
+}

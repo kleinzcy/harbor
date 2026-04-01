@@ -1,0 +1,5 @@
+{
+  "status": "success",
+  "has_age": false,
+  "has_name": false
+}

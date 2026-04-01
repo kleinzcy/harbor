@@ -1,0 +1,25 @@
+Long good paragraph with many words and sufficient length.
+Short.
+Another long good paragraph with adequate length.
+Good content here
+Short at start.
+Long content paragraph with many words and sufficient length.
+Long content paragraph with many words and sufficient length.
+Short at end.
+
+Boilerplate with high link density. Link Link
+Long content paragraph.
+Another boilerplate.
+Heading
+Subheading
+Short.
+Long content paragraph.
+Short paragraph exactly 100 characters long. This is exactly 100 chars.
+Another long paragraph.
+Long content paragraph.
+Short paragraph of 99 characters. This is exactly 99 characters long, just below threshold.
+Another long paragraph.
+First long paragraph.
+Short with high link density link .
+Second long paragraph.
+Medium length paragraph but still content.

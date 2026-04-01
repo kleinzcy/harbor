@@ -1,0 +1,182 @@
+{
+    "description": "FileFinder with extension filtering, ignored directories, and text\u2011file detection (enhanced with edge cases)",
+    "cases": [
+        {
+            "input": {
+                "roots": [
+                    "./test_data"
+                ],
+                "recurse": true,
+                "ignore_dirs": [
+                    ".git",
+                    "__pycache__",
+                    ".svn"
+                ],
+                "find_only_text_files": true,
+                "search_extensions": [
+                    ".py",
+                    ".js",
+                    ".ts"
+                ],
+                "ignore_extensions": [
+                    ".min.js"
+                ],
+                "search_patterns": [
+                    "test_*"
+                ],
+                "ignore_patterns": [
+                    "*_temp.*"
+                ],
+                "filter_include_patterns": [
+                    "src/**"
+                ],
+                "filter_exclude_patterns": [
+                    "src/vendor/**"
+                ]
+            },
+            "expected_output": [
+                "./test_data/src/main.py",
+                "./test_data/src/test_module.py",
+                "./test_data/src/utils.js"
+            ]
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data",
+                    "./another"
+                ],
+                "recurse": false,
+                "search_extensions": [
+                    ".txt",
+                    ".md"
+                ],
+                "find_only_text_files": false
+            },
+            "expected_output": [
+                "./test_data/README.md",
+                "./test_data/notes.txt",
+                "./another/CHANGELOG.txt"
+            ]
+        },
+        {
+            "input": {
+                "roots": [],
+                "recurse": true
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "roots": [
+                    "/nonexistent_xyz_123"
+                ],
+                "recurse": true
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data"
+                ],
+                "recurse": false,
+                "search_extensions": []
+            },
+            "expected_output": [
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/notes.txt",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/README.md"
+            ]
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data"
+                ],
+                "recurse": true,
+                "search_patterns": [
+                    "*.py"
+                ]
+            },
+            "expected_output": [
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_module.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_temp.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/main.py"
+            ]
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data"
+                ],
+                "recurse": true,
+                "filter_include_patterns": [
+                    "src/**"
+                ]
+            },
+            "expected_output": [
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_module.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_temp.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/utils.min.js",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/utils.js",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/main.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/vendor/external.js"
+            ]
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data"
+                ],
+                "recurse": true,
+                "filter_include_patterns": [
+                    "src/**"
+                ],
+                "filter_exclude_patterns": [
+                    "src/vendor/**"
+                ]
+            },
+            "expected_output": [
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_module.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_temp.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/utils.min.js",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/utils.js",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/main.py"
+            ]
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data"
+                ],
+                "recurse": true,
+                "ignore_dirs": [
+                    "dummy"
+                ]
+            },
+            "expected_output": [
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/notes.txt",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/README.md",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_module.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/test_temp.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/utils.min.js",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/utils.js",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/main.py",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/src/vendor/external.js"
+            ]
+        },
+        {
+            "input": {
+                "roots": [
+                    "./test_data",
+                    "/nonexistent_abc"
+                ],
+                "recurse": false
+            },
+            "expected_output": [
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/notes.txt",
+                "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pss/test_data/README.md"
+            ]
+        }
+    ]
+}

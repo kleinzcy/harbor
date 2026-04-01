@@ -1,0 +1,324 @@
+{
+  "description": "Basic parameterization with string and tuple argument names",
+  "cases": [
+    {
+      "input": {
+        "argnames": "x,expected",
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_square_0",
+          "test_square_1",
+          "test_square_2"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "expected": 1
+          },
+          {
+            "x": 2,
+            "expected": 4
+          },
+          {
+            "x": 3,
+            "expected": 9
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": [
+          "x",
+          "expected"
+        ],
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_square_0",
+          "test_square_1"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "expected": 1
+          },
+          {
+            "x": 2,
+            "expected": 4
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x, expected",
+        "argvalues": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_with_spaces_0",
+          "test_with_spaces_1"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "expected": 1
+          },
+          {
+            "x": 2,
+            "expected": 4
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x",
+        "argvalues": [
+          5
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_single_0"
+        ],
+        "parameters": [
+          {
+            "x": 5
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "value",
+        "argvalues": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_large_0",
+          "test_large_1",
+          "test_large_2",
+          "test_large_3",
+          "test_large_4",
+          "test_large_5",
+          "test_large_6",
+          "test_large_7",
+          "test_large_8",
+          "test_large_9"
+        ],
+        "parameters": [
+          {
+            "value": 0
+          },
+          {
+            "value": 1
+          },
+          {
+            "value": 2
+          },
+          {
+            "value": 3
+          },
+          {
+            "value": 4
+          },
+          {
+            "value": 5
+          },
+          {
+            "value": 6
+          },
+          {
+            "value": 7
+          },
+          {
+            "value": 8
+          },
+          {
+            "value": 9
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x\t,\ty",
+        "argvalues": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_tabs_0",
+          "test_tabs_1"
+        ],
+        "parameters": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x-y,z_w",
+        "argvalues": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_special_0",
+          "test_special_1"
+        ],
+        "parameters": [
+          {
+            "x-y": 1,
+            "z_w": 2
+          },
+          {
+            "x-y": 3,
+            "z_w": 4
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "x,x",
+        "argvalues": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_dup_0",
+          "test_dup_1"
+        ]
+      }
+    },
+    {
+      "input": {
+        "argnames": "value",
+        "argvalues": [
+          null,
+          3.14,
+          "hello",
+          true,
+          false,
+          {
+            "key": "val"
+          },
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "expected_output": {
+        "generated_methods": [
+          "test_mixed_0",
+          "test_mixed_1",
+          "test_mixed_2",
+          "test_mixed_3",
+          "test_mixed_4",
+          "test_mixed_5",
+          "test_mixed_6"
+        ]
+      }
+    }
+  ]
+}

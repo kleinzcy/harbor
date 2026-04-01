@@ -1,0 +1,4 @@
+{
+  "success": true,
+  "scroll_detected": true
+}

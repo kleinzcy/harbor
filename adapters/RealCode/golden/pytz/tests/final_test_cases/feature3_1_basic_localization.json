@@ -1,0 +1,110 @@
+{
+  "description": "Test basic localization of naive datetime objects to timezone-aware datetimes in various timezones.",
+  "cases": [
+    {
+      "input": {
+        "zone": "US/Eastern",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 EST (-0500)"
+    },
+    {
+      "input": {
+        "zone": "US/Eastern",
+        "datetime": "2002-07-07 06:00:00"
+      },
+      "expected_output": "2002-07-07 06:00:00 EDT (-0400)"
+    },
+    {
+      "input": {
+        "zone": "Europe/Amsterdam",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 CET (+0100)"
+    },
+    {
+      "input": {
+        "zone": "Asia/Shanghai",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 CST (+0800)"
+    },
+    {
+      "input": {
+        "zone": "US/Eastern",
+        "datetime": "2023-01-15 10:30:00"
+      },
+      "expected_output": "2023-01-15 10:30:00 EST (-0500)"
+    },
+    {
+      "input": {
+        "zone": "US/Eastern",
+        "datetime": "2023-06-15 10:30:00"
+      },
+      "expected_output": "2023-06-15 10:30:00 EDT (-0400)"
+    },
+    {
+      "input": {
+        "zone": "America/Los_Angeles",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 PST (-0800)"
+    },
+    {
+      "input": {
+        "zone": "America/Los_Angeles",
+        "datetime": "2002-07-07 06:00:00"
+      },
+      "expected_output": "2002-07-07 06:00:00 PDT (-0700)"
+    },
+    {
+      "input": {
+        "zone": "Pacific/Auckland",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 NZDT (+1300)"
+    },
+    {
+      "input": {
+        "zone": "Pacific/Auckland",
+        "datetime": "2002-06-27 06:00:00"
+      },
+      "expected_output": "2002-06-27 06:00:00 NZST (+1200)"
+    },
+    {
+      "input": {
+        "zone": "Europe/London",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 GMT (+0000)"
+    },
+    {
+      "input": {
+        "zone": "Europe/London",
+        "datetime": "2002-07-07 06:00:00"
+      },
+      "expected_output": "2002-07-07 06:00:00 BST (+0100)"
+    },
+    {
+      "input": {
+        "zone": "UTC",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 UTC (+0000)"
+    },
+    {
+      "input": {
+        "zone": "GMT",
+        "datetime": "2002-10-27 06:00:00"
+      },
+      "expected_output": "2002-10-27 06:00:00 GMT (+0000)"
+    },
+    {
+      "input": {
+        "zone": "Asia/Shanghai",
+        "datetime": "2050-12-31 23:59:59"
+      },
+      "expected_output": "2050-12-31 23:59:59 CST (+0800)"
+    }
+  ]
+}

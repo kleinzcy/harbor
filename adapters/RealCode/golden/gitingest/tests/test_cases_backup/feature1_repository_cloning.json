@@ -1,0 +1,42 @@
+{
+    "description": "Test various repository cloning scenarios",
+    "cases": [
+        {
+            "input": {
+                "url": "file:///tmp/test-local-repo",
+                "local_path": "/tmp/test-repo-1",
+                "branch": "main"
+            },
+            "expected_output": {
+                "success": true,
+                "git_dir_exists": true,
+                "readme_exists": true
+            }
+        },
+        {
+            "input": {
+                "url": "file:///tmp/nonexistent-repo",
+                "local_path": "/tmp/test-repo-2",
+                "branch": "develop",
+                "token": "ghp_xxxxxxxxxxxxx"
+            },
+            "expected_output": {
+                "success": false,
+                "git_dir_exists": false,
+                "branch": "develop"
+            }
+        },
+        {
+            "input": {
+                "url": "file:///tmp/test-local-repo",
+                "local_path": "/tmp/test-repo-3",
+                "subpath": "/"
+            },
+            "expected_output": {
+                "success": true,
+                "subpath_exists": true,
+                "other_dirs_excluded": false
+            }
+        }
+    ]
+}

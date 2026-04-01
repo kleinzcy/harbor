@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "position_within_tolerance": true,
+  "initial_position": [
+    0,
+    0
+  ],
+  "final_position": [
+    5000.0,
+    5000.0
+  ],
+  "target_position": [
+    5000,
+    5000
+  ],
+  "distance": 0.0
+}

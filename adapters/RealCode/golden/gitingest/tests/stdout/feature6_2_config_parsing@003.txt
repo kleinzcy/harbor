@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "format": "ini",
+  "data": {
+    "database": {
+      "host": "localhost",
+      "port": "3306"
+    },
+    "server": {
+      "port": "8080",
+      "hostname": "example.com"
+    }
+  },
+  "keys": [
+    "database",
+    "server"
+  ],
+  "values": [
+    {
+      "host": "localhost",
+      "port": "3306"
+    },
+    {
+      "port": "8080",
+      "hostname": "example.com"
+    }
+  ],
+  "key_count": 2
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "matching_line": "def foo():",
+    "matching_lineno": 1,
+    "matching_column_ranges": [
+      [
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "matching_line": "def bar():",
+    "matching_lineno": 3,
+    "matching_column_ranges": [
+      [
+        0,
+        4
+      ]
+    ]
+  }
+]

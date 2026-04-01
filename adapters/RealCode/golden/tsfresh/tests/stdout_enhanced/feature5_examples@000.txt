@@ -1,0 +1,7 @@
+{
+  "extracted_features_shape": [
+    100,
+    50
+  ],
+  "selected_features_count": 15
+}

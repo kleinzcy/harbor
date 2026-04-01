@@ -1,0 +1,25 @@
+{
+    "description": "Given a dictionary as comma-separated key:value pairs, print all keys sorted alphabetically, one per line.",
+    "cases": [
+        {
+            "input": "a:1,b:2,c:3",
+            "expected_output": "a\\nb\\nc"
+        },
+        {
+            "input": "z:1,a:2,m:3",
+            "expected_output": "a\\nm\\nz"
+        },
+        {
+            "input": "x:10",
+            "expected_output": "x"
+        },
+        {
+            "input": "b:2,a:1,d:4,c:3",
+            "expected_output": "a\\nb\\nc\\nd"
+        },
+        {
+            "input": "cat:1,ant:2,bat:3",
+            "expected_output": "ant\\nbat\\ncat"
+        }
+    ]
+}

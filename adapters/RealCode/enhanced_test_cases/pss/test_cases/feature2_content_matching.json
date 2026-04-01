@@ -1,0 +1,456 @@
+{
+    "description": "ContentMatcher with regex, literal, case\u2011insensitive, whole\u2011word, inverted, smart\u2011case, and max\u2011match options (enhanced with edge cases)",
+    "cases": [
+        {
+            "input": {
+                "pattern": "def ",
+                "ignore_case": false,
+                "invert_match": false,
+                "whole_words": false,
+                "literal_pattern": false,
+                "max_match_count": 2,
+                "content": "def foo():\n  print('def')\ndef bar():\n  pass\n  # def not here"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "def foo():",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            4
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "def bar():",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            4
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "vector *<",
+                "ignore_case": false,
+                "whole_words": false,
+                "literal_pattern": false,
+                "content": "vector<int> v;\nvector <float> f;"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "vector<int> v;",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            10
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "vector <float> f;",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            13
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "error",
+                "ignore_case": true,
+                "invert_match": true,
+                "max_match_count": 100,
+                "content": "ERROR: something\nWarning: something\nInfo: something"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "Warning: something",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": []
+                },
+                {
+                    "matching_line": "Info: something",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": []
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "Error",
+                "smart_case": true,
+                "content": "Error: something\nerror: something\nERROR: something"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "Error: something",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            5
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "error",
+                "smart_case": true,
+                "content": "Error: something\nerror: something\nERROR: something"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "Error: something",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            5
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "error: something",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            5
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "ERROR: something",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            5
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "$\\t",
+                "literal_pattern": true,
+                "content": "$\\t is a tab"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "$\\t is a tab",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            3
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "",
+                "content": "hello\nworld"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "hello",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            1,
+                            1
+                        ],
+                        [
+                            2,
+                            2
+                        ],
+                        [
+                            3,
+                            3
+                        ],
+                        [
+                            4,
+                            4
+                        ],
+                        [
+                            5,
+                            5
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "world",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            1,
+                            1
+                        ],
+                        [
+                            2,
+                            2
+                        ],
+                        [
+                            3,
+                            3
+                        ],
+                        [
+                            4,
+                            4
+                        ],
+                        [
+                            5,
+                            5
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "a.b",
+                "content": "aab\naxb\na b"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "aab",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            3
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "axb",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            3
+                        ]
+                    ]
+                },
+                {
+                    "matching_line": "a b",
+                    "matching_lineno": 3,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            3
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "hello",
+                "whole_words": true,
+                "literal_pattern": true,
+                "content": "hello world"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "hello world",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            5
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "Error",
+                "ignore_case": true,
+                "smart_case": true,
+                "content": "error Error ERROR"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "error Error ERROR",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            6,
+                            11
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "error",
+                "invert_match": true,
+                "max_match_count": 1,
+                "content": "error\nwarning\nerror"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "warning",
+                    "matching_lineno": 2,
+                    "matching_column_ranges": []
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "hello",
+                "max_match_count": 0,
+                "content": "hello hello"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "hello hello",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            5
+                        ],
+                        [
+                            6,
+                            11
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "\u0130",
+                "ignore_case": true,
+                "content": "i \u0130 \u0131"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "i \u0130 \u0131",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            1
+                        ],
+                        [
+                            2,
+                            3
+                        ],
+                        [
+                            4,
+                            5
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "aa",
+                "literal_pattern": true,
+                "content": "aaa"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "aaa",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            2
+                        ],
+                        [
+                            1,
+                            3
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "hello",
+                "content": ""
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "pattern": "\\n",
+                "literal_pattern": true,
+                "content": "\\n newline"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "\\n newline",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            0,
+                            2
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "input": {
+                "pattern": "[",
+                "content": "["
+            },
+            "expected_output": []
+        },
+        {
+            "input": {
+                "pattern": "oo",
+                "content": "foo boo"
+            },
+            "expected_output": [
+                {
+                    "matching_line": "foo boo",
+                    "matching_lineno": 1,
+                    "matching_column_ranges": [
+                        [
+                            1,
+                            3
+                        ],
+                        [
+                            5,
+                            7
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

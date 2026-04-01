@@ -1,0 +1,60 @@
+{
+    "description": "Test web API endpoints for repository ingestion",
+    "cases": [
+        {
+            "input": {
+                "endpoint": "/api/ingest",
+                "method": "POST",
+                "payload": {
+                    "input_text": "/tmp/test-local-repo",
+                    "max_file_size": 5120,
+                    "pattern_type": "exclude",
+                    "pattern": "",
+                    "token": null
+                }
+            },
+            "expected_output": {
+                "status_code": 200,
+                "has_summary": true,
+                "has_tree": true,
+                "has_content": true,
+                "contains_repo_name": true
+            }
+        },
+        {
+            "input": {
+                "endpoint": "/api/ingest",
+                "method": "POST",
+                "payload": {
+                    "input_text": "/tmp/nonexistent-repo",
+                    "max_file_size": 5120,
+                    "pattern_type": "exclude",
+                    "pattern": "",
+                    "token": null
+                }
+            },
+            "expected_output": {
+                "status_code": 400,
+                "error_contains_auth": true
+            }
+        },
+        {
+            "input": {
+                "endpoint": "/api/ingest",
+                "method": "POST",
+                "payload": {
+                    "input_text": "/tmp/test-local-repo",
+                    "max_file_size": 5120,
+                    "pattern_type": "include",
+                    "pattern": "*.py,*.md",
+                    "token": null
+                }
+            },
+            "expected_output": {
+                "status_code": 200,
+                "includes_py_md": true,
+                "excludes_other_formats": true
+            }
+        }
+    ]
+}

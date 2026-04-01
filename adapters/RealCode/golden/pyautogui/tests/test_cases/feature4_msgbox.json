@@ -1,0 +1,51 @@
+{
+  "description": "Message box dialog simulation with various button configurations and input scenarios",
+  "cases": [
+    {
+      "input": {
+        "test_type": "alert",
+        "text": "Hello World",
+        "title": "Test Alert"
+      },
+      "expected_output": {
+        "return_value": "OK"
+      }
+    },
+    {
+      "input": {
+        "test_type": "confirm",
+        "text": "Continue?",
+        "buttons": [
+          "Yes",
+          "No"
+        ]
+      },
+      "expected_output": {
+        "return_value_in": [
+          "Yes",
+          "No"
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_type": "prompt",
+        "text": "Enter name:",
+        "default": "User"
+      },
+      "expected_output": {
+        "return_value_type": "string"
+      }
+    },
+    {
+      "input": {
+        "test_type": "password",
+        "text": "Enter password:",
+        "mask": "*"
+      },
+      "expected_output": {
+        "return_value_type": "string"
+      }
+    }
+  ]
+}

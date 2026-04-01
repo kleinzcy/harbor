@@ -1,0 +1,158 @@
+{
+    "description": "Test Jupyter notebook conversion to executable Python code - enhanced",
+    "cases": [
+        {
+            "input": {
+                "notebook": {
+                    "cells": [
+                        {
+                            "cell_type": "code",
+                            "source": ["import math\n", "print(math.pi)"],
+                            "outputs": [{"text": "3.141592653589793\n"}]
+                        },
+                        {
+                            "cell_type": "markdown",
+                            "source": ["# Title\n", "Description"]
+                        }
+                    ]
+                },
+                "include_output": true
+            },
+            "expected_output": {
+                "contains_import": true,
+                "contains_print": true,
+                "contains_output": true,
+                "contains_markdown": true
+            }
+        },
+        {
+            "input": {
+                "notebook": {
+                    "cells": [{
+                        "cell_type": "code",
+                        "source": ["x = 42"],
+                        "outputs": [{"text": "42"}]
+                    }]
+                },
+                "include_output": false
+            },
+            "expected_output": {
+                "contains_code": true,
+                "excludes_output": true
+            }
+        },
+        {
+            "input": {
+                "notebook": {
+                    "cells": []
+                },
+                "include_output": false
+            },
+            "expected_output": {
+                "success": true,
+                "cell_count": 0,
+                "code_cells": 0,
+                "markdown_cells": 0
+            }
+        },
+        {
+            "input": {
+                "notebook": {
+                    "cells": [
+                        {
+                            "cell_type": "code",
+                            "source": ["import pandas as pd\n", "import numpy as np"],
+                            "outputs": []
+                        },
+                        {
+                            "cell_type": "code",
+                            "source": ["print('hello')"],
+                            "outputs": [{"output_type": "stream", "text": "hello\n"}]
+                        },
+                        {
+                            "cell_type": "markdown",
+                            "source": ["## Section 1", "Details"]
+                        },
+                        {
+                            "cell_type": "markdown",
+                            "source": ["## Section 2"]
+                        }
+                    ]
+                },
+                "include_output": true
+            },
+            "expected_output": {
+                "contains_import": true,
+                "contains_print": true,
+                "contains_output": true,
+                "contains_markdown": true,
+                "cell_count": 4,
+                "code_cells": 2,
+                "markdown_cells": 2
+            }
+        },
+        {
+            "input": {
+                "notebook": {
+                    "cells": [
+                        {
+                            "cell_type": "code",
+                            "source": ["x = 1"],
+                            "outputs": [{"output_type": "execute_result", "data": {"text/plain": "1"}}]
+                        }
+                    ]
+                },
+                "include_output": true
+            },
+            "expected_output": {
+                "contains_output": true,
+                "code_cells": 1
+            }
+        },
+        {
+            "input": {
+                "notebook": {
+                    "cells": [
+                        {
+                            "cell_type": "code",
+                            "source": []
+                        }
+                    ]
+                },
+                "include_output": false
+            },
+            "expected_output": {
+                "code_cells": 1,
+                "contains_import": false,
+                "contains_print": false
+            }
+        },
+        {
+            "input": {
+                "notebook": {
+                    "cells": [
+                        {
+                            "cell_type": "markdown",
+                            "source": ["# Only markdown"]
+                        }
+                    ]
+                },
+                "include_output": false
+            },
+            "expected_output": {
+                "contains_markdown": true,
+                "code_cells": 0,
+                "markdown_cells": 1
+            }
+        },
+        {
+            "input": {
+                "notebook": {},
+                "include_output": false
+            },
+            "expected_output": {
+                "success": false
+            }
+        }
+    ]
+}

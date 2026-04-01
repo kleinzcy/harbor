@@ -1,0 +1,29 @@
+{
+    "description": "Given a class name, dynamically create it using a custom metaclass that injects injected=True, then print whether the injection succeeded.",
+    "cases": [
+        {
+            "input": "MyClass",
+            "expected_output": "True"
+        },
+        {
+            "input": "AnotherClass",
+            "expected_output": "True"
+        },
+        {
+            "input": "TestClass",
+            "expected_output": "True"
+        },
+        {
+            "input": "Foo",
+            "expected_output": "True"
+        },
+        {
+            "input": "My_Meta_Class",
+            "expected_output": "True"
+        },
+        {
+            "input": "A",
+            "expected_output": "True"
+        }
+    ]
+}

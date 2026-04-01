@@ -1,0 +1,14 @@
+{
+    "description": "Test that UnknownTimeZoneError is raised for invalid timezone names.",
+    "cases": [
+        {
+            "input": {
+                "zone": "US/Eastern"
+            },
+            "expected_output": {
+                "error": null,
+                "zone": "US/Eastern"
+            }
+        }
+    ]
+}

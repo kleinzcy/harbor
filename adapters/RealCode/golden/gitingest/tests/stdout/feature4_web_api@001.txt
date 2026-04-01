@@ -1,0 +1,12 @@
+{
+  "status_code": 200,
+  "success": true,
+  "summary": {
+    "repository": "test-repo",
+    "files_processed": 10
+  },
+  "has_summary": true,
+  "has_tree": true,
+  "has_content": true,
+  "contains_repo_name": true
+}

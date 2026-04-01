@@ -1,0 +1,68 @@
+{
+  "description": "Safety configuration, fail-safe mechanism validation, and exception handling",
+  "cases": [
+    {
+      "input": {
+        "test_type": "failsafe_config",
+        "enable": true
+      },
+      "expected_output": {
+        "failsafe_enabled": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "pause_config",
+        "seconds": 0.5
+      },
+      "expected_output": {
+        "pause_set": 0.5
+      }
+    },
+    {
+      "input": {
+        "test_type": "failsafe_points"
+      },
+      "expected_output": {
+        "points_count": 4
+      }
+    },
+    {
+      "input": {
+        "test_type": "exception_trigger",
+        "exception_type": "ImageNotFoundException",
+        "image_path": "nonexistent.png"
+      },
+      "expected_output": {
+        "exception_raised": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "failsafe_config",
+        "enable": false
+      },
+      "expected_output": {
+        "failsafe_enabled": false
+      }
+    },
+    {
+      "input": {
+        "test_type": "pause_config",
+        "seconds": 0
+      },
+      "expected_output": {
+        "pause_set": 0
+      }
+    },
+    {
+      "input": {
+        "test_type": "pause_config",
+        "seconds": -1
+      },
+      "expected_output": {
+        "pause_set": -1
+      }
+    }
+  ]
+}

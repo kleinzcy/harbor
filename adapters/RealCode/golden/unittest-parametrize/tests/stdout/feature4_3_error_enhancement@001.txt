@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/unittest-parametrize/src/unittest_parametrize/core.py", line 125, in test_method
+    return func(self, *args)
+  File "<string>", line 2, in test_method
+AssertionError: 1 != 2
+Test parameters: x=1, expected=2

@@ -1,0 +1,1 @@
+{"before_normalize": "2002-10-27 02:00:00 EDT (-0400)", "after_normalize": "2002-10-27 01:00:00 EST (-0500)"}

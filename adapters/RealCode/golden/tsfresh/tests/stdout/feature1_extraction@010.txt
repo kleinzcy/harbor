@@ -1,0 +1,12 @@
+{
+  "columns": [
+    "value__mean",
+    "value__variance",
+    "value__length"
+  ],
+  "1": [
+    2.0,
+    1.0,
+    3.0
+  ]
+}

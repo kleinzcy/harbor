@@ -1,0 +1,54 @@
+{
+    "description": "Test command line interface functionality",
+    "cases": [
+        {
+            "input": {
+                "command": ["gitingest", "/tmp/test-project"],
+                "working_dir": "/tmp"
+            },
+            "expected_output": {
+                "exit_code": 0,
+                "creates_digest": true,
+                "contains_structure": true
+            }
+        },
+        {
+            "input": {
+                "command": ["gitingest", "/tmp/test-local-repo"],
+                "working_dir": "/tmp"
+            },
+            "expected_output": {
+                "exit_code": 0,
+                "creates_digest": true,
+                "contains_hello_world": false
+            }
+        },
+        {
+            "input": {
+                "command": [
+                    "gitingest", ".",
+                    "--exclude-pattern", "*.pyc",
+                    "--exclude-pattern", "__pycache__/",
+                    "--include-pattern", "*.py"
+                ],
+                "working_dir": "/tmp/test-project"
+            },
+            "expected_output": {
+                "exit_code": 0,
+                "includes_py": true,
+                "excludes_pyc": true
+            }
+        },
+        {
+            "input": {
+                "command": ["gitingest", ".", "--output", "-"],
+                "working_dir": "/tmp/test-project"
+            },
+            "expected_output": {
+                "exit_code": 0,
+                "stdout_contains_structure": true,
+                "no_digest_file": true
+            }
+        }
+    ]
+}

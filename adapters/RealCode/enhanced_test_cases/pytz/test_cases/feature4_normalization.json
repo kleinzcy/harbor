@@ -1,0 +1,108 @@
+{
+    "description": "Test timezone normalization after datetime arithmetic crosses DST boundaries.",
+    "cases": [
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:00:00",
+                "is_dst": false,
+                "delta_minutes": -10
+            },
+            "expected_output": {
+                "before_normalize": "2002-10-27 00:50:00 EST (-0500)",
+                "after_normalize": "2002-10-27 01:50:00 EDT (-0400)"
+            }
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-10-27 01:00:00",
+                "is_dst": true,
+                "delta_minutes": 60
+            },
+            "expected_output": {
+                "before_normalize": "2002-10-27 02:00:00 EDT (-0400)",
+                "after_normalize": "2002-10-27 01:00:00 EST (-0500)"
+            }
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-04-07 01:00:00",
+                "delta_minutes": 60
+            },
+            "expected_output": {
+                "before_normalize": "2002-04-07 02:00:00 EST (-0500)",
+                "after_normalize": "2002-04-07 03:00:00 EDT (-0400)"
+            }
+        },
+        {
+            "input": {
+                "zone": "US/Eastern",
+                "datetime": "2002-07-07 12:00:00",
+                "delta_minutes": 30
+            },
+            "expected_output": {
+                "before_normalize": "2002-07-07 12:30:00 EDT (-0400)",
+                "after_normalize": "2002-07-07 12:30:00 EDT (-0400)"
+            }
+        },
+        {
+            "input": {
+                "zone": "Europe/London",
+                "datetime": "2002-03-31 01:00:00",
+                "delta_minutes": 60
+            },
+            "expected_output": {
+                "before_normalize": "2002-03-31 02:00:00 GMT (+0000)",
+                "after_normalize": "2002-03-31 03:00:00 BST (+0100)"
+            }
+        },
+        {
+            "input": {
+                "zone": "Europe/London",
+                "datetime": "2002-10-27 01:00:00",
+                "is_dst": true,
+                "delta_minutes": 60
+            },
+            "expected_output": {
+                "before_normalize": "2002-10-27 02:00:00 BST (+0100)",
+                "after_normalize": "2002-10-27 01:00:00 GMT (+0000)"
+            }
+        },
+        {
+            "input": {
+                "zone": "Pacific/Auckland",
+                "datetime": "2002-10-27 01:00:00",
+                "delta_minutes": 60
+            },
+            "expected_output": {
+                "before_normalize": "2002-10-27 02:00:00 NZST (+1200)",
+                "after_normalize": "2002-10-27 03:00:00 NZDT (+1300)"
+            }
+        },
+        {
+            "input": {
+                "zone": "Pacific/Auckland",
+                "datetime": "2002-04-07 01:00:00",
+                "is_dst": true,
+                "delta_minutes": 60
+            },
+            "expected_output": {
+                "before_normalize": "2002-04-07 02:00:00 NZDT (+1300)",
+                "after_normalize": "2002-04-07 01:00:00 NZST (+1200)"
+            }
+        },
+        {
+            "input": {
+                "zone": "UTC",
+                "datetime": "2002-10-27 06:00:00",
+                "delta_minutes": 30
+            },
+            "expected_output": {
+                "before_normalize": "2002-10-27 06:30:00 UTC (+0000)",
+                "after_normalize": "2002-10-27 06:30:00 UTC (+0000)"
+            }
+        }
+    ]
+}

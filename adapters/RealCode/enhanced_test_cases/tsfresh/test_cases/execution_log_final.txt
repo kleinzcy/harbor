@@ -1,0 +1,322 @@
+Running tsfresh test suite...
+Processing feature1_extraction.json...
+  Case 0...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 0 failed
+  Case 1...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 1 failed
+  Case 2...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 2 failed
+  Case 3...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 3 failed
+  Case 4...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 4 failed
+  Case 5...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 5 failed
+  Case 6...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 6 failed
+  Case 7...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 7 failed
+  Case 8...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 8 failed
+  Case 9...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 9 failed
+  Case 10...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 10 failed
+  Case 11...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 11 failed
+Processing feature2_selection.json...
+  Case 0...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_selection.py", line 10, in <module>
+    from tsfresh.feature_selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 0 failed
+  Case 1...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_selection.py", line 10, in <module>
+    from tsfresh.feature_selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 1 failed
+  Case 2...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_selection.py", line 10, in <module>
+    from tsfresh.feature_selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 2 failed
+  Case 3...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_selection.py", line 10, in <module>
+    from tsfresh.feature_selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 3 failed
+  Case 4...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_selection.py", line 10, in <module>
+    from tsfresh.feature_selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 4 failed
+Processing feature3_1_multivariate.json...
+  Case 0...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 0 failed
+  Case 1...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 1 failed
+  Case 2...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 2 failed
+Processing feature3_2_irregular.json...
+  Case 0...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 0 failed
+  Case 1...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 1 failed
+  Case 2...
+Script failed: Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tests/../run_extraction.py", line 10, in <module>
+    from tsfresh import extract_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/__init__.py", line 8, in <module>
+    from .feature_selection import select_features
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/__init__.py", line 5, in <module>
+    from .selection import select_features, calculate_relevance_table
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/tsfresh/tsfresh/feature_selection/selection.py", line 8, in <module>
+    from scipy import stats
+ModuleNotFoundError: No module named 'scipy'
+
+  Case 2 failed
+Processing feature4_interface.json...
+  Case 0...
+  Case 0 passed
+  Case 1...
+  Case 1 passed
+Processing feature5_examples.json...
+  Case 0...
+  Case 0 passed
+  Case 1...
+  Case 1 passed
+Processing feature6_package.json...
+  Case 0...
+  Case 0 passed
+  Case 1...
+  Case 1 passed
+  Case 2...
+  Case 2 passed
+Some tests failed

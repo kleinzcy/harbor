@@ -1,0 +1,15 @@
+
+This is a long paragraph with only one link and plenty of regular text.
+Plain text without any links
+Link density exactly 0.5: link text plus some other text.
+
+Empty link
+Link1 Link2 both links
+image link
+
+
+Heading with link
+
+
+Link density zero: no links.
+Multiple links with varying lengths: short and a longer link text plus some other text.

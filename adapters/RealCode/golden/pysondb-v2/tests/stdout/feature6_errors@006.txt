@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Missing required keys: ['name']",
+  "error_type": "UnknownKeyError"
+}

@@ -1,0 +1,3 @@
+{
+  "is_shift_character": false
+}

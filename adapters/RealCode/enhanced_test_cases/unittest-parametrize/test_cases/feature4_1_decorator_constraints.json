@@ -1,0 +1,63 @@
+{
+  "description": "Decorator ordering and stacking validation",
+  "cases": [
+    {
+      "input": {
+        "scenario": "parametrize not outermost",
+        "decorators": [
+          "@mock.patch",
+          "@parametrize"
+        ]
+      },
+      "expected_output": {
+        "error": "@parametrize must be the top-most decorator"
+      }
+    },
+    {
+      "input": {
+        "scenario": "multiple parametrize decorators",
+        "decorators": [
+          "@parametrize",
+          "@parametrize"
+        ]
+      },
+      "expected_output": {
+        "error": "@parametrize cannot be stacked"
+      }
+    },
+    {
+      "input": {
+        "scenario": "duplicate generated method name",
+        "existing_method": "test_something_0",
+        "parametrize_method": "test_something"
+      },
+      "expected_output": {
+        "error": "Duplicate test name 'test_something_0'"
+      }
+    },
+    {
+      "input": {
+        "scenario": "parametrize with unittest.skip",
+        "decorators": [
+          "@unittest.skip",
+          "@parametrize"
+        ]
+      },
+      "expected_output": {
+        "error": "@parametrize must be the top-most decorator"
+      }
+    },
+    {
+      "input": {
+        "scenario": "parametrize with expectedFailure",
+        "decorators": [
+          "@unittest.expectedFailure",
+          "@parametrize"
+        ]
+      },
+      "expected_output": {
+        "error": "@parametrize must be the top-most decorator"
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+FAIL: RuntimeError: 14 worker(s) failed:
+  Worker 1: ValueError: invalid literal for int() with base 10: 'not_a_number'
+Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pandarallel/pandarallel/utils.py", line 117, in safe_apply
+    result = func(*args, **kwargs)
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pandarallel/pandarallel/core.py", line 27, in _apply_chunk
+    return chunk.apply(func, *args, **kwargs_no_axis)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/algorithms.py", line 1710, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "<string>", line 1, in <lambda>
+ValueError: invalid literal for int() with base 10: 'not_a_number'
+
+  Worker 2: ValueError: invalid literal for int() with base 10: 'not_a_number'
+Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pandarallel/pandarallel/utils.py", line 117, in safe_apply
+    result = func(*args, **kwargs)
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pandarallel/pandarallel/core.py", line 27, in _apply_chunk
+    return chunk.apply(func, *args, **kwargs_no_axis)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/algorithms.py", line 1710, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "<string>", line 1, in <lambda>
+ValueError: invalid literal for int() with base 10: 'not_a_number'
+
+  Worker 3: ValueError: invalid literal for int() with base 10: 'not_a_number'
+Traceback (most recent call last):
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pandarallel/pandarallel/utils.py", line 117, in safe_apply
+    result = func(*args, **kwargs)
+  File "/Users/pengzhongyuan/PythonCode/realcode_bench/workspaces/pandarallel/pandarallel/core.py", line 27, in _apply_chunk
+    return chunk.apply(func, *args, **kwargs_no_axis)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/pandas/core/algorithms.py", line 1710, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "<string>", line 1, in <lambda>
+ValueError: invalid literal for int() with base 10: 'not_a_number'
+
+  ... and 11 more errors

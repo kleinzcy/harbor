@@ -1,0 +1,10 @@
+Starting jusText test suite...
+=== Testing feature1 ===
+=== Testing feature2 ===
+=== Testing feature3 ===
+=== Testing multilingual support ===
+=== Testing feature5 ===
+=== Testing feature6 ===
+=== Testing feature7 ===
+Combining all test outputs...
+Test suite completed. Output saved to enhanced_stdout.txt

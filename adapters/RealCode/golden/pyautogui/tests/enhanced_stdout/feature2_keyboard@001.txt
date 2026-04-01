@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "text_typed": true,
+  "timing_within_tolerance": false,
+  "elapsed_time": 1.3037490844726562,
+  "expected_time": 1.2000000000000002
+}

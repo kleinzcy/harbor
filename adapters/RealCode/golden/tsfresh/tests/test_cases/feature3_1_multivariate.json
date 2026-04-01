@@ -1,0 +1,53 @@
+{
+  "description": "Extract features from multivariate time series with temperature and pressure measurements",
+  "cases": [
+    {
+      "input": {
+        "data": {
+          "id": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "time": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "kind": [
+            "temp",
+            "temp",
+            "pressure",
+            "pressure"
+          ],
+          "value": [
+            20.0,
+            21.0,
+            100.0,
+            101.0
+          ]
+        },
+        "column_id": "id",
+        "column_sort": "time",
+        "column_kind": "kind",
+        "column_value": "value"
+      },
+      "expected_output": {
+        "columns": [
+          "temp__mean",
+          "temp__variance",
+          "pressure__mean",
+          "pressure__variance"
+        ],
+        "1": [
+          20.5,
+          0.5,
+          100.5,
+          0.5
+        ]
+      }
+    }
+  ]
+}

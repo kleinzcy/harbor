@@ -1,0 +1,25 @@
+{
+    "description": "Test conversion from UTC to various local timezones.",
+    "cases": [
+        {
+            "input": {"utc_datetime": "2002-10-27 06:00:00", "target_zone": "US/Eastern"},
+            "expected_output": "2002-10-27 01:00:00 EST (-0500)"
+        },
+        {
+            "input": {"utc_datetime": "2002-10-27 06:00:00", "target_zone": "Asia/Shanghai"},
+            "expected_output": "2002-10-27 14:00:00 CST (+0800)"
+        },
+        {
+            "input": {"utc_datetime": "2002-07-07 06:00:00", "target_zone": "US/Eastern"},
+            "expected_output": "2002-07-07 02:00:00 EDT (-0400)"
+        },
+        {
+            "input": {"utc_datetime": "2002-10-27 06:00:00", "target_zone": "Europe/London"},
+            "expected_output": "2002-10-27 06:00:00 GMT (+0000)"
+        },
+        {
+            "input": {"utc_datetime": "2002-07-07 06:00:00", "target_zone": "Europe/London"},
+            "expected_output": "2002-07-07 07:00:00 BST (+0100)"
+        }
+    ]
+}

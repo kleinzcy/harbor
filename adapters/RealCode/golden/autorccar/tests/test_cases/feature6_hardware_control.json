@@ -1,0 +1,77 @@
+{
+    "description": "Test serial command mapping for steering predictions",
+    "cases": [
+        {
+            "input": {
+                "prediction": 2
+            },
+            "expected_output": {
+                "command": "forward"
+            }
+        },
+        {
+            "input": {
+                "prediction": 0
+            },
+            "expected_output": {
+                "command": "left"
+            }
+        },
+        {
+            "input": {
+                "prediction": 1
+            },
+            "expected_output": {
+                "command": "right"
+            }
+        },
+        {
+            "input": {
+                "prediction": 3
+            },
+            "expected_output": {
+                "command": "stop"
+            }
+        },
+        {
+            "input": "",
+            "expected_output": {"error": "No input provided"}
+        },
+        {
+            "input": "{",
+            "expected_output": {"error": "Invalid JSON input"}
+        },
+        {
+            "input": {},
+            "expected_output": {"error": "Missing prediction parameter"}
+        },
+        {
+            "input": {"prediction": "two"},
+            "expected_output": {"error": "Invalid prediction type: invalid literal for int() with base 10: 'two'"}
+        },
+        {
+            "input": {"prediction": 4},
+            "expected_output": {
+                "command": "stop"
+            }
+        },
+        {
+            "input": {"prediction": -1},
+            "expected_output": {
+                "command": "stop"
+            }
+        },
+        {
+            "input": {"prediction": 2.0},
+            "expected_output": {
+                "command": "forward"
+            }
+        },
+        {
+            "input": {"prediction": 2, "extra": "field"},
+            "expected_output": {
+                "command": "forward"
+            }
+        }
+    ]
+}

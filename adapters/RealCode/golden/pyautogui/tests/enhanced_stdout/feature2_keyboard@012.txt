@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "press_count": 1,
+  "keys_pressed": 0
+}

@@ -1,0 +1,76 @@
+{
+    "description": "Test training data collection and labeling",
+    "cases": [
+        {
+            "input": {
+                "key": "K_UP",
+                "frame": "image_array"
+            },
+            "expected_output": {
+                "label": [0, 0, 1, 0],
+                "saved": true
+            }
+        },
+        {
+            "input": {
+                "key": "K_LEFT",
+                "frame": "image_array"
+            },
+            "expected_output": {
+                "label": [1, 0, 0, 0],
+                "saved": true
+            }
+        },
+        {
+            "input": "",
+            "expected_output": {"error": "No input provided"}
+        },
+        {
+            "input": "{",
+            "expected_output": {"error": "Invalid JSON input"}
+        },
+        {
+            "input": {},
+            "expected_output": {"error": "Missing required parameter: key"}
+        },
+        {
+            "input": {"key": "K_UP"},
+            "expected_output": {"error": "Missing required parameter: frame"}
+        },
+        {
+            "input": {"key": "K_RIGHT", "frame": "image_array"},
+            "expected_output": {
+                "label": [0, 1, 0, 0],
+                "saved": true
+            }
+        },
+        {
+            "input": {"key": "K_DOWN", "frame": "image_array"},
+            "expected_output": {
+                "label": [0, 0, 0, 1],
+                "saved": true
+            }
+        },
+        {
+            "input": {"key": "K_SPACE", "frame": "image_array"},
+            "expected_output": {
+                "label": [0, 0, 0, 1],
+                "saved": true
+            }
+        },
+        {
+            "input": {"key": "UNKNOWN", "frame": "image_array"},
+            "expected_output": {
+                "label": [0, 0, 0, 1],
+                "saved": true
+            }
+        },
+        {
+            "input": {"key": "K_UP", "frame": "image_array", "extra": "field"},
+            "expected_output": {
+                "label": [0, 0, 1, 0],
+                "saved": true
+            }
+        }
+    ]
+}

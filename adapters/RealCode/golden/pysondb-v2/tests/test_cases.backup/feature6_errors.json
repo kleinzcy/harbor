@@ -1,0 +1,21 @@
+{
+    "description": "Error handling and exception scenarios",
+    "cases": [
+        {
+            "input": {"operation": "get_by_id", "id": "non_existent_123"},
+            "expected_output": {"status": "error", "error_type": "IdDoesNotExistError"}
+        },
+        {
+            "input": {"operation": "add", "data": {"unknown_field": "value"}},
+            "expected_output": {"status": "error", "error_type": "UnknownKeyError"}
+        },
+        {
+            "input": {"operation": "load_corrupted", "db_file": "corrupted.json"},
+            "expected_output": {"status": "error", "error_type": "SchemaTypeError"}
+        },
+        {
+            "input": {"operation": "add", "data": "not_a_dict"},
+            "expected_output": {"status": "error", "error_type": "TypeError"}
+        }
+    ]
+}

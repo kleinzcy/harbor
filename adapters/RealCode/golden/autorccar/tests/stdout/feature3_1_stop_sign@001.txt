@@ -1,0 +1,1 @@
+{"detected": false, "v_param": 0}

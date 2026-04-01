@@ -48,14 +48,20 @@ def get_image_names(
     samples_hf: list[dict],
 ) -> dict[str, str]:
     """
-    Return a mapping from sample instance_id → Docker image name
+    Return a mapping from sample instance_id → Docker image name.
+    Instances for which make_test_spec raises are skipped with a warning.
     """
     id_to_image: dict[str, str] = {}
     for sample in samples_hf:
-        spec = make_test_spec(sample, namespace="swebench")
-        id_to_image[sample["instance_id"]] = spec.instance_image_key.replace(
-            "arm64", "x86_64"
-        )
+        try:
+            spec = make_test_spec(sample, namespace="swebench")
+            id_to_image[sample["instance_id"]] = spec.instance_image_key.replace(
+                "arm64", "x86_64"
+            )
+        except Exception as exc:
+            print(
+                f"Warning: skipping image lookup for {sample['instance_id']}: {exc}"
+            )
     return id_to_image
 
 

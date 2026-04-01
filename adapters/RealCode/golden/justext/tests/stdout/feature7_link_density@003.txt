@@ -1,0 +1,1 @@
+Link density exactly 0.5: link text plus some other text.

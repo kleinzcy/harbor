@@ -1,0 +1,13 @@
+Hello 世界
+Test content
+Test
+﻿BOM character
+
+Emojis: 🚀 👍 😀
+Zero-width space:​test
+Combining characters: ñ (n with tilde)
+Test
+First charset wins
+Chinese encoding
+HTML entities: <div> & "quotes"
+Non-breaking space: test

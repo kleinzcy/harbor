@@ -1,0 +1,133 @@
+{
+  "description": "Documentation doctest validation, API accessibility checks, and example code testing",
+  "cases": [
+    {
+      "input": {
+        "test_type": "doctest"
+      },
+      "expected_output": {
+        "tests_passed": true,
+        "failures": 0
+      }
+    },
+    {
+      "input": {
+        "test_type": "api_availability",
+        "function_names": [
+          "moveTo",
+          "click",
+          "typewrite",
+          "screenshot"
+        ]
+      },
+      "expected_output": {
+        "all_functions_available": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "example_code",
+        "example": "basic_mouse_movement"
+      },
+      "expected_output": {
+        "success": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "constant_validation",
+        "constants": [
+          "FAILSAFE",
+          "PAUSE",
+          "PRIMARY"
+        ]
+      },
+      "expected_output": {
+        "all_constants_defined": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "api_availability",
+        "function_names": [
+          "moveTo",
+          "moveRel",
+          "click",
+          "rightClick",
+          "doubleClick",
+          "tripleClick",
+          "mouseDown",
+          "mouseUp",
+          "dragTo",
+          "dragRel",
+          "scroll",
+          "hscroll",
+          "vscroll",
+          "typewrite",
+          "press",
+          "keyDown",
+          "keyUp",
+          "hold",
+          "hotkey",
+          "isShiftCharacter",
+          "isValidKey",
+          "screenshot",
+          "locateOnScreen",
+          "locateAllOnScreen",
+          "locateCenterOnScreen",
+          "pixel",
+          "pixelMatchesColor",
+          "locate",
+          "locateAll",
+          "center",
+          "alert",
+          "confirm",
+          "prompt",
+          "password",
+          "size",
+          "position",
+          "onScreen",
+          "getPointOnLine",
+          "set_failsafe",
+          "set_pause",
+          "get_failsafe_points",
+          "platform",
+          "check_dependency",
+          "_normalizeXYArgs",
+          "_getNumberToken",
+          "_getQuotedStringToken"
+        ]
+      },
+      "expected_output": {
+        "all_functions_available": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "constant_validation",
+        "constants": [
+          "FAILSAFE",
+          "PAUSE",
+          "MINIMUM_DURATION",
+          "PRIMARY",
+          "SECONDARY",
+          "LEFT",
+          "RIGHT",
+          "MIDDLE"
+        ]
+      },
+      "expected_output": {
+        "all_constants_defined": true
+      }
+    },
+    {
+      "input": {
+        "test_type": "example_code",
+        "example": "keyboard_shortcuts"
+      },
+      "expected_output": {
+        "success": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+    "description": "Test traffic light detection and color recognition",
+    "cases": [
+        {
+            "input": {
+                "cascade_file": "traffic_light.xml",
+                "image": "color_array"
+            },
+            "expected_output": {
+                "detected": true,
+                "color": "red"
+            }
+        },
+        {
+            "input": {
+                "cascade_file": "traffic_light.xml",
+                "image": "color_array_green"
+            },
+            "expected_output": {
+                "detected": true,
+                "color": "green"
+            }
+        },
+        {
+            "input": "",
+            "expected_output": {"error": "No input provided"}
+        },
+        {
+            "input": "{",
+            "expected_output": {"error": "Invalid JSON input"}
+        },
+        {
+            "input": {},
+            "expected_output": {"error": "Missing cascade_file parameter"}
+        },
+        {
+            "input": {"cascade_file": "traffic_light.xml"},
+            "expected_output": {
+                "detected": false
+            }
+        },
+        {
+            "input": {"cascade_file": "traffic_light.xml", "image": "color_array_yellow"},
+            "expected_output": {
+                "detected": true,
+                "color": "yellow"
+            }
+        },
+        {
+            "input": {"cascade_file": "traffic_light.xml", "image": "unknown_image"},
+            "expected_output": {
+                "detected": false
+            }
+        },
+        {
+            "input": {"cascade_file": "unknown.xml", "image": "color_array"},
+            "expected_output": {"error": "Unknown cascade file: unknown.xml"}
+        },
+        {
+            "input": {"image": "color_array"},
+            "expected_output": {"error": "Missing cascade_file parameter"}
+        }
+    ]
+}

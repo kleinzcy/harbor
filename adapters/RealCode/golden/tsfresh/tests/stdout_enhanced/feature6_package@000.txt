@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "module_imports": [
+    "tsfresh",
+    "tsfresh.feature_extraction",
+    "tsfresh.feature_selection"
+  ]
+}
