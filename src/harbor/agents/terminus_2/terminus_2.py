@@ -31,6 +31,7 @@ from harbor.llms.base import (
     OutputLengthExceededError,
 )
 from harbor.llms.chat import Chat
+from harbor.llms.friday import FridayLLM
 from harbor.llms.lite_llm import LiteLLM
 from harbor.models.agent.context import AgentContext
 from harbor.models.agent.name import AgentName
@@ -134,6 +135,18 @@ class Terminus2(BaseAgent):
                     collect_rollout_details=collect_rollout_details,
                     **(llm_kwargs or {}),
                 )
+            case LLMBackend.FRIDAY.value:
+                return FridayLLM(
+                    model_name=model_name,
+                    temperature=temperature,
+                    collect_rollout_details=collect_rollout_details,
+                    session_id=session_id,
+                    max_thinking_tokens=max_thinking_tokens,
+                    reasoning_effort=reasoning_effort,
+                    model_info=model_info,
+                    use_responses_api=use_responses_api,
+                    **(llm_kwargs or {}),
+                )
             case _:
                 raise ValueError(
                     f"Unknown llm_backend: {llm_backend!r}. "
@@ -214,7 +227,7 @@ class Terminus2(BaseAgent):
                 and send to litellm in next round's conversation (default: False)
             suppress_max_turns_warning: Whether to suppress the warning about artificially
                 limiting max_turns (default: False)
-            llm_backend: LLM backend to use. Use LLMBackend.LITELLM or "litellm".
+            llm_backend: LLM backend to use. One of "litellm", "tinker", "friday".
                 (default: LLMBackend.LITELLM)
             llm_kwargs: Additional kwargs to pass to the LLM constructor.
                 (default: None)
