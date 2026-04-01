@@ -23,7 +23,7 @@ class FridayLLM(BaseLLM):
         model_name_list: list[str] | None = None,
         temperature: float = 0.0,
         api_key: str | None = None,
-        base_url: str = "https://aigc.sankuai.com/v1/openai/native/chat/completions",
+        base_url: str = "https://aigc.sankuai.com/v1/openai/native",
         top_p: float = 0.8,
         top_k: int = 20,
         max_tokens: int = 32768,
@@ -44,11 +44,11 @@ class FridayLLM(BaseLLM):
         **kwargs,
     ):
         super().__init__(**kwargs)
-        self._default_model_name = model_name
+        self._default_model_name = self._normalize_model_name(model_name)
         self._model_name_list = (
-            model_name_list
+            [self._normalize_model_name(m) for m in model_name_list]
             if model_name_list and len(model_name_list) > 0
-            else [model_name]
+            else [self._default_model_name]
         )
         self._api_key = (
             api_key or os.getenv("FRIDAY_API_KEY") or os.getenv("AIGC_API_KEY")
@@ -90,6 +90,12 @@ class FridayLLM(BaseLLM):
     def _random_model_selection(self) -> str:
         return random.choice(self._model_name_list)
 
+    def _normalize_model_name(self, model_name: str) -> str:
+        normalized = model_name.strip().rstrip("/")
+        if normalized.startswith("openai/"):
+            return normalized
+        return f"openai/{normalized}"
+
     def _build_extra_headers(self) -> dict[str, str]:
         token = f"{self._auth_header_prefix}{self._api_key}"
         return {
@@ -127,19 +133,17 @@ class FridayLLM(BaseLLM):
         tried_models: list[str] = [current_model]
 
         for attempt in range(self._max_retries):
-            if (
-                attempt > 0
-                and self._model_switch_interval > 0
-                and attempt % self._model_switch_interval == 0
-            ):
+            if attempt > 0:
                 untried = [m for m in self._model_name_list if m not in tried_models]
-                current_model = (
-                    random.choice(untried)
-                    if untried
-                    else self._random_model_selection()
-                )
-                if current_model not in tried_models:
+                if untried:
+                    # Prefer trying an untried alias/model on each retry.
+                    current_model = untried[0]
                     tried_models.append(current_model)
+                elif (
+                    self._model_switch_interval > 0
+                    and attempt % self._model_switch_interval == 0
+                ):
+                    current_model = self._random_model_selection()
 
             call_kwargs = dict(kwargs)
             call_kwargs["top_p"] = self._top_p
