@@ -2,8 +2,13 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 
-from adapter import RealCodeAdapter
+CURRENT_DIR = Path(__file__).resolve().parent
+if str(CURRENT_DIR) not in sys.path:
+    sys.path.insert(0, str(CURRENT_DIR))
+
+from adapter import RealCodeAdapter  # noqa: E402
 
 
 def main() -> None:
